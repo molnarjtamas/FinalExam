@@ -5594,6 +5594,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -56533,9 +56552,44 @@ var render = function() {
                   "tbody",
                   _vm._l(this.users, function(user) {
                     return _c("tr", [
-                      _c("td", { staticClass: "py-4 px-5" }, [
-                        _vm._v(_vm._s(user.name))
-                      ]),
+                      _c(
+                        "td",
+                        { staticClass: "px-5 py-5 border-b  bg-white text-sm" },
+                        [
+                          _c("div", { staticClass: "flex items-center" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex-shrink-0 w-10 h-10" },
+                              [
+                                _c("img", {
+                                  staticClass: "w-full h-full rounded-full",
+                                  attrs: {
+                                    src: user.profile_photo_path,
+                                    alt: user.name
+                                  }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "ml-3" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass:
+                                    "text-gray-900 whitespace-no-wrap"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(user.name) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("td", { staticClass: "py-3 px-5" }, [
                         _vm._v(_vm._s(user.email))
