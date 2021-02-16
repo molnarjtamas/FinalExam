@@ -5613,6 +5613,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5648,9 +5654,6 @@ __webpack_require__.r(__webpack_exports__);
     clickPage: function clickPage(button) {
       if (button === 'prev') this.link = this.links.prev;else this.link = this.links.next;
       this.fetchUsers();
-    },
-    setButtonStatus: function setButtonStatus() {
-      if (this.links.prev == null || this.links.next == null) this.isActive = false;
     },
     registeredSince: function registeredSince(user) {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()(user.created_at).fromNow();
@@ -56557,19 +56560,30 @@ var render = function() {
                         { staticClass: "px-5 py-5 border-b  bg-white text-sm" },
                         [
                           _c("div", { staticClass: "flex items-center" }, [
-                            _c(
-                              "div",
-                              { staticClass: "flex-shrink-0 w-10 h-10" },
-                              [
-                                _c("img", {
-                                  staticClass: "w-full h-full rounded-full",
-                                  attrs: {
-                                    src: user.profile_photo_path,
-                                    alt: user.name
-                                  }
-                                })
-                              ]
-                            ),
+                            user.profile_photo_path === "/storage/"
+                              ? _c(
+                                  "div",
+                                  { staticClass: "flex-shrink-0 w-10 h-10" },
+                                  [
+                                    _c("img", {
+                                      staticClass: "w-full h-full rounded-full",
+                                      attrs: {
+                                        src:
+                                          "../storage/profile-photos/default/default-avatar.png"
+                                      }
+                                    })
+                                  ]
+                                )
+                              : _c(
+                                  "div",
+                                  { staticClass: "flex-shrink-0 w-10 h-10" },
+                                  [
+                                    _c("img", {
+                                      staticClass: "w-full h-full rounded-full",
+                                      attrs: { src: user.profile_photo_path }
+                                    })
+                                  ]
+                                ),
                             _vm._v(" "),
                             _c("div", { staticClass: "ml-3" }, [
                               _c(

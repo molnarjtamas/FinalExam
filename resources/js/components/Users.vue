@@ -181,12 +181,18 @@
                                 class="px-5 py-5 border-b  bg-white text-sm"
                             >
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-10 h-10">
+                                    <div v-if="user.profile_photo_path === '/storage/' "
+                                         class="flex-shrink-0 w-10 h-10">
+                                        <img
+                                            class="w-full h-full rounded-full"
+                                            :src="'../storage/profile-photos/default/default-avatar.png'"
+                                        />
+                                    </div>
+                                    <div v-else class="flex-shrink-0 w-10 h-10">
                                         <img
                                             class="w-full h-full rounded-full"
                                             :src="user.profile_photo_path"
-                                            :alt="user.name"
-                                        />
+                                            />
                                     </div>
 
                                     <div class="ml-3">
@@ -196,8 +202,8 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="py-3 px-5">{{user.email}}</td>
-                            <td class="py-3 px-5">{{registeredSince(user)}}</td>
+                            <td class="py-3 px-5">{{ user.email }}</td>
+                            <td class="py-3 px-5">{{ registeredSince(user) }}</td>
 
                         </tr>
 
@@ -207,7 +213,7 @@
                         class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
                     >
               <span class="text-xs xs:text-sm text-gray-900"
-              >Showing {{this.meta.from}} to {{ this.meta.to }} of {{ this.meta.total}} Entries</span
+              >Showing {{ this.meta.from }} to {{ this.meta.to }} of {{ this.meta.total }} Entries</span
               >
 
                         <div class="inline-flex mt-2 xs:mt-0">
@@ -235,6 +241,7 @@
 import axios from "axios";
 import moment from "moment";
 
+
 export default {
     name: "Users",
     data() {
@@ -243,8 +250,7 @@ export default {
             users: null,
             links: null,
             meta: null,
-            isActive: true
-
+            isActive: true,
         }
     },
     mounted() {
@@ -280,10 +286,7 @@ export default {
             this.fetchUsers();
         },
 
-        setButtonStatus() {
-            if ((this.links.prev == null) || (this.links.next == null))
-                this.isActive = false
-        },
+
 
 
         registeredSince(user) {
