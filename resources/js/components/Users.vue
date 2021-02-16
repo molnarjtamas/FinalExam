@@ -4,9 +4,20 @@
 
 
         <div class="mt-6">
-            <div class="flex justify-between">
-            <h2 class="text-xl font-semibold text-gray-700 leading-tight">Users</h2>
-                <JetButton class="mr-8">Invite User</JetButton>
+            <div class="flex justify-between ">
+                <div class="flex">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                            <jet-application-mark class="block h-44 w-auto" />
+                    </div>
+                    <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
+                           Users
+                    </div>
+                </div>
+
+                <!--                <JetButton class="mr-8">Invite User</JetButton>-->
+                <InviteUser></InviteUser>
+
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
@@ -105,12 +116,16 @@
 import axios from "axios";
 import moment from "moment";
 import JetButton from '@/Jetstream/Button';
+import InviteUser from "@/components/InviteUser";
+import JetApplicationMark from "@/Jetstream/ApplicationMark";
 
 
 export default {
     name: "Users",
     components: {
-        JetButton
+        JetButton,
+        InviteUser,
+        JetApplicationMark,
     },
     data() {
         return {
