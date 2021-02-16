@@ -5381,6 +5381,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
 //
 //
 //
@@ -5483,146 +5484,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Users",
+  components: {
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__.default
+  },
   data: function data() {
     return {
       link: 'http://127.0.0.1:8000/api/users',
@@ -56532,9 +56401,20 @@ var render = function() {
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
       _c(
-        "h2",
-        { staticClass: "text-xl font-semibold text-gray-700 leading-tight" },
-        [_vm._v("Users")]
+        "div",
+        { staticClass: "flex justify-between" },
+        [
+          _c(
+            "h2",
+            {
+              staticClass: "text-xl font-semibold text-gray-700 leading-tight"
+            },
+            [_vm._v("Users")]
+          ),
+          _vm._v(" "),
+          _c("JetButton", { staticClass: "mr-8" }, [_vm._v("Invite User")])
+        ],
+        1
       ),
       _vm._v(" "),
       _c(
@@ -56741,7 +56621,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                            Status\n                        "
+              "\n                            Role\n                        "
             )
           ]
         )
