@@ -57,7 +57,7 @@ export default {
 
     methods: {
         addUser(){
-            this.inviteUserForm.post(route('users.store',this.user)),{
+            this.inviteUserForm.post(route('users.invite',this.user)),{
                 errorBag: 'addUser',
                 preserveScroll: true,
                 onSuccess: () => this.inviteUserForm.reset(),

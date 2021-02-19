@@ -5439,7 +5439,7 @@ __webpack_require__.r(__webpack_exports__);
     addUser: function addUser() {
       var _this = this;
 
-      this.inviteUserForm.post(route('users.store', this.user)), {
+      this.inviteUserForm.post(route('users.invite', this.user)), {
         errorBag: 'addUser',
         preserveScroll: true,
         onSuccess: function onSuccess() {
