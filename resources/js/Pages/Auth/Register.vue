@@ -44,7 +44,7 @@
                     Already registered?
                 </inertia-link>
 
-                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <jet-button v-on:click="submit"  class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </jet-button>
             </div>

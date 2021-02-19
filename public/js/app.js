@@ -5429,22 +5429,23 @@ __webpack_require__.r(__webpack_exports__);
   props: ['user'],
   data: function data() {
     return {
-      form: this.$inertia.form({
-        _method: 'PUT',
-        email: null
+      inviteUserForm: this.$inertia.form({
+        email: '',
+        token: null
       })
     };
   },
   methods: {
-    updateProfileInformation: function updateProfileInformation() {
-      if (this.$refs.photo) {
-        this.form.photo = this.$refs.photo.files[0];
-      }
+    addUser: function addUser() {
+      var _this = this;
 
-      this.form.post(route('user-profile-information.update'), {
-        errorBag: 'updateProfileInformation',
-        preserveScroll: true
-      });
+      this.inviteUserForm.post(route('users.store', this.user)), {
+        errorBag: 'addUser',
+        preserveScroll: true,
+        onSuccess: function onSuccess() {
+          return _this.inviteUserForm.reset();
+        }
+      };
     }
   }
 });
@@ -54100,7 +54101,8 @@ var render = function() {
                 {
                   staticClass: "ml-4",
                   class: { "opacity-25": _vm.form.processing },
-                  attrs: { disabled: _vm.form.processing }
+                  attrs: { disabled: _vm.form.processing },
+                  on: { click: _vm.submit }
                 },
                 [_vm._v("\n                Register\n            ")]
               )
@@ -56588,17 +56590,17 @@ var render = function() {
                 _c("jet-input", {
                   attrs: { id: "email", type: "email" },
                   model: {
-                    value: _vm.form.email,
+                    value: _vm.inviteUserForm.email,
                     callback: function($$v) {
-                      _vm.$set(_vm.form, "email", $$v)
+                      _vm.$set(_vm.inviteUserForm, "email", $$v)
                     },
-                    expression: "form.email"
+                    expression: "inviteUserForm.email"
                   }
                 }),
                 _vm._v(" "),
                 _c("jet-input-error", {
                   staticClass: "mt-2",
-                  attrs: { message: _vm.form.errors.email }
+                  attrs: { message: _vm.inviteUserForm.errors.email }
                 })
               ],
               1
@@ -56615,16 +56617,16 @@ var render = function() {
               "jet-action-message",
               {
                 staticClass: "mr-3",
-                attrs: { on: _vm.form.recentlySuccessful }
+                attrs: { on: _vm.inviteUserForm.recentlySuccessful }
               },
-              [_vm._v("\n            Saved.\n        ")]
+              [_vm._v("\n            Sent.\n        ")]
             ),
             _vm._v(" "),
             _c(
               "jet-button",
               {
-                class: { "opacity-25": _vm.form.processing },
-                attrs: { disabled: _vm.form.processing }
+                class: { "opacity-25": _vm.inviteUserForm.processing },
+                attrs: { disabled: _vm.inviteUserForm.processing }
               },
               [_vm._v("\n            Invite\n        ")]
             )

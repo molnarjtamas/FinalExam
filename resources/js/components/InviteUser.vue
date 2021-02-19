@@ -6,17 +6,17 @@
             <!-- Email -->
             <div class="col-span-4 sm:col-span-4">
                 <jet-label for="email" value="Email" />
-                <jet-input id="email" type="email"  v-model="form.email" />
-                <jet-input-error :message="form.errors.email" class="mt-2" />
+                <jet-input id="email" type="email"  v-model="inviteUserForm.email" />
+                <jet-input-error :message="inviteUserForm.errors.email" class="mt-2" />
             </div>
         </template>
 
         <template #actions>
-            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-                Saved.
+            <jet-action-message :on="inviteUserForm.recentlySuccessful" class="mr-3">
+                Sent.
             </jet-action-message>
 
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <jet-button :class="{ 'opacity-25': inviteUserForm.processing }" :disabled="inviteUserForm.processing">
                 Invite
             </jet-button>
         </template>
@@ -47,25 +47,21 @@ export default {
 
     data() {
         return {
-            form: this.$inertia.form({
-                _method: 'PUT',
-                email: null,
-
-            }),
+            inviteUserForm: this.$inertia.form({
+                email: '',
+                token: null,
+            })
 
         }
     },
 
     methods: {
-        updateProfileInformation() {
-            if (this.$refs.photo) {
-                this.form.photo = this.$refs.photo.files[0]
+        addUser(){
+            this.inviteUserForm.post(route('users.store',this.user)),{
+                errorBag: 'addUser',
+                preserveScroll: true,
+                onSuccess: () => this.inviteUserForm.reset(),
             }
-
-            this.form.post(route('user-profile-information.update'), {
-                errorBag: 'updateProfileInformation',
-                preserveScroll: true
-            });
         },
 
 

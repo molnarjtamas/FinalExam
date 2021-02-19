@@ -28,4 +28,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
+Route::get('/registration/{token}',function (){
+    return Inertia::render('Auth/Register');
+});
+
+
+//Route::POST('/registration', 'Auth\RegisterController@register')->name('accept');
 
