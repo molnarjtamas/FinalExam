@@ -7,7 +7,7 @@ use App\Models\Invitation;
 use App\Models\User;
 use App\Notifications\InvitationNotification;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;

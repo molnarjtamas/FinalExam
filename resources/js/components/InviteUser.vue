@@ -1,5 +1,5 @@
 <template>
-    <jet-form-section @submitted="updateProfileInformation">
+    <jet-form-section>
 
         <template #form>
 
@@ -9,6 +9,13 @@
                 <jet-input id="email" type="email"  v-model="inviteUserForm.email" />
                 <jet-input-error :message="inviteUserForm.errors.email" class="mt-2" />
             </div>
+
+            <div class="col-span-4 sm:col-span-4">
+
+                <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
+
+            </div>
+
         </template>
 
         <template #actions>
@@ -16,9 +23,9 @@
                 Sent.
             </jet-action-message>
 
-            <jet-button :class="{ 'opacity-25': inviteUserForm.processing }" :disabled="inviteUserForm.processing">
+            <button v-on:click="addUser()" :class="{ 'opacity-25': inviteUserForm.processing }" :disabled="inviteUserForm.processing">
                 Invite
-            </jet-button>
+            </button>
         </template>
     </jet-form-section>
 </template>
@@ -31,9 +38,12 @@ import JetInputError from '@/Jetstream/InputError'
 import JetLabel from '@/Jetstream/Label'
 import JetActionMessage from '@/Jetstream/ActionMessage'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+import Button from "@/Jetstream/Button";
 
 export default {
+
     components: {
+        Button,
         JetActionMessage,
         JetButton,
         JetFormSection,
@@ -43,9 +53,10 @@ export default {
         JetSecondaryButton,
     },
 
-    props: ['user'],
+
 
     data() {
+
         return {
             inviteUserForm: this.$inertia.form({
                 email: '',
@@ -57,12 +68,17 @@ export default {
 
     methods: {
         addUser(){
-            this.inviteUserForm.post(route('users.invite',this.user)),{
+            console.log(this.inviteUserForm.email)
+            this.inviteUserForm.post(route('user.invite')),{
                 errorBag: 'addUser',
                 preserveScroll: true,
                 onSuccess: () => this.inviteUserForm.reset(),
             }
         },
+
+
+
+
 
 
 

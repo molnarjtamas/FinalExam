@@ -30,7 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/registration/{token}',function (){
     return Inertia::render('Auth/Register');
-});
+})->name('registration');
 Route::post('/dashboard',[\App\Http\Controllers\UserController::class,'process_invitations'])->name('user.invite');
 
 

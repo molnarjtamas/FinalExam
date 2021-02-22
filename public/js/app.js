@@ -3901,6 +3901,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3925,7 +3931,8 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: '',
         password_confirmation: '',
-        terms: false
+        terms: false,
+        token: ''
       })
     };
   },
@@ -5409,6 +5416,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -5418,6 +5433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_0__.default,
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_5__.default,
     JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_0__.default,
     JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_1__.default,
@@ -5426,7 +5442,6 @@ __webpack_require__.r(__webpack_exports__);
     JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__.default,
     JetSecondaryButton: _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__.default
   },
-  props: ['user'],
   data: function data() {
     return {
       inviteUserForm: this.$inertia.form({
@@ -5439,7 +5454,8 @@ __webpack_require__.r(__webpack_exports__);
     addUser: function addUser() {
       var _this = this;
 
-      this.inviteUserForm.post(route('users.invite', this.user)), {
+      console.log(this.inviteUserForm.email);
+      this.inviteUserForm.post(route('user.invite')), {
         errorBag: 'addUser',
         preserveScroll: true,
         onSuccess: function onSuccess() {
@@ -54024,6 +54040,32 @@ var render = function() {
             1
           ),
           _vm._v(" "),
+          _c(
+            "div",
+            [
+              _c("jet-label", { attrs: { for: "token", value: "Token" } }),
+              _vm._v(" "),
+              _c("jet-input", {
+                staticClass: "mt-1 block w-full",
+                attrs: {
+                  id: "token",
+                  type: "text",
+                  required: "",
+                  autofocus: "",
+                  autocomplete: "token"
+                },
+                model: {
+                  value: _vm.form.token,
+                  callback: function($$v) {
+                    _vm.$set(_vm.form, "token", $$v)
+                  },
+                  expression: "form.token"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
           _vm.$page.props.jetstream.hasTermsAndPrivacyPolicyFeature
             ? _c(
                 "div",
@@ -56575,7 +56617,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("jet-form-section", {
-    on: { submitted: _vm.updateProfileInformation },
     scopedSlots: _vm._u([
       {
         key: "form",
@@ -56604,6 +56645,24 @@ var render = function() {
                 })
               ],
               1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-4 sm:col-span-4" },
+              [
+                _c("jet-input", {
+                  attrs: { id: "token", hidden: "true" },
+                  model: {
+                    value: _vm.inviteUserForm.email,
+                    callback: function($$v) {
+                      _vm.$set(_vm.inviteUserForm, "email", $$v)
+                    },
+                    expression: "inviteUserForm.email"
+                  }
+                })
+              ],
+              1
             )
           ]
         },
@@ -56623,10 +56682,15 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "jet-button",
+              "button",
               {
                 class: { "opacity-25": _vm.inviteUserForm.processing },
-                attrs: { disabled: _vm.inviteUserForm.processing }
+                attrs: { disabled: _vm.inviteUserForm.processing },
+                on: {
+                  click: function($event) {
+                    return _vm.addUser()
+                  }
+                }
               },
               [_vm._v("\n            Invite\n        ")]
             )

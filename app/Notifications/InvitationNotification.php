@@ -44,7 +44,7 @@ class InvitationNotification extends Notification
         return (new MailMessage)
                     ->greeting('Greetings!')
                     ->line('You have been invited to join our platform '. config('app.name'))
-                    ->action('Notification Action',$this->notification_url)
+                    ->action('Register',$this->notification_url)
                     ->line('Thank you for using our application!');
     }
 
