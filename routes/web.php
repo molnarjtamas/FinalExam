@@ -18,7 +18,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
+      //  'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
@@ -28,4 +28,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
+Route::get('/registration/{token}',function ($token){
+    return Inertia::render('Auth/Register');
+})->name('registration');
+Route::post('/dashboard',[\App\Http\Controllers\UserController::class,'process_invitations'])->name('user.invite');
+
+
+//Route::POST('/registration', 'Auth\RegisterController@register')->name('accept');
 
