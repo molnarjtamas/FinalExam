@@ -50,7 +50,7 @@ class UserController extends Controller
         ]);
         $url = URL::temporarySignedRoute(
 
-            'registration', now()->addMinutes(300), ['token' => $token]
+            'registration', now()->addMinutes(300), ['token' => $token, 'email' => $request->input('email')],
         );
 
         Notification::route('mail', $request->input('email'))->notify(new InvitationNotification($url));

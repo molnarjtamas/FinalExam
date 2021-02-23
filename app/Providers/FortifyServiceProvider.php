@@ -40,6 +40,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::registerView(function ($token){
             $invitation = Invitation::where('token',$token)->first();
             return view('auth.register',['invitation'=>$invitation]);
+
         });
 
         RateLimiter::for('login', function (Request $request) {

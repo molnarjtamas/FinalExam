@@ -3928,13 +3928,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: this.$inertia.form({
         name: '',
-        email: '',
+        email: decodeURIComponent(window.location.search.split('&', 1).pop().substr(7)),
         password: '',
         password_confirmation: '',
         terms: false,
-        token: ''
+        token: window.location.href.split('/').pop().substr(0, 20)
       })
     };
+  },
+  mounted: function mounted() {
+    console.log(window.location.href.split('/').pop().substr(0, 20));
+    console.log(window.location.search.split('&', 1).pop().substr(7));
   },
   methods: {
     submit: function submit() {
@@ -53968,7 +53972,12 @@ var render = function() {
               _vm._v(" "),
               _c("jet-input", {
                 staticClass: "mt-1 block w-full",
-                attrs: { id: "email", type: "email", required: "" },
+                attrs: {
+                  disabled: 1,
+                  id: "email",
+                  type: "email",
+                  required: ""
+                },
                 model: {
                   value: _vm.form.email,
                   callback: function($$v) {
@@ -54043,13 +54052,11 @@ var render = function() {
           _c(
             "div",
             [
-              _c("jet-label", { attrs: { for: "token", value: "Token" } }),
-              _vm._v(" "),
               _c("jet-input", {
                 staticClass: "mt-1 block w-full",
                 attrs: {
                   id: "token",
-                  type: "text",
+                  type: "hidden",
                   required: "",
                   autofocus: "",
                   autocomplete: "token"

@@ -14,7 +14,7 @@
 
             <div class="mt-4">
                 <jet-label for="email" value="Email" />
-                <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
+                <jet-input :disabled="1" id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
             </div>
 
             <div class="mt-4">
@@ -28,8 +28,8 @@
             </div>
 
             <div>
-                <jet-label for="token" value="Token" />
-                <jet-input id="token" type="text" class="mt-1 block w-full" v-model="form.token" required autofocus autocomplete="token" />
+
+                <jet-input  id="token" type="hidden" class="mt-1 block w-full" v-model="form.token" required autofocus autocomplete="token" />
             </div>
 
 
@@ -78,17 +78,24 @@
             JetValidationErrors
         },
 
+
         data() {
             return {
                 form: this.$inertia.form({
                     name: '',
-                    email: '',
+                    email: decodeURIComponent(window.location.search.split('&',1).pop().substr(7)),
                     password: '',
                     password_confirmation: '',
                     terms: false,
-                    token: ''
+                    token: window.location.href.split('/').pop().substr(0,20)
                 })
             }
+        },
+
+        mounted(){
+            console.log(window.location.href.split('/').pop().substr(0,20));
+            console.log(window.location.search.split('&',1).pop().substr(7));
+
         },
 
         methods: {
