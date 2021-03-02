@@ -50,8 +50,8 @@
                         </thead>
                         <tbody>
 
-                        <tr v-for="user in this.users">
-                            <td
+                        <tr v-for="user in users">
+                            <td v-if="user"
                                 class="px-5 py-5 border-b  bg-white text-sm"
                             >
                                 <div class="flex items-center">
@@ -76,8 +76,9 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="py-3 px-5">{{ user.email }}</td>
-                            <td class="py-3 px-5">{{ registeredSince(user) }}</td>
+                            <td v-if="user" class="py-3 px-5">{{ user.email }}</td>
+                            <td v-if="user" class="py-3 px-5">{{ registeredSince(user) }}</td>
+                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 uppercase">{{ role }}</td>
 
                         </tr>
 
@@ -87,7 +88,7 @@
                         class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
                     >
               <span class="text-xs xs:text-sm text-gray-900"
-              >Showing {{ this.meta.from }} to {{ this.meta.to }} of {{ this.meta.total }} Entries</span
+              >Showing {{ meta.from }} to {{ meta.to }} of {{ meta.total }} Entries</span
               >
 
                         <div class="inline-flex mt-2 xs:mt-0">
@@ -115,7 +116,6 @@
 
 import axios from "axios";
 import moment from "moment";
-import JetButton from '@/Jetstream/Button';
 import InviteUser from "@/components/InviteUser";
 import JetApplicationMark from "@/Jetstream/ApplicationMark";
 
@@ -123,22 +123,20 @@ import JetApplicationMark from "@/Jetstream/ApplicationMark";
 export default {
     name: "Users",
     components: {
-        JetButton,
         InviteUser,
         JetApplicationMark,
     },
     data() {
         return {
             link: 'http://127.0.0.1:8000/api/users',
-            users: null,
-            links: null,
-            meta: null,
+            users: {},
+            links: {},
+            meta: {},
             isActive: true,
         }
     },
     mounted() {
         this.fetchUsers()
-        this.registeredSince(user)
     },
 
     methods: {
