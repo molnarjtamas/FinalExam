@@ -46,8 +46,11 @@ class UserController extends Controller
         } while (Invitation::where('token', $token)->first());
         Invitation::create([
             'token' => $token,
-            'email' => $request->input('email')
+            'email' => $request->input('email'),
+            'role' => $request->input('role'),
+            //dd($request->input('role'))
         ]);
+
         $url = URL::temporarySignedRoute(
 
             'registration', now()->addMinutes(300), ['token' => $token, 'email' => $request->input('email')],

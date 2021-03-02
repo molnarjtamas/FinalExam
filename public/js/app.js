@@ -5431,6 +5431,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -5455,7 +5456,8 @@ __webpack_require__.r(__webpack_exports__);
       roles: [],
       inviteUserForm: this.$inertia.form({
         email: '',
-        token: null
+        token: null,
+        role: null
       })
     };
   },
@@ -5478,6 +5480,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get(this.link).then(function (res) {
+        console.log(res);
+
         _this2.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
@@ -56729,24 +56733,33 @@ var render = function() {
               "div",
               { staticClass: "col-span-4 sm:col-span-4" },
               [
-                _c("jet-input", {
-                  attrs: { id: "token", hidden: "true" },
-                  model: {
-                    value: _vm.inviteUserForm.email,
-                    callback: function($$v) {
-                      _vm.$set(_vm.inviteUserForm, "email", $$v)
-                    },
-                    expression: "inviteUserForm.email"
-                  }
-                }),
+                _c("jet-label", { attrs: { for: "role", value: "Role" } }),
                 _vm._v(" "),
                 _c("v-select", {
                   staticClass: "text-xl capitalize",
-                  attrs: { options: _vm.roles }
+                  attrs: { id: "role", options: _vm.roles },
+                  model: {
+                    value: _vm.inviteUserForm.role,
+                    callback: function($$v) {
+                      _vm.$set(_vm.inviteUserForm, "role", $$v)
+                    },
+                    expression: "inviteUserForm.role"
+                  }
                 })
               ],
               1
-            )
+            ),
+            _vm._v(" "),
+            _c("jet-input", {
+              attrs: { id: "token", hidden: "true" },
+              model: {
+                value: _vm.inviteUserForm.email,
+                callback: function($$v) {
+                  _vm.$set(_vm.inviteUserForm, "email", $$v)
+                },
+                expression: "inviteUserForm.email"
+              }
+            })
           ]
         },
         proxy: true

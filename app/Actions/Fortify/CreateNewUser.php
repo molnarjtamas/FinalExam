@@ -34,14 +34,16 @@ class CreateNewUser implements CreatesNewUsers
         $invitation = Invitation::where('token', $input['token'])->first();
 
         abort_if($invitation==null,400,"Invalid token!");
-        $invitation->delete();
 
-        return User::create([
+//        dd($invitation);
+
+         $user =User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+        ])->assignRole($invitation->role);
 
-        ]);
-
+         $invitation->delete();
+         return $user;
     }
 }

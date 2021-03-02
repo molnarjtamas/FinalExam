@@ -12,10 +12,11 @@
 
             <div class="col-span-4 sm:col-span-4">
 
-                <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
-                <v-select class="text-xl capitalize" :options="roles"></v-select>
+                <jet-label for="role" value="Role"/>
+                <v-select id="role" class="text-xl capitalize" :options="roles" v-model="inviteUserForm.role"></v-select>
 
             </div>
+            <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
 
         </template>
 
@@ -67,6 +68,7 @@ export default {
             inviteUserForm: this.$inertia.form({
                 email: '',
                 token: null,
+                role: null,
             })
 
         }
@@ -87,6 +89,7 @@ export default {
         fetchRoles(){
             axios.get(this.link)
                 .then(res =>{
+                    console.log(res)
                     this.prepareParams(res)
                 }).catch(err =>{
                     console.log(err)
