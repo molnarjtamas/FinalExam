@@ -15,8 +15,13 @@
                     </div>
                 </div>
 
+
+
+
+
                 <!--                <JetButton class="mr-8">Invite User</JetButton>-->
-                <InviteUser></InviteUser>
+
+                <InviteUser v-if="getPermission('invite-users')"></InviteUser>
 
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -133,13 +138,32 @@ export default {
             links: {},
             meta: {},
             isActive: true,
+            hasAccess: false,
         }
     },
     mounted() {
         this.fetchUsers()
+        //this.getPermission()
+
     },
 
     methods: {
+        getPermission(permissionName){
+            axios.get(`/permission/${permissionName}`)
+                .then(()=> {
+
+                    this.hasAccess = true;
+                    console.log("hasaccesbelul",this.hasAccess);
+
+                }).catch(()=> {
+                    console.log("mambono5")
+                    this.hasAccess = false;
+                });
+            console.log("hasacceskivul",this.hasAccess);
+
+            return this.hasAccess;
+
+        },
 
         fetchUsers() {
             axios.get(this.link)

@@ -5627,6 +5627,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -5643,18 +5648,32 @@ __webpack_require__.r(__webpack_exports__);
       users: {},
       links: {},
       meta: {},
-      isActive: true
+      isActive: true,
+      hasAccess: false
     };
   },
   mounted: function mounted() {
-    this.fetchUsers();
+    this.fetchUsers(); //this.getPermission()
   },
   methods: {
-    fetchUsers: function fetchUsers() {
+    getPermission: function getPermission(permissionName) {
       var _this = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/permission/".concat(permissionName)).then(function () {
+        _this.hasAccess = true;
+        console.log("hasaccesbelul", _this.hasAccess);
+      })["catch"](function () {
+        console.log("mambono5");
+        _this.hasAccess = false;
+      });
+      console.log("hasacceskivul", this.hasAccess);
+      return this.hasAccess;
+    },
+    fetchUsers: function fetchUsers() {
+      var _this2 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.link).then(function (res) {
-        _this.prepareParams(res);
+        _this2.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -56846,7 +56865,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("InviteUser")
+          _vm.getPermission("invite-users") ? _c("InviteUser") : _vm._e()
         ],
         1
       ),
