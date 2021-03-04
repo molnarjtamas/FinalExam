@@ -22,6 +22,7 @@ class UserResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'profile_photo_path' => Storage::url($this->profile_photo_path),
+            'roles'=>$this->getRoleNames(),
         ];
     }
 }

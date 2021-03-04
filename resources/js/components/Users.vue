@@ -8,16 +8,16 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex items-center">
-                            <jet-application-mark class="block h-44 w-auto" />
+                        <jet-application-mark class="block h-44 w-auto"/>
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                           Users
+                        Users
                     </div>
                 </div>
 
-                <!--                <JetButton class="mr-8">Invite User</JetButton>-->
-                <InviteUser></InviteUser>
-
+                <div v-can="'invite-users'">
+                    <InviteUser></InviteUser>
+                </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
@@ -50,8 +50,8 @@
                         </thead>
                         <tbody>
 
-                        <tr v-for="user in this.users">
-                            <td
+                        <tr v-for="user in users">
+                            <td v-if="user"
                                 class="px-5 py-5 border-b  bg-white text-sm"
                             >
                                 <div class="flex items-center">
@@ -76,8 +76,9 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="py-3 px-5">{{ user.email }}</td>
-                            <td class="py-3 px-5">{{ registeredSince(user) }}</td>
+                            <td v-if="user" class="py-3 px-5">{{ user.email }}</td>
+                            <td v-if="user" class="py-3 px-5">{{ registeredSince(user) }}</td>
+                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 uppercase">{{ role }}</td>
 
                         </tr>
 
@@ -87,7 +88,7 @@
                         class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
                     >
               <span class="text-xs xs:text-sm text-gray-900"
-              >Showing {{ this.meta.from }} to {{ this.meta.to }} of {{ this.meta.total }} Entries</span
+              >Showing {{ meta.from }} to {{ meta.to }} of {{ meta.total }} Entries</span
               >
 
                         <div class="inline-flex mt-2 xs:mt-0">
@@ -115,7 +116,6 @@
 
 import axios from "axios";
 import moment from "moment";
-import JetButton from '@/Jetstream/Button';
 import InviteUser from "@/components/InviteUser";
 import JetApplicationMark from "@/Jetstream/ApplicationMark";
 
@@ -123,22 +123,19 @@ import JetApplicationMark from "@/Jetstream/ApplicationMark";
 export default {
     name: "Users",
     components: {
-        JetButton,
         InviteUser,
         JetApplicationMark,
     },
     data() {
         return {
             link: 'http://127.0.0.1:8000/api/users',
-            users: null,
-            links: null,
-            meta: null,
-            isActive: true,
+            users: {},
+            links: {},
+            meta: {},
         }
     },
     mounted() {
         this.fetchUsers()
-        this.registeredSince(user)
     },
 
     methods: {

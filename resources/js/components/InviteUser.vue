@@ -12,11 +12,14 @@
 
             <div class="col-span-4 sm:col-span-4">
 
-                <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
+                <jet-label for="role" value="Role"/>
+                <v-select id="role" class="text-xl capitalize" :options="roles" v-model="inviteUserForm.role"></v-select>
 
             </div>
+            <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
 
         </template>
+
 
         <template #actions>
             <jet-action-message :on="inviteUserForm.recentlySuccessful" class="mr-3">
@@ -31,26 +34,28 @@
 </template>
 
 <script>
-import JetButton from '@/Jetstream/Button'
+
 import JetFormSection from '@/Jetstream/FormSection'
 import JetInput from '@/Jetstream/Input'
 import JetInputError from '@/Jetstream/InputError'
 import JetLabel from '@/Jetstream/Label'
 import JetActionMessage from '@/Jetstream/ActionMessage'
-import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+import 'vue-select/dist/vue-select.css';
+
+
 import Button from "@/Jetstream/Button";
+import vSelect from 'vue-select'
 
 export default {
 
     components: {
         Button,
         JetActionMessage,
-        JetButton,
         JetFormSection,
         JetInput,
         JetInputError,
         JetLabel,
-        JetSecondaryButton,
+        vSelect,
     },
 
 
@@ -58,17 +63,22 @@ export default {
     data() {
 
         return {
+            link: 'http://127.0.0.1:8000/api/roles',
+            roles: [],
             inviteUserForm: this.$inertia.form({
                 email: '',
                 token: null,
+                role: null,
             })
 
         }
     },
+    mounted() {
+        this.fetchRoles()
+    },
 
     methods: {
         addUser(){
-            console.log(this.inviteUserForm.email)
             this.inviteUserForm.post(route('user.invite')),{
                 errorBag: 'addUser',
                 preserveScroll: true,
@@ -76,6 +86,20 @@ export default {
             }
         },
 
+        fetchRoles(){
+            axios.get(this.link)
+                .then(res =>{
+                    console.log(res)
+                    this.prepareParams(res)
+                }).catch(err =>{
+                    console.log(err)
+            })
+        },
+
+        prepareParams(res){
+            this.roles = Object.values(res.data)
+            console.log(this.roles)
+        }
 
 
 

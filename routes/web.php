@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -32,7 +33,8 @@ Route::get('/registration/{token}',function ($token){
     return Inertia::render('Auth/Register');
 })->name('registration');
 Route::post('/dashboard',[\App\Http\Controllers\UserController::class,'process_invitations'])->name('user.invite');
-
+Route::get('/roles',[\App\Http\Controllers\RoleController::class,'index']);
+Route::get('/permission/{permissionName}', [\App\Http\Controllers\PermissionController::class,'check']);
 
 //Route::POST('/registration', 'Auth\RegisterController@register')->name('accept');
 
