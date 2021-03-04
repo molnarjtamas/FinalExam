@@ -16,6 +16,13 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script type="text/javascript">
+            @auth
+                window.Permissions = {!! json_encode(Auth::user()->getAllPermissions()->pluck('name'), true) !!};
+            @else
+                window.Permissions = [];
+            @endauth
+        </script>
     </head>
     <body class="font-sans antialiased">
         @inertia

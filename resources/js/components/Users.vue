@@ -8,21 +8,16 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex items-center">
-                            <jet-application-mark class="block h-44 w-auto" />
+                        <jet-application-mark class="block h-44 w-auto"/>
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                           Users
+                        Users
                     </div>
                 </div>
 
-
-
-
-
-                <!--                <JetButton class="mr-8">Invite User</JetButton>-->
-
-                <InviteUser v-if="getPermission('invite-users')"></InviteUser>
-
+                <div v-can="'invite-users'">
+                    <InviteUser></InviteUser>
+                </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
@@ -137,33 +132,13 @@ export default {
             users: {},
             links: {},
             meta: {},
-            isActive: true,
-            hasAccess: false,
         }
     },
     mounted() {
         this.fetchUsers()
-        //this.getPermission()
-
     },
 
     methods: {
-        getPermission(permissionName){
-            axios.get(`/permission/${permissionName}`)
-                .then(()=> {
-
-                    this.hasAccess = true;
-                    console.log("hasaccesbelul",this.hasAccess);
-
-                }).catch(()=> {
-                    console.log("mambono5")
-                    this.hasAccess = false;
-                });
-            console.log("hasacceskivul",this.hasAccess);
-
-            return this.hasAccess;
-
-        },
 
         fetchUsers() {
             axios.get(this.link)

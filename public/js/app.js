@@ -5627,11 +5627,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -5647,33 +5642,18 @@ __webpack_require__.r(__webpack_exports__);
       link: 'http://127.0.0.1:8000/api/users',
       users: {},
       links: {},
-      meta: {},
-      isActive: true,
-      hasAccess: false
+      meta: {}
     };
   },
   mounted: function mounted() {
-    this.fetchUsers(); //this.getPermission()
+    this.fetchUsers();
   },
   methods: {
-    getPermission: function getPermission(permissionName) {
+    fetchUsers: function fetchUsers() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/permission/".concat(permissionName)).then(function () {
-        _this.hasAccess = true;
-        console.log("hasaccesbelul", _this.hasAccess);
-      })["catch"](function () {
-        console.log("mambono5");
-        _this.hasAccess = false;
-      });
-      console.log("hasacceskivul", this.hasAccess);
-      return this.hasAccess;
-    },
-    fetchUsers: function fetchUsers() {
-      var _this2 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.link).then(function (res) {
-        _this2.prepareParams(res);
+        _this.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -5719,6 +5699,13 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.mixin({
 });
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.plugin);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(portal_vue__WEBPACK_IMPORTED_MODULE_1__.default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.directive('can', function (el, binding, vnode) {
+  if (Permissions.indexOf(binding.value) !== -1) {
+    return vnode.elm.hidden = false;
+  } else {
+    return vnode.elm.hidden = true;
+  }
+});
 var app = document.getElementById('app');
 new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   render: function render(h) {
@@ -56841,34 +56828,41 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
-      _c(
-        "div",
-        { staticClass: "flex justify-between " },
-        [
-          _c("div", { staticClass: "flex" }, [
-            _c(
-              "div",
-              { staticClass: "flex items-center" },
-              [
-                _c("jet-application-mark", { staticClass: "block h-44 w-auto" })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
-              },
-              [_vm._v("\n                       Users\n                ")]
-            )
-          ]),
+      _c("div", { staticClass: "flex justify-between " }, [
+        _c("div", { staticClass: "flex" }, [
+          _c(
+            "div",
+            { staticClass: "flex items-center" },
+            [_c("jet-application-mark", { staticClass: "block h-44 w-auto" })],
+            1
+          ),
           _vm._v(" "),
-          _vm.getPermission("invite-users") ? _c("InviteUser") : _vm._e()
-        ],
-        1
-      ),
+          _c(
+            "div",
+            {
+              staticClass:
+                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+            },
+            [_vm._v("\n                    Users\n                ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "can",
+                rawName: "v-can",
+                value: "invite-users",
+                expression: "'invite-users'"
+              }
+            ]
+          },
+          [_c("InviteUser")],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c(
         "div",
