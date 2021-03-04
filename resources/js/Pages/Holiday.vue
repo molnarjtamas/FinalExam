@@ -2,14 +2,14 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                Holiday
             </h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Users></Users>
+                    <AllHolidays></AllHolidays>
                 </div>
             </div>
         </div>
@@ -17,13 +17,14 @@
 </template>
 
 <script>
-    import AppLayout from '@/Layouts/AppLayout'
-    import Users from "@/components/Users";
+import AppLayout from '@/Layouts/AppLayout'
+import AllHolidays from "@/components/AllHolidays";
 
-    export default {
-        components: {
-            AppLayout,
-            Users
-        },
-    }
+
+export default {
+    components: {
+        AppLayout,
+        AllHolidays
+    },
+}
 </script>

@@ -28,6 +28,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/holiday', function () {
+    return Inertia::render('Holiday');
+})->name('holiday');
 
 Route::get('/registration/{token}',function ($token){
     return Inertia::render('Auth/Register');
