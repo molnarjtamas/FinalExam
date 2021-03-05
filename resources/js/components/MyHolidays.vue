@@ -11,17 +11,17 @@
                         <jet-application-mark class="block h-44 w-auto"/>
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                        {{ getToday() }}
+                       My Holidays
                     </div>
                 </div>
 
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
-                    class="inline-block min-w-full shadow rounded-lg overflow-hidden"
+                    class="inline-block min-w-1/2 shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
-                        <thead class="border-green-200 bg-green-200">
+                        <thead class="border-green-200 bg-green-200 h-12">
                         <tr>
                             <th
                                 class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
@@ -50,7 +50,7 @@
                         <tr v-for="holiday in holidays" :class="holidayStatusClass(holiday)">
                             <td v-if="holiday"
                                 :class="holidayStatusClass(holiday)"
-                                class="px-5 py-5  bg-white text-sm"
+                                class="px-5 py-5   bg-white "
                             >
                                 <div class="flex items-center">
                                     <div v-if="holiday.user.profile_photo_path === null "
@@ -68,7 +68,7 @@
                                     </div>
 
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
+                                        <p class="whitespace-no-wrap">
                                             {{ holiday.user.name }}
                                         </p>
                                     </div>
@@ -119,15 +119,19 @@ import JetApplicationMark from "@/Jetstream/ApplicationMark";
 
 export default {
     name: "AllHolidays",
+
+
     components: {
         JetApplicationMark,
     },
     data() {
         return {
-            link: '/holidays',
+            link: `/holidays/${this.$page.props.user.id}`,
             holidays: {},
             links: {},
             meta: {},
+
+
         }
     },
 
@@ -143,7 +147,6 @@ export default {
             axios.get(this.link)
                 .then(res => {
                     this.prepareParams(res)
-
                 }).catch(err => {
                 console.log(err)
             })
@@ -190,6 +193,7 @@ export default {
 }
 
 .outdated-background {
-    background-color: rgb(160, 160, 160);
+    background-color: darkgrey;
+    color: grey;
 }
 </style>

@@ -23,7 +23,13 @@ class DatabaseSeeder extends Seeder
         $role3 = Role::create(['name' => 'user']);
         $permission1 = Permission::create(['name' => 'invite-users']);
         $permission2 = Permission::create(['name' => 'view-users']);
-        $role1->givePermissionTo([$permission1,$permission2]);
+        $permission3 = Permission::create(['name' => 'view-all-holidays']);
+        $permission4 = Permission::create(['name' => 'view-own-holidays']);
+        $permission5 = Permission::create(['name' => 'take-holiday']);
+
+        $role1->givePermissionTo([$permission1,$permission2,$permission3]);
+        $role3->givePermissionTo([$permission4,$permission5]);
+
         $user->assignRole('admin');
     }
 }

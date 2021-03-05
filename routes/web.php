@@ -32,6 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/holiday', function () {
     return Inertia::render('Holiday');
 })->name('holiday');
 
+Route::get('holidays',[\App\Http\Controllers\HolidayController::class,'index']);
+
+Route::get('holidays/{user}',[\App\Http\Controllers\HolidayController::class,'show']);
+
 Route::get('/registration/{token}',function ($token){
     return Inertia::render('Auth/Register');
 })->name('registration');
