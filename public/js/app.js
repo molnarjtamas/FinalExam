@@ -5401,6 +5401,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getToday: function getToday() {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYY-MM-DD");
+    },
+    formatDate: function formatDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do YY");
     }
   }
 });
@@ -5724,6 +5727,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Jetstream/ValidationErrors */ "./resources/js/Jetstream/ValidationErrors.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
 //
 //
 //
@@ -5770,6 +5776,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
+
 
 
 
@@ -5780,6 +5789,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    ValidationErrors: _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_8__.default,
     Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_6__.default,
     JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_4__.default,
     JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_0__.default,
@@ -5793,21 +5803,23 @@ __webpack_require__.r(__webpack_exports__);
       link: 'http://127.0.0.1:8000/api/roles',
       roles: [],
       takeHolidayForm: this.$inertia.form({
-        email: '',
-        token: null,
-        role: null
+        type: '',
+        description: '',
+        start_date: '',
+        end_date: ''
       })
     };
   },
   mounted: function mounted() {
     this.fetchRoles();
+    this.getMinStartDate();
   },
   methods: {
-    addUser: function addUser() {
+    requestHoliday: function requestHoliday() {
       var _this = this;
 
-      this.takeHolidayForm.post(route('user.invite')), {
-        errorBag: 'addUser',
+      this.takeHolidayForm.post(route('holiday.request')), {
+        errorBag: 'requestHoliday',
         preserveScroll: true,
         onSuccess: function onSuccess() {
           return _this.takeHolidayForm.reset();
@@ -5828,6 +5840,12 @@ __webpack_require__.r(__webpack_exports__);
     prepareParams: function prepareParams(res) {
       this.roles = Object.values(res.data);
       console.log(this.roles);
+    },
+    getMinStartDate: function getMinStartDate() {
+      return moment__WEBPACK_IMPORTED_MODULE_9___default()().add(15, 'days').format("YYYY-MM-DD");
+    },
+    formatDate: function formatDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_9___default()(date).format("MMM Do YY");
     }
   }
 });
@@ -56865,13 +56883,13 @@ var render = function() {
                         _vm._v(" "),
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.start_date))
+                              _vm._v(_vm._s(_vm.formatDate(holiday.start_date)))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.end_date))
+                              _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
                             ])
                           : _vm._e()
                       ]
@@ -57487,9 +57505,30 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.takeHolidayForm.description,
+                      expression: "takeHolidayForm.description"
+                    }
+                  ],
                   staticClass:
                     "h-24 custom-width resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
-                  attrs: { id: "description" }
+                  attrs: { id: "description" },
+                  domProps: { value: _vm.takeHolidayForm.description },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.takeHolidayForm,
+                        "description",
+                        $event.target.value
+                      )
+                    }
+                  }
                 })
               ],
               1
@@ -57500,14 +57539,41 @@ var render = function() {
               { staticClass: "col-span-4 sm:col-span-4" },
               [
                 _c("jet-label", {
-                  attrs: { for: "startdate", value: "Starting on" }
+                  attrs: { for: "start_date", value: "Starting on" }
                 }),
                 _vm._v(" "),
-                _c("jet-input", { attrs: { id: "startdate", type: "date" } }),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.takeHolidayForm.start_date,
+                      expression: "takeHolidayForm.start_date"
+                    }
+                  ],
+                  attrs: {
+                    id: "start_date",
+                    type: "date",
+                    min: _vm.getMinStartDate()
+                  },
+                  domProps: { value: _vm.takeHolidayForm.start_date },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.takeHolidayForm,
+                        "start_date",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
                 _vm._v(" "),
                 _c("jet-input-error", {
                   staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.startdate }
+                  attrs: { message: _vm.takeHolidayForm.errors.start_date }
                 })
               ],
               1
@@ -57517,13 +57583,40 @@ var render = function() {
               "div",
               { staticClass: "col-span-4 sm:col-span-4" },
               [
-                _c("jet-label", { attrs: { for: "enddate", value: "Until" } }),
+                _c("jet-label", { attrs: { for: "end_date", value: "Until" } }),
                 _vm._v(" "),
-                _c("jet-input", { attrs: { id: "enddate", type: "date" } }),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.takeHolidayForm.end_date,
+                      expression: "takeHolidayForm.end_date"
+                    }
+                  ],
+                  attrs: {
+                    id: "end_date",
+                    type: "date",
+                    min: _vm.getMinStartDate()
+                  },
+                  domProps: { value: _vm.takeHolidayForm.end_date },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.takeHolidayForm,
+                        "end_date",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
                 _vm._v(" "),
                 _c("jet-input-error", {
                   staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.enddate }
+                  attrs: { message: _vm.takeHolidayForm.errors.end_date }
                 })
               ],
               1
@@ -57542,7 +57635,7 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.takeHolidayForm.recentlySuccessful }
               },
-              [_vm._v("\n            Sent.\n        ")]
+              [_vm._v("\n            Requested.\n        ")]
             ),
             _vm._v(" "),
             _c(
@@ -57552,7 +57645,7 @@ var render = function() {
                 attrs: { disabled: _vm.takeHolidayForm.processing },
                 on: {
                   click: function($event) {
-                    return _vm.addUser()
+                    return _vm.requestHoliday()
                   }
                 }
               },

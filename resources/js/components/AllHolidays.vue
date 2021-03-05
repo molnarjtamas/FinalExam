@@ -75,8 +75,8 @@
                                 </div>
                             </td>
                             <td v-if="holiday" class="py-3 px-5 ">{{ holiday.type }}</td>
-                            <td v-if="holiday" class="py-3 px-5">{{ holiday.start_date }}</td>
-                            <td v-if="holiday" class="py-3 px-5">{{ holiday.end_date }}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{ formatDate(holiday.start_date )}}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date)}}</td>
 
                         </tr>
 
@@ -177,7 +177,10 @@ export default {
 
         getToday() {
             return moment().format("YYYY-MM-DD")
-        }
+        },
+        formatDate(date){
+            return moment(date).format("MMM Do YY")
+        },
 
 
     }

@@ -39,7 +39,9 @@ Route::get('holidays/{user}',[\App\Http\Controllers\HolidayController::class,'sh
 Route::get('/registration/{token}',function ($token){
     return Inertia::render('Auth/Register');
 })->name('registration');
+
 Route::post('/dashboard',[\App\Http\Controllers\UserController::class,'process_invitations'])->name('user.invite');
+Route::post('/holiday',[\App\Http\Controllers\HolidayController::class,'process_holidays'])->name('holiday.request');
 Route::get('/roles',[\App\Http\Controllers\RoleController::class,'index']);
 Route::get('/permission/{permissionName}', [\App\Http\Controllers\PermissionController::class,'check']);
 
