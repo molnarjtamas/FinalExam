@@ -13,7 +13,7 @@
                 <jet-label for="description" value="Description" />
                 <textarea  class="h-24 custom-width resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                            id="description" v-model="takeHolidayForm.description"/>
-
+                <jet-input-error :message="takeHolidayForm.errors.description" class="mt-2" />
             </div>
 
             <div class="col-span-4 sm:col-span-4">
@@ -38,7 +38,7 @@
                 Requested.
             </jet-action-message>
 
-            <button v-on:click="requestHoliday()" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
+            <button v-on:click="requestHoliday()" class="bg-green-700 text-white font-bold py-2 px-4 rounded" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
                 Give me a break!
             </button>
         </template>

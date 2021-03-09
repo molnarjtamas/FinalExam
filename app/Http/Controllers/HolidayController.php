@@ -26,24 +26,11 @@ class HolidayController extends Controller
     {
         return HolidayResource::collection($user->holidays()->orderBy('start_date')->paginate(4));
     }
-    public function process_holidays(Request $request)
+    public function process_holidays(ProcessHolidayRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'type' => 'required',
-            'description'=> 'required|max:255',
-            'start_date' => 'required|date|after:today+ 14 days',
-            'end_date' => 'required|after:start_date'
-        ]);
-
-        if ($validator->fails()) {
-
-            return redirect(route('holiday'))
-                ->withErrors($validator)
-                ->withInput();
-        };
+        $validated = $request->validated();
 
         $url = URL::signedRoute(
-
             'holiday',['user ' => Auth::user()]
         );
 

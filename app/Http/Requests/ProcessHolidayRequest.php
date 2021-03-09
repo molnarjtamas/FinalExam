@@ -13,7 +13,7 @@ class ProcessHolidayRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,7 +26,7 @@ class ProcessHolidayRequest extends FormRequest
         return [
             'type' => 'required',
             'description'=> 'required|max:255',
-            'start_date' => 'required|after:today+14',
+            'start_date' => 'required|date|after:today+ 14 days',
             'end_date' => 'required|after:start_date'
 
         ];

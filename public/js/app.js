@@ -57529,6 +57529,11 @@ var render = function() {
                       )
                     }
                   }
+                }),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.takeHolidayForm.errors.description }
                 })
               ],
               1
@@ -57641,6 +57646,8 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass:
+                  "bg-green-700 text-white font-bold py-2 px-4 rounded",
                 class: { "opacity-25": _vm.takeHolidayForm.processing },
                 attrs: { disabled: _vm.takeHolidayForm.processing },
                 on: {
