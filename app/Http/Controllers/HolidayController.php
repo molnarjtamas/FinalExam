@@ -26,20 +26,31 @@ class HolidayController extends Controller
     {
         return HolidayResource::collection($user->holidays()->orderBy('start_date')->paginate(4));
     }
+
     public function process_holidays(ProcessHolidayRequest $request)
     {
         $validated = $request->validated();
+        $validated['user_id']=Auth::id();
+
+        $holiday =Holiday::create($validated);
 
         $url = URL::signedRoute(
-            'holiday',['user ' => Auth::user()]
+            "holiday.approve",$holiday->id
         );
 
-        Notification::route('mail', 'managment@webgurus.com')->notify(new HolidayNotification($url));
-
+        Notification::route('mail', 'managment@webgurus.com')->notify(new HolidayNotification($url,$validated));
 
         return redirect('/holiday')->with('success', 'The Invitation has been sent successfully');
     }
 
+    public function approve(Holiday $holiday)
+    {
+
+            $holiday->update(['approved' => true]);
+
+            return redirect('holiday');
+
+    }
 
 
 }

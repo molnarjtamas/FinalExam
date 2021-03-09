@@ -9,9 +9,10 @@
                     <!-- Logo -->
                     <div class="flex items-center">
                         <jet-application-mark class="block h-44 w-auto"/>
+
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                       My Holidays
+                        My Holidays
                     </div>
                 </div>
 
@@ -43,6 +44,12 @@
                             >
                                 Returns on
                             </th>
+                            <th
+                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                            >
+                                Status
+                            </th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -77,6 +84,13 @@
                             <td v-if="holiday" class="py-3 px-5 ">{{ holiday.type }}</td>
                             <td v-if="holiday" class="py-3 px-5">{{ holiday.start_date }}</td>
                             <td v-if="holiday" class="py-3 px-5">{{ holiday.end_date }}</td>
+                            <td v-if="holiday" class="py-3 px-5">
+                                <div v-if="holiday.approved">
+                                    <CheckMark class="h-10 w-10"></CheckMark>
+
+                                </div>
+                            </td>
+
 
                         </tr>
 
@@ -115,14 +129,15 @@
 import axios from "axios";
 import moment from "moment";
 import JetApplicationMark from "@/Jetstream/ApplicationMark";
-
+import CheckMark from "@/components/CheckMark"
 
 export default {
-    name: "AllHolidays",
+    name: "MyHolidays",
 
 
     components: {
         JetApplicationMark,
+        CheckMark,
     },
     data() {
         return {
@@ -135,6 +150,7 @@ export default {
         }
     },
 
+    computed: {},
     mounted() {
         this.fetchHolidays()
         this.getToday()

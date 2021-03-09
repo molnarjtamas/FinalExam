@@ -6,12 +6,12 @@
 
             <div class="col-span-4 sm:col-span-4">
                 <jet-label for="type" value="Type of holiday" />
-                <jet-input id="type" type="text"  v-model="takeHolidayForm.type" />
+                <jet-input class="w-full" id="type" type="text"  v-model="takeHolidayForm.type" />
                 <jet-input-error :message="takeHolidayForm.errors.type" class="mt-2" />
             </div>
             <div class="col-span-4 sm:col-span-4">
                 <jet-label for="description" value="Description" />
-                <textarea  class="h-24 custom-width resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                <textarea  class="h-24 w-full resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                            id="description" v-model="takeHolidayForm.description"/>
                 <jet-input-error :message="takeHolidayForm.errors.description" class="mt-2" />
             </div>
@@ -38,7 +38,7 @@
                 Requested.
             </jet-action-message>
 
-            <button v-on:click="requestHoliday()" class="bg-green-700 text-white font-bold py-2 px-4 rounded" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
+            <button v-on:click="requestHoliday()" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
                 Give me a break!
             </button>
         </template>
@@ -102,7 +102,8 @@ export default {
                 errorBag: 'requestHoliday',
                 preserveScroll: true,
                 onSuccess: () => this.takeHolidayForm.reset(),
-            }
+            };
+
         },
 
         fetchRoles(){
@@ -131,8 +132,3 @@ export default {
 }
 </script>
 
-<style>
-.custom-width{
-    width: 95%;
-}
-</style>

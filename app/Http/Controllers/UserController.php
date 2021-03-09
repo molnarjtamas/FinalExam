@@ -48,7 +48,6 @@ class UserController extends Controller
             'token' => $token,
             'email' => $request->input('email'),
             'role' => $request->input('role'),
-            //dd($request->input('role'))
         ]);
 
         $url = URL::temporarySignedRoute(

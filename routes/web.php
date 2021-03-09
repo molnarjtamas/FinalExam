@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,18 +36,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/holiday', function () {
     return Inertia::render('Holiday');
 })->name('holiday');
 
-Route::get('holidays',[\App\Http\Controllers\HolidayController::class,'index']);
+Route::get('holidays',[HolidayController::class,'index']);
 
-Route::get('holidays/{user}',[\App\Http\Controllers\HolidayController::class,'show']);
+Route::get('holiday/{holiday}',[HolidayController::class,'approve'])->name('holiday.approve');
+
+
+Route::get('holidays/{user}',[HolidayController::class,'show']);
 
 Route::get('/registration/{token}',function ($token){
     return Inertia::render('Auth/Register');
 })->name('registration');
 
-Route::post('/dashboard',[\App\Http\Controllers\UserController::class,'process_invitations'])->name('user.invite');
-Route::post('/holiday',[\App\Http\Controllers\HolidayController::class,'process_holidays'])->name('holiday.request');
-Route::get('/roles',[\App\Http\Controllers\RoleController::class,'index']);
-Route::get('/permission/{permissionName}', [\App\Http\Controllers\PermissionController::class,'check']);
+Route::post('/dashboard',[UserController::class,'process_invitations'])->name('user.invite');
+Route::post('/holiday',[HolidayController::class,'process_holidays'])->name('holiday.request');
+Route::get('/roles',[RoleController::class,'index']);
+Route::get('/permission/{permissionName}', [PermissionController::class,'check']);
 
 //Route::POST('/registration', 'Auth\RegisterController@register')->name('accept');
 

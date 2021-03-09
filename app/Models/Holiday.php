@@ -12,8 +12,10 @@ class Holiday extends Model
     protected $fillable = [
         'user_id',
         'type',
+        'description',
         'start_date',
-        'end_date'
+        'end_date',
+        'approved',
     ];
 
     public function user()

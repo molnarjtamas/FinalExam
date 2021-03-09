@@ -17,10 +17,10 @@ class HolidayNotification extends Notification
      *
      * @return void
      */
-    public function __construct($notification_url)
+    public function __construct($notification_url,$data)
     {
         $this->notification_url = $notification_url;
-
+        $this->data = $data;
     }
 
     /**
@@ -44,10 +44,13 @@ class HolidayNotification extends Notification
     {
         return (new MailMessage)
             ->greeting('Dear Management,')
-            ->line("This letter is a formal request for a holiday leave from Monday, June 1st to Tuesday, June 15th. I will be back in the office on Wednesday, June 16th.")
+            ->line("This letter is a formal request for a ".$this->data['type'] . " leave from "
+                . date("F j, Y",strtotime($this->data['start_date']))
+                ." to " . date("F j, Y",strtotime($this->data['end_date'])))
+            ->line(ucfirst($this->data['description']) .".")
+            ->line('Thank you for reviewing my request!')
             ->action('Approve', $this->notification_url)
-            ->line('Thank you for using our application!')
-            ->salutation("Thank you,\n". Auth::user()->name);
+            ->salutation("Regards,\r\n". Auth::user()->name);
     }
 
     /**

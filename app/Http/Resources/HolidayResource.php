@@ -23,6 +23,7 @@ class HolidayResource extends JsonResource
             'type' => $this->type,
             'start_date' => $this->start_date,
             'end_date'=> $this->end_date,
+            'approved' => $this->approved,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
 
