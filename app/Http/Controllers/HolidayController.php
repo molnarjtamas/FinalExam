@@ -34,11 +34,15 @@ class HolidayController extends Controller
 
         $holiday =Holiday::create($validated);
 
-        $url = URL::signedRoute(
+        $approve_url = URL::signedRoute(
             "holiday.approve",$holiday->id
         );
+        $decline_url = URL::signedRoute(
+            "holiday.decline",$holiday->id
+        );
 
-        Notification::route('mail', 'managment@webgurus.com')->notify(new HolidayNotification($url,$validated));
+        Notification::route('mail', 'managment@webgurus.com')
+            ->notify(new HolidayNotification($approve_url,$decline_url,$validated));
 
         return redirect('/holiday')->with('success', 'The Invitation has been sent successfully');
     }
@@ -46,11 +50,19 @@ class HolidayController extends Controller
     public function approve(Holiday $holiday)
     {
 
-            $holiday->update(['approved' => true]);
+        $holiday->update(['approved' => true]);
 
-            return redirect('holiday');
+        return redirect('holiday');
 
     }
 
+    public function decline(Holiday $holiday)
+    {
+
+        $holiday->delete();
+
+        return redirect('holiday');
+
+    }
 
 }

@@ -38,7 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/holiday', function () {
 
 Route::get('holidays',[HolidayController::class,'index']);
 
-Route::get('holiday/{holiday}',[HolidayController::class,'approve'])->name('holiday.approve');
+Route::get('holiday/approve/{holiday}',[HolidayController::class,'approve'])->name('holiday.approve');
+Route::get('holiday/decline/{holiday}',[HolidayController::class,'decline'])->name('holiday.decline');
+
 
 
 Route::get('holidays/{user}',[HolidayController::class,'show']);

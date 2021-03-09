@@ -4,6 +4,7 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Action;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +18,10 @@ class HolidayNotification extends Notification
      *
      * @return void
      */
-    public function __construct($notification_url,$data)
+    public function __construct($approve_url,$decline_url,$data)
     {
-        $this->notification_url = $notification_url;
+        $this->approve_url = $approve_url;
+        $this->decline_url = $decline_url;
         $this->data = $data;
     }
 
@@ -49,7 +51,8 @@ class HolidayNotification extends Notification
                 ." to " . date("F j, Y",strtotime($this->data['end_date'])))
             ->line(ucfirst($this->data['description']) .".")
             ->line('Thank you for reviewing my request!')
-            ->action('Approve', $this->notification_url)
+            ->action('Approve', $this->approve_url)
+            ->line(url($this->decline_url))
             ->salutation("Regards,\r\n". Auth::user()->name);
     }
 
