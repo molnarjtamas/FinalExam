@@ -4,12 +4,11 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Action;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 
-class HolidayNotification extends Notification
+class HolidayRequested extends Notification
 {
     use Queueable;
 
@@ -28,7 +27,7 @@ class HolidayNotification extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -39,27 +38,26 @@ class HolidayNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Dear Management,')
-            ->line("This letter is a formal request for a ".$this->data['type'] . " leave from "
-                . date("F j, Y",strtotime($this->data['start_date']))
-                ." to " . date("F j, Y",strtotime($this->data['end_date'])))
-            ->line(ucfirst($this->data['description']) .".")
-            ->line('Thank you for reviewing my request!')
-            ->action('Approve', $this->approve_url)
-            ->line(url($this->decline_url))
-            ->salutation("Regards,\r\n". Auth::user()->name);
+            ->markdown('mail.holiday.requested',[
+                'approve_url' => $this->approve_url,
+                'decline_url' =>$this->decline_url,
+                'data'=> $this->data,
+                'user'=>Auth::user(),
+
+            ]);
+
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function toArray($notifiable)

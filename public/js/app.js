@@ -5795,6 +5795,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57557,20 +57570,59 @@ var render = function() {
               { staticClass: "col-span-4 sm:col-span-4" },
               [
                 _c("jet-label", {
+                  staticClass: "mb-2",
                   attrs: { for: "type", value: "Type of holiday" }
                 }),
                 _vm._v(" "),
-                _c("jet-input", {
-                  staticClass: "w-full",
-                  attrs: { id: "type", type: "text" },
-                  model: {
-                    value: _vm.takeHolidayForm.type,
-                    callback: function($$v) {
-                      _vm.$set(_vm.takeHolidayForm, "type", $$v)
+                _c("label", { staticClass: "inline-flex items-center" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.takeHolidayForm.type,
+                        expression: "takeHolidayForm.type"
+                      }
+                    ],
+                    staticClass: "form-radio",
+                    attrs: { type: "radio", name: "type", value: "paid" },
+                    domProps: {
+                      checked: _vm._q(_vm.takeHolidayForm.type, "paid")
                     },
-                    expression: "takeHolidayForm.type"
-                  }
-                }),
+                    on: {
+                      change: function($event) {
+                        return _vm.$set(_vm.takeHolidayForm, "type", "paid")
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2" }, [_vm._v("Paid")])
+                ]),
+                _vm._v(" "),
+                _c("label", { staticClass: "inline-flex items-center ml-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.takeHolidayForm.type,
+                        expression: "takeHolidayForm.type"
+                      }
+                    ],
+                    staticClass: "form-radio",
+                    attrs: { type: "radio", name: "type", value: "unpaid" },
+                    domProps: {
+                      checked: _vm._q(_vm.takeHolidayForm.type, "unpaid")
+                    },
+                    on: {
+                      change: function($event) {
+                        return _vm.$set(_vm.takeHolidayForm, "type", "unpaid")
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2" }, [_vm._v("Unpaid")])
+                ]),
                 _vm._v(" "),
                 _c("jet-input-error", {
                   staticClass: "mt-2",
@@ -57724,7 +57776,7 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.takeHolidayForm.recentlySuccessful }
               },
-              [_vm._v("\n            Requested.\n        ")]
+              [_vm._v("\n                Requested.\n            ")]
             ),
             _vm._v(" "),
             _c(
@@ -57738,7 +57790,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("\n            Give me a break!\n        ")]
+              [_vm._v("\n                Give me a break!\n            ")]
             )
           ]
         },

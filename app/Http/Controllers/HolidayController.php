@@ -8,6 +8,7 @@ use App\Http\Resources\HolidayResource;
 use App\Models\Holiday;
 use App\Models\User;
 use App\Notifications\HolidayNotification;
+use App\Notifications\HolidayRequested;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,7 @@ class HolidayController extends Controller
         );
 
         Notification::route('mail', 'managment@webgurus.com')
-            ->notify(new HolidayNotification($approve_url,$decline_url,$validated));
+            ->notify(new HolidayRequested($approve_url,$decline_url,$validated));
 
         return redirect('/holiday')->with('success', 'The Invitation has been sent successfully');
     }

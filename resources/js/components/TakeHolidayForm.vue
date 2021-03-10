@@ -5,8 +5,19 @@
 
 
             <div class="col-span-4 sm:col-span-4">
-                <jet-label for="type" value="Type of holiday" />
-                <jet-input class="w-full" id="type" type="text"  v-model="takeHolidayForm.type" />
+                <jet-label for="type" value="Type of holiday" class="mb-2"/>
+<!--                <jet-input class="w-full" id="type" type="text"  v-model="takeHolidayForm.type" />-->
+
+
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="type" value="paid"  v-model="takeHolidayForm.type">
+                        <span class="ml-2">Paid</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" class="form-radio" name="type" value="unpaid"  v-model="takeHolidayForm.type">
+                        <span class="ml-2">Unpaid</span>
+                    </label>
+
                 <jet-input-error :message="takeHolidayForm.errors.type" class="mt-2" />
             </div>
             <div class="col-span-4 sm:col-span-4">
@@ -14,6 +25,8 @@
                 <textarea  class="h-24 w-full resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                            id="description" v-model="takeHolidayForm.description"/>
                 <jet-input-error :message="takeHolidayForm.errors.description" class="mt-2" />
+
+
             </div>
 
             <div class="col-span-4 sm:col-span-4">
