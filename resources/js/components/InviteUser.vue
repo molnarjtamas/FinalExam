@@ -4,16 +4,16 @@
         <template #form>
 
             <!-- Email -->
-            <div class="col-span-4 sm:col-span-4">
+            <div class="col-span-4 ">
                 <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email"  v-model="inviteUserForm.email" />
                 <jet-input-error :message="inviteUserForm.errors.email" class="mt-2" />
             </div>
 
-            <div class="col-span-4 sm:col-span-4">
+            <div class="col-span-4 flex-shrink-0">
 
                 <jet-label for="role" value="Role"/>
-                <v-select id="role" class="text-xl capitalize" :options="roles" v-model="inviteUserForm.role"></v-select>
+                <v-select  id="role" class="text-xl capitalize w-56 sm:w-full " :options="roles" v-model="inviteUserForm.role"></v-select>
 
             </div>
             <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />
@@ -23,10 +23,11 @@
 
         <template #actions>
             <jet-action-message :on="inviteUserForm.recentlySuccessful" class="mr-3">
-                Sent.
+                Invitation sent.
             </jet-action-message>
 
-            <button v-on:click="addUser()" :class="{ 'opacity-25': inviteUserForm.processing }" :disabled="inviteUserForm.processing">
+            <button v-on:click="addUser()" :class="{ 'opacity-25': inviteUserForm.processing } " :disabled="inviteUserForm.processing"
+                    class="text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded">
                 Invite
             </button>
         </template>
@@ -104,3 +105,13 @@ export default {
     },
 }
 </script>
+<style>
+#role #vs1__listbox >li{
+    color:black;
+    background-color: white;
+}
+#role #vs1__listbox >li:hover{
+    background-color: #047857;
+    color:white;
+}
+</style>

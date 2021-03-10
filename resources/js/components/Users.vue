@@ -4,8 +4,8 @@
 
 
         <div class="mt-6">
-            <div class="flex justify-between ">
-                <div class="flex">
+            <div class="lg:flex justify-between ">
+                <div class="flex pl-6">
                     <!-- Logo -->
                     <div class="flex items-center">
                         <UsersLogo class="block h-44 w-auto"/>
