@@ -57604,7 +57604,7 @@ var render = function() {
                 _c("jet-label", { attrs: { for: "role", value: "Role" } }),
                 _vm._v(" "),
                 _c("v-select", {
-                  staticClass: "text-xl capitalize w-56 sm:w-full ",
+                  staticClass: "text-xl capitalize w-56 lg:w-full ",
                   attrs: { id: "role", options: _vm.roles },
                   model: {
                     value: _vm.inviteUserForm.role,
@@ -58274,11 +58274,15 @@ var render = function() {
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
       _c("div", { staticClass: "lg:flex justify-between " }, [
-        _c("div", { staticClass: "flex pl-6" }, [
+        _c("div", { staticClass: " flex pl-6" }, [
           _c(
             "div",
             { staticClass: "flex items-center" },
-            [_c("UsersLogo", { staticClass: "block h-44 w-auto" })],
+            [
+              _c("UsersLogo", {
+                staticClass: " self-center block h-24 sm:h-44 w-auto"
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -58286,7 +58290,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
             },
             [_vm._v("\n                    Users\n                ")]
           )
@@ -58311,7 +58315,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto" },
+        { staticClass: "-mx-4 sm:-mx-8 px-2 sm:px-8 py-4 overflow-x-auto" },
         [
           _c(
             "div",
@@ -58325,6 +58329,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
                   _vm._l(_vm.users, function(user) {
                     return _c(
                       "tr",
@@ -58392,16 +58397,21 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         user
-                          ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(_vm.registeredSince(user)))
-                            ])
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(_vm.registeredSince(user)))]
+                            )
                           : _vm._e(),
                         _vm._v(" "),
                         _vm._l(user.roles, function(role) {
                           return user
                             ? _c(
                                 "td",
-                                { staticClass: "py-3 px-5 capitalize" },
+                                {
+                                  staticClass:
+                                    "py-3 px-5 capitalize hidden sm:table-cell"
+                                },
                                 [_vm._v(_vm._s(role))]
                               )
                             : _vm._e()
@@ -58492,7 +58502,7 @@ var staticRenderFns = [
       "thead",
       {
         staticClass:
-          "border-green-700 bg-green-700 text-white  text-left text-sm font-semibold uppercase tracking-wider"
+          "border-green-700 bg-green-700 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider"
       },
       [
         _c("tr", [
@@ -58502,23 +58512,31 @@ var staticRenderFns = [
             )
           ]),
           _vm._v(" "),
-          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
+          _c("th", { staticClass: "px-5 py-3 border-b-2 " }, [
             _vm._v(
               "\n                            Email\n                        "
             )
           ]),
           _vm._v(" "),
-          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
-            _vm._v(
-              "\n                            Registered\n                        "
-            )
-          ]),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Registered\n                        "
+              )
+            ]
+          ),
           _vm._v(" "),
-          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
-            _vm._v(
-              "\n                            Role\n                        "
-            )
-          ])
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Role\n                        "
+              )
+            ]
+          )
         ])
       ]
     )

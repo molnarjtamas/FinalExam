@@ -13,7 +13,7 @@
             <div class="col-span-4 flex-shrink-0">
 
                 <jet-label for="role" value="Role"/>
-                <v-select  id="role" class="text-xl capitalize w-56 sm:w-full " :options="roles" v-model="inviteUserForm.role"></v-select>
+                <v-select  id="role" class="text-xl capitalize w-56 lg:w-full " :options="roles" v-model="inviteUserForm.role"></v-select>
 
             </div>
             <jet-input id="token" hidden="true" v-model="inviteUserForm.email" />

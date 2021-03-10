@@ -5,26 +5,26 @@
 
         <div class="mt-6">
             <div class="lg:flex justify-between ">
-                <div class="flex pl-6">
+                <div class=" flex pl-6">
                     <!-- Logo -->
                     <div class="flex items-center">
-                        <UsersLogo class="block h-44 w-auto"/>
+                        <UsersLogo class=" self-center block h-24 sm:h-44 w-auto"/>
                     </div>
-                    <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
+                    <div class="self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase">
                         Users
                     </div>
                 </div>
 
-                <div v-can="'invite-users'">
+                <div  v-can="'invite-users'">
                     <InviteUser></InviteUser>
                 </div>
             </div>
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div class="-mx-4 sm:-mx-8 px-2 sm:px-8 py-4 overflow-x-auto">
                 <div
                     class="inline-block min-w-full shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
-                        <thead class="border-green-700 bg-green-700 text-white  text-left text-sm font-semibold uppercase tracking-wider">
+                        <thead class="border-green-700 bg-green-700 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider">
                         <tr>
                             <th
                                 class="px-5 py-3 border-b-2"
@@ -32,23 +32,23 @@
                                 User
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2"
+                                class="px-5 py-3 border-b-2 "
                             >
                                 Email
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2"
+                                class="px-5 py-3 border-b-2 hidden sm:table-cell"
                             >
                                 Registered
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2"
+                                class="px-5 py-3 border-b-2 hidden sm:table-cell"
                             >
                                 Role
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-xs sm:text-lg">
 
                         <tr v-for="user in users">
                             <td v-if="user"
@@ -77,8 +77,8 @@
                                 </div>
                             </td>
                             <td v-if="user" class="py-3 px-5">{{ user.email }}</td>
-                            <td v-if="user" class="py-3 px-5">{{ registeredSince(user) }}</td>
-                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 capitalize">{{ role }}</td>
+                            <td v-if="user" class="py-3 px-5 hidden sm:table-cell">{{ registeredSince(user) }}</td>
+                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 capitalize hidden sm:table-cell">{{ role }}</td>
 
                         </tr>
 
