@@ -14,10 +14,10 @@
                     </div>
 
                     <div v-can="'view-own-holidays'" >
-                        <div class="flex">
+                        <div class="xl:flex ">
 
                             <MyHolidays></MyHolidays>
-                            <TakeHolidayForm class="self-end mb-6"></TakeHolidayForm>
+                            <TakeHolidayForm class="self-end mb-6 mr-6"></TakeHolidayForm>
                         </div>
                     </div>
                 </div>

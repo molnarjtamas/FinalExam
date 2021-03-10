@@ -5424,32 +5424,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ApplicationMark */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
 /* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5559,7 +5535,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "MyHolidays",
   components: {
-    JetApplicationMark: _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__.default,
+    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
     CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
@@ -5599,6 +5575,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getToday: function getToday() {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYY-MM-DD");
+    },
+    formatDate: function formatDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do, YY");
     }
   }
 });
@@ -55214,11 +55193,13 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    { staticClass: "flex" },
+                    { staticClass: "xl:flex " },
                     [
                       _c("MyHolidays"),
                       _vm._v(" "),
-                      _c("TakeHolidayForm", { staticClass: "self-end mb-6" })
+                      _c("TakeHolidayForm", {
+                        staticClass: "self-end mb-6 mr-6"
+                      })
                     ],
                     1
                   )
@@ -57048,7 +57029,7 @@ var render = function() {
           attrs: {
             d:
               "M3.179,332.702 L0,331.316 C58.162,299.934 102.129,272.143 165.059,241.357 C196.247,287.963 216.275,322.209 244.491,380.721 C317.446,243.823 400.046,84.169 579.494,-0 C573.704,75.61 572.435,133.976 590.088,199.231 C450.006,268.799 337.296,390.748 256.067,520.027 L254.581,522.431 C179.674,436.203 104.663,377.515 3.179,332.702 z",
-            fill: "#D40000",
+            fill: "#065F46",
             id: "path880"
           }
         })
@@ -57275,12 +57256,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
-      _c("div", { staticClass: "flex justify-between " }, [
-        _c("div", { staticClass: "flex" }, [
+      _c("div", { staticClass: "lg:flex justify-between " }, [
+        _c("div", { staticClass: "lg:flex pl-6" }, [
           _c(
             "div",
-            { staticClass: "flex items-center" },
-            [_c("jet-application-mark", { staticClass: "block h-44 w-auto" })],
+            { staticClass: "flex  items-center" },
+            [
+              _c("HolidayMark", {
+                staticClass: "self-center block h-44 w-full"
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -57288,9 +57273,9 @@ var render = function() {
             "div",
             {
               staticClass:
-                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
             },
-            [_vm._v("\n                    My Holidays\n                ")]
+            [_vm._v("\n                    My holidays\n                ")]
           )
         ])
       ]),
@@ -57311,6 +57296,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
                   _vm._l(_vm.holidays, function(holiday) {
                     return _c(
                       "tr",
@@ -57319,87 +57305,28 @@ var render = function() {
                         holiday
                           ? _c(
                               "td",
-                              {
-                                staticClass: "px-5 py-5   bg-white ",
-                                class: _vm.holidayStatusClass(holiday)
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex items-center" },
-                                  [
-                                    holiday.user.profile_photo_path === null
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "/storage/profile-photos/default/default-avatar.png"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      : _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "/storage/" +
-                                                  holiday.user
-                                                    .profile_photo_path
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "ml-3" }, [
-                                      _c(
-                                        "p",
-                                        { staticClass: "whitespace-no-wrap" },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(holiday.user.name) +
-                                              "\n                                    "
-                                          )
-                                        ]
-                                      )
-                                    ])
-                                  ]
-                                )
-                              ]
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.type))]
                             )
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
-                          ? _c("td", { staticClass: "py-3 px-5 " }, [
-                              _vm._v(_vm._s(holiday.type))
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.description))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _vm._v(_vm._s(_vm.formatDate(holiday.start_date)))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.start_date))
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        holiday
-                          ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.end_date))
+                              _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
@@ -57410,7 +57337,7 @@ var render = function() {
                                     "div",
                                     [
                                       _c("CheckMark", {
-                                        staticClass: "h-10 w-10"
+                                        staticClass: "h-8 w-8 text-green-700"
                                       })
                                     ],
                                     1
@@ -57499,74 +57426,54 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "border-green-200 bg-green-200 h-12" }, [
-      _c("tr", [
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+    return _c(
+      "thead",
+      {
+        staticClass:
+          "border-green-800 bg-green-800 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider"
+      },
+      [
+        _c("tr", [
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell " },
+            [
+              _vm._v(
+                "\n                            Type\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Description\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
-              "\n                            User\n                        "
+              "\n                            I leave on\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2  " }, [
             _vm._v(
-              "\n                            Type\n                        "
+              "\n                            Until\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Leaves on\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Returns on\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
               "\n                            Status\n                        "
             )
-          ]
-        )
-      ])
-    ])
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
