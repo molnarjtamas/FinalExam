@@ -8,7 +8,7 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex items-center">
-                        <jet-application-mark class="block h-44 w-auto"/>
+                        <UsersLogo class="block h-44 w-auto"/>
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
                         Users
@@ -24,25 +24,25 @@
                     class="inline-block min-w-full shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
-                        <thead class="border-green-200 bg-green-200">
+                        <thead class="border-green-700 bg-green-700 text-white  text-left text-sm font-semibold uppercase tracking-wider">
                         <tr>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
                                 User
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
                                 Email
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
                                 Registered
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
                                 Role
                             </th>
@@ -52,7 +52,7 @@
 
                         <tr v-for="user in users">
                             <td v-if="user"
-                                class="px-5 py-5 border-b  bg-white text-sm"
+                                class="px-5 py-5 "
                             >
                                 <div class="flex items-center">
                                     <div v-if="user.profile_photo_path === '/storage/' "
@@ -78,7 +78,7 @@
                             </td>
                             <td v-if="user" class="py-3 px-5">{{ user.email }}</td>
                             <td v-if="user" class="py-3 px-5">{{ registeredSince(user) }}</td>
-                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 uppercase">{{ role }}</td>
+                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 capitalize">{{ role }}</td>
 
                         </tr>
 
@@ -93,13 +93,13 @@
 
                         <div class="inline-flex mt-2 xs:mt-0">
                             <button @click="clickPage('prev')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l"
 
                             >
                                 Prev
                             </button>
                             <button @click="clickPage('next')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r"
                             >
                                 Next
                             </button>
@@ -117,14 +117,15 @@
 import axios from "axios";
 import moment from "moment";
 import InviteUser from "@/components/InviteUser";
-import JetApplicationMark from "@/Jetstream/ApplicationMark";
+
+import UsersLogo from "@/components/UsersLogo"
 
 
 export default {
     name: "Users",
     components: {
         InviteUser,
-        JetApplicationMark,
+        UsersLogo,
     },
     data() {
         return {
