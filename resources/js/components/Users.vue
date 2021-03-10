@@ -19,7 +19,7 @@
                     <InviteUser></InviteUser>
                 </div>
             </div>
-            <div class="-mx-4 sm:-mx-8 px-2 sm:px-8 py-4 overflow-x-auto">
+            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
                     class="inline-block min-w-full shadow rounded-lg overflow-hidden"
                 >
@@ -52,17 +52,17 @@
 
                         <tr v-for="user in users">
                             <td v-if="user"
-                                class="px-5 py-5 "
+                                class="px-2 py-5 "
                             >
                                 <div class="flex items-center">
                                     <div v-if="user.profile_photo_path === '/storage/' "
-                                         class="flex-shrink-0 w-10 h-10">
+                                         class="flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
                                         <img
                                             class="w-full h-full rounded-full"
                                             :src="'../storage/profile-photos/default/default-avatar.png'"
                                         />
                                     </div>
-                                    <div v-else class="flex-shrink-0 w-10 h-10">
+                                    <div v-else class="flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
                                         <img
                                             class="w-full h-full rounded-full"
                                             :src="user.profile_photo_path"

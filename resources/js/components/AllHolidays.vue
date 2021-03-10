@@ -4,14 +4,14 @@
 
 
         <div class="mt-6">
-            <div class="flex justify-between ">
-                <div class="flex">
+            <div class="lg:flex justify-between ">
+                <div class="flex pl-6">
                     <!-- Logo -->
                     <div class="flex items-center">
-                        <jet-application-mark class="block h-44 w-auto"/>
+                        <HolidayMark class="self-center block h-24 sm:h-44 w-auto"/>
                     </div>
-                    <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                        {{ getToday() }}
+                    <div class="self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase">
+                        {{ formatDate() }}
                     </div>
                 </div>
 
@@ -21,62 +21,69 @@
                     class="inline-block min-w-full shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
-                        <thead class="border-green-200 bg-green-200">
+                        <thead class="border-green-800 bg-green-800 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider">
                         <tr>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
                                 User
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2 hidden sm:table-cell"
                             >
                                 Type
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2 hidden sm:table-cell"
+                            >
+                                Description
+                            </th>
+                            <th
+                                class="px-5 py-3 border-b-2"
                             >
                                 Leaves on
                             </th>
                             <th
-                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                class="px-5 py-3 border-b-2"
                             >
-                                Returns on
+                                Until
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-xs sm:text-lg">
 
                         <tr v-for="holiday in holidays" :class="holidayStatusClass(holiday)">
                             <td v-if="holiday"
                                 :class="holidayStatusClass(holiday)"
-                                class="px-5 py-5  bg-white text-sm"
+                                class="px-2 py-5  bg-white "
                             >
                                 <div class="flex items-center">
                                     <div v-if="holiday.user.profile_photo_path === null "
-                                         class="flex-shrink-0 w-10 h-10">
+                                         class="flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
                                         <img
                                             class="w-full h-full rounded-full"
                                             :src="'/storage/profile-photos/default/default-avatar.png'"
                                         />
                                     </div>
-                                    <div v-else class="flex-shrink-0 w-10 h-10">
+                                    <div v-else class=" flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
                                         <img
-                                            class="w-full h-full rounded-full"
+                                            class=" w-full h-full rounded-full"
                                             :src="'/storage/' + holiday.user.profile_photo_path"
                                         />
                                     </div>
 
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
+                                        <p >
                                             {{ holiday.user.name }}
                                         </p>
                                     </div>
                                 </div>
                             </td>
-                            <td v-if="holiday" class="py-3 px-5 ">{{ holiday.type }}</td>
+                            <td v-if="holiday" class="py-3 px-5 hidden sm:table-cell">{{ holiday.type }}</td>
+                            <td v-if="holiday" class="py-3 px-5 hidden sm:table-cell">{{ holiday.description }}</td>
+
                             <td v-if="holiday" class="py-3 px-5">{{ formatDate(holiday.start_date )}}</td>
-                            <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date)}}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date )}}</td>
 
                         </tr>
 
@@ -91,13 +98,13 @@
 
                         <div class="inline-flex mt-2 xs:mt-0">
                             <button @click="clickPage('prev')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l"
 
                             >
                                 Prev
                             </button>
                             <button @click="clickPage('next')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r"
                             >
                                 Next
                             </button>
@@ -114,13 +121,13 @@
 
 import axios from "axios";
 import moment from "moment";
-import JetApplicationMark from "@/Jetstream/ApplicationMark";
+import HolidayMark from "@/components/HolidayMark"
 
 
 export default {
     name: "AllHolidays",
     components: {
-        JetApplicationMark,
+        HolidayMark,
     },
     data() {
         return {
@@ -179,7 +186,7 @@ export default {
             return moment().format("YYYY-MM-DD")
         },
         formatDate(date){
-            return moment(date).format("MMM Do YY")
+            return moment(date).format("MMM Do, YY")
         },
 
 
@@ -189,7 +196,7 @@ export default {
 </script>
 <style>
 .active-background {
-    background-color: rgb(150, 255, 50);
+    background-color:#34D399!important;
 }
 
 .outdated-background {
