@@ -8,19 +8,20 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 
-class InvitationNotification extends Notification
+class HolidayRequested extends Notification
 {
     use Queueable;
-    protected $notification_url;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($notification_url)
+    public function __construct($approve_url,$decline_url,$data)
     {
-        $this->notification_url = $notification_url;
+        $this->approve_url = $approve_url;
+        $this->decline_url = $decline_url;
+        $this->data = $data;
     }
 
     /**
@@ -43,11 +44,14 @@ class InvitationNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->greeting('Greetings!')
-                    ->line('You have been invited to join our platform '. config('app.name'))
-                    ->action('Register',$this->notification_url)
-                    ->line('Thank you for using our application!')
-                    ->salutation("Regards,\n". Auth::user()->name);
+            ->markdown('mail.holiday.requested',[
+                'approve_url' => $this->approve_url,
+                'decline_url' =>$this->decline_url,
+                'data'=> $this->data,
+                'user'=>Auth::user(),
+
+            ]);
+
     }
 
     /**

@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('users',[\App\Http\Controllers\UserController::class,'index']);
 Route::get('roles',[\App\Http\Controllers\RoleController::class,'index']);
+
+
 Route::get('/permission/{permissionName}', [\App\Http\Controllers\PermissionController::class,'check']);
 
 

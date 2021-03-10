@@ -18,13 +18,11 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
-    import Welcome from '@/Jetstream/Welcome'
     import Users from "@/components/Users";
 
     export default {
         components: {
             AppLayout,
-            Welcome,
             Users
         },
     }

@@ -9,22 +9,20 @@
                     <!-- Logo -->
                     <div class="flex items-center">
                         <jet-application-mark class="block h-44 w-auto"/>
+
                     </div>
                     <div class="self-center text-5xl ml-16 font-semibold text-gray-600 uppercase">
-                        Users
+                        My Holidays
                     </div>
                 </div>
 
-                <div v-can="'invite-users'">
-                    <InviteUser></InviteUser>
-                </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
-                    class="inline-block min-w-full shadow rounded-lg overflow-hidden"
+                    class="inline-block min-w-1/2 shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
-                        <thead class="border-green-200 bg-green-200">
+                        <thead class="border-green-200 bg-green-200 h-12">
                         <tr>
                             <th
                                 class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
@@ -34,51 +32,65 @@
                             <th
                                 class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                             >
-                                Email
+                                Type
                             </th>
                             <th
                                 class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                             >
-                                Registered
+                                Leaves on
                             </th>
                             <th
                                 class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                             >
-                                Role
+                                Returns on
                             </th>
+                            <th
+                                class="px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                            >
+                                Status
+                            </th>
+
                         </tr>
                         </thead>
                         <tbody>
 
-                        <tr v-for="user in users">
-                            <td v-if="user"
-                                class="px-5 py-5 border-b  bg-white text-sm"
+                        <tr v-for="holiday in holidays" :class="holidayStatusClass(holiday)">
+                            <td v-if="holiday"
+                                :class="holidayStatusClass(holiday)"
+                                class="px-5 py-5   bg-white "
                             >
                                 <div class="flex items-center">
-                                    <div v-if="user.profile_photo_path === '/storage/' "
+                                    <div v-if="holiday.user.profile_photo_path === null "
                                          class="flex-shrink-0 w-10 h-10">
                                         <img
                                             class="w-full h-full rounded-full"
-                                            :src="'../storage/profile-photos/default/default-avatar.png'"
+                                            :src="'/storage/profile-photos/default/default-avatar.png'"
                                         />
                                     </div>
                                     <div v-else class="flex-shrink-0 w-10 h-10">
                                         <img
                                             class="w-full h-full rounded-full"
-                                            :src="user.profile_photo_path"
+                                            :src="'/storage/' + holiday.user.profile_photo_path"
                                         />
                                     </div>
 
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
-                                            {{ user.name }}
+                                        <p class="whitespace-no-wrap">
+                                            {{ holiday.user.name }}
                                         </p>
                                     </div>
                                 </div>
                             </td>
-                            <td v-if="user" class="py-3 px-5">{{ user.email }}</td>
-                            <td v-if="user" class="py-3 px-5">{{ registeredSince(user) }}</td>
-                            <td v-if="user" v-for="role in user.roles" class="py-3 px-5 uppercase">{{ role }}</td>
+                            <td v-if="holiday" class="py-3 px-5 ">{{ holiday.type }}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{ holiday.start_date }}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{ holiday.end_date }}</td>
+                            <td v-if="holiday" class="py-3 px-5">
+                                <div v-if="holiday.approved">
+                                    <CheckMark class="h-10 w-10"></CheckMark>
+
+                                </div>
+                            </td>
+
 
                         </tr>
 
@@ -116,42 +128,49 @@
 
 import axios from "axios";
 import moment from "moment";
-import InviteUser from "@/components/InviteUser";
 import JetApplicationMark from "@/Jetstream/ApplicationMark";
-
+import CheckMark from "@/components/CheckMark"
 
 export default {
-    name: "Users",
+    name: "MyHolidays",
+
+
     components: {
-        InviteUser,
         JetApplicationMark,
+        CheckMark,
     },
     data() {
         return {
-            link: '/api/users',
-            users: {},
+            link: `/holidays/${this.$page.props.user.id}`,
+            holidays: {},
             links: {},
             meta: {},
+
+
         }
     },
+
+    computed: {},
     mounted() {
-        this.fetchUsers()
+        this.fetchHolidays()
+        this.getToday()
+
     },
 
     methods: {
 
-        fetchUsers() {
+        fetchHolidays() {
             axios.get(this.link)
                 .then(res => {
                     this.prepareParams(res)
-
                 }).catch(err => {
                 console.log(err)
             })
         },
 
+
         prepareParams(res) {
-            this.users = res.data.data
+            this.holidays = res.data.data
             this.links = res.data.links
             this.meta = res.data.meta
         },
@@ -163,14 +182,34 @@ export default {
             else
                 this.link = this.links.next
 
-            this.fetchUsers();
+            this.fetchHolidays();
         },
 
+        holidayStatusClass(holiday) {
+            if ((holiday.start_date < this.getToday()) && (holiday.end_date > this.getToday()))
+                return 'active-background'
+            else if (holiday.end_date < this.getToday())
+                return 'outdated-background'
+            else
+                return ''
+        },
 
-        registeredSince(user) {
-            return moment(user.created_at).fromNow();
+        getToday() {
+            return moment().format("YYYY-MM-DD")
         }
+
+
     }
 
 }
 </script>
+<style>
+.active-background {
+    background-color: rgb(150, 255, 50);
+}
+
+.outdated-background {
+    background-color: darkgrey;
+    color: grey;
+}
+</style>
