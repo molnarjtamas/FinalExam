@@ -91,7 +91,7 @@ export default {
     data() {
 
         return {
-            link: 'http://127.0.0.1:8000/api/roles',
+            link: '/api/roles',
             roles: [],
             takeHolidayForm: this.$inertia.form({
                 type: '',

@@ -5365,7 +5365,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      link: 'http://127.0.0.1:8000/api/roles',
+      link: '/api/roles',
       roles: [],
       inviteUserForm: this.$inertia.form({
         email: '',
@@ -5690,7 +5690,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      link: 'http://127.0.0.1:8000/api/roles',
+      link: '/api/roles',
       roles: [],
       takeHolidayForm: this.$inertia.form({
         type: '',
