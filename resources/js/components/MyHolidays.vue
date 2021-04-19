@@ -62,8 +62,11 @@
                             <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date )}}</td>
                             <td v-if="holiday" class="py-3 px-5">
                                 <div v-if="holiday.approved">
-                                    <CheckMark class="h-8 w-8 text-green-700"></CheckMark>
+                                    <CheckMark class="h-8 w-8 ml-2 text-green-700"></CheckMark>
 
+                                </div>
+                                <div v-else>
+                                    <Waiting class="h-8 w-8 ml-2"></Waiting>
                                 </div>
                             </td>
 
@@ -81,13 +84,13 @@
 
                         <div class="inline-flex mt-2 xs:mt-0">
                             <button @click="clickPage('prev')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l"
 
                             >
                                 Prev
                             </button>
                             <button @click="clickPage('next')"
-                                    class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
+                                    class="text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r"
                             >
                                 Next
                             </button>
@@ -106,7 +109,7 @@ import axios from "axios";
 import moment from "moment";
 import HolidayMark from "@/components/HolidayMark"
 import CheckMark from "@/components/CheckMark"
-
+import Waiting from "@/components/Waiting"
 export default {
     name: "MyHolidays",
 
@@ -114,6 +117,7 @@ export default {
     components: {
         HolidayMark,
         CheckMark,
+        Waiting
     },
     data() {
         return {

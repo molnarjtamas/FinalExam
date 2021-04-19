@@ -5117,6 +5117,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
+/* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
+/* harmony import */ var _Decline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Decline */ "./resources/js/components/Decline.vue");
 //
 //
 //
@@ -5236,13 +5238,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "AllHolidays",
   components: {
-    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default
+    Decline: _Decline__WEBPACK_IMPORTED_MODULE_4__.default,
+    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
+    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
@@ -5426,6 +5443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
 /* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
+/* harmony import */ var _components_Waiting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/Waiting */ "./resources/js/components/Waiting.vue");
 //
 //
 //
@@ -5528,6 +5546,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -5536,7 +5558,8 @@ __webpack_require__.r(__webpack_exports__);
   name: "MyHolidays",
   components: {
     HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
-    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default
+    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default,
+    Waiting: _components_Waiting__WEBPACK_IMPORTED_MODULE_4__.default
   },
   data: function data() {
     return {
@@ -5759,6 +5782,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_InviteUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/InviteUser */ "./resources/js/components/InviteUser.vue");
 /* harmony import */ var _components_UsersLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/UsersLogo */ "./resources/js/components/UsersLogo.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48920,6 +48948,43 @@ component.options.__file = "resources/js/components/CheckMark.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Decline.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Decline.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Decline.vue?vue&type=template&id=01c5bd4a& */ "./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Decline.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/HolidayMark.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/HolidayMark.vue ***!
@@ -49150,6 +49215,43 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/UsersLogo.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Waiting.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Waiting.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Waiting.vue?vue&type=template&id=189e5d9c& */ "./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Waiting.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -50762,6 +50864,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Decline.vue?vue&type=template&id=01c5bd4a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa& ***!
@@ -50860,6 +50979,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UsersLogo.vue?vue&type=template&id=42cb0c78& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Waiting.vue?vue&type=template&id=189e5d9c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&");
 
 
 /***/ }),
@@ -56855,6 +56991,25 @@ var render = function() {
                           ? _c("td", { staticClass: "py-3 px-5" }, [
                               _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
                             ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _c(
+                                "div",
+                                { staticClass: "flex" },
+                                [
+                                  _c("CheckMark", {
+                                    staticClass: "h-8 w-8 ml-2 text-green-700"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("Decline", {
+                                    staticClass: "h-8 w-8 ml-4 text-red-700"
+                                  })
+                                ],
+                                1
+                              )
+                            ])
                           : _vm._e()
                       ]
                     )
@@ -56981,6 +57136,12 @@ var staticRenderFns = [
             _vm._v(
               "\n                            Until\n                        "
             )
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
+            _vm._v(
+              "\n                            Action\n                        "
+            )
           ])
         ])
       ]
@@ -57031,6 +57192,56 @@ var render = function() {
               "M3.179,332.702 L0,331.316 C58.162,299.934 102.129,272.143 165.059,241.357 C196.247,287.963 216.275,322.209 244.491,380.721 C317.446,243.823 400.046,84.169 579.494,-0 C573.704,75.61 572.435,133.976 590.088,199.231 C450.006,268.799 337.296,390.748 256.067,520.027 L254.581,522.431 C179.674,436.203 104.663,377.515 3.179,332.702 z",
             fill: "#065F46",
             id: "path880"
+          }
+        })
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      staticStyle: { "enable-background": "new 0 0 297 297" },
+      attrs: {
+        version: "1.1",
+        id: "Capa_1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+        x: "0px",
+        y: "0px",
+        viewBox: "0 0 297 297",
+        "xml:space": "preserve"
+      }
+    },
+    [
+      _c("g", [
+        _c("path", {
+          attrs: {
+            d:
+              "M293.805,219.495l-71.019-71.003l70.998-71.015c4.258-4.259,4.256-11.163-0.002-15.422L234.921,3.194\n\t\tC232.875,1.149,230.101,0,227.209,0c-2.893,0-5.667,1.15-7.712,3.196l-70.999,71.025L77.477,3.219\n\t\tc-4.26-4.258-11.162-4.257-15.422,0.001L3.194,62.081C1.149,64.127,0,66.901,0,69.794c0,2.893,1.15,5.666,3.196,7.711l71.035,71.01\n\t\tL3.248,219.525c-4.257,4.258-4.257,11.16,0,15.419l58.834,58.859c2.045,2.046,4.819,3.196,7.712,3.196h0.001\n\t\tc2.893,0,5.667-1.149,7.712-3.195l71.013-71.029l71.005,70.979c4.258,4.258,11.161,4.258,15.419,0l58.86-58.834\n\t\tc2.046-2.045,3.196-4.819,3.196-7.713C297,224.315,295.851,221.541,293.805,219.495z"
           }
         })
       ])
@@ -57337,12 +57548,21 @@ var render = function() {
                                     "div",
                                     [
                                       _c("CheckMark", {
-                                        staticClass: "h-8 w-8 text-green-700"
+                                        staticClass:
+                                          "h-8 w-8 ml-2 text-green-700"
                                       })
                                     ],
                                     1
                                   )
-                                : _vm._e()
+                                : _c(
+                                    "div",
+                                    [
+                                      _c("Waiting", {
+                                        staticClass: "h-8 w-8 ml-2"
+                                      })
+                                    ],
+                                    1
+                                  )
                             ])
                           : _vm._e()
                       ]
@@ -57380,7 +57600,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("prev")
@@ -57398,7 +57618,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("next")
@@ -57631,6 +57851,8 @@ var render = function() {
                       expression: "takeHolidayForm.start_date"
                     }
                   ],
+                  staticClass:
+                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
                   attrs: {
                     id: "start_date",
                     type: "date",
@@ -57674,6 +57896,8 @@ var render = function() {
                       expression: "takeHolidayForm.end_date"
                     }
                   ],
+                  staticClass:
+                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
                   attrs: {
                     id: "end_date",
                     type: "date",
@@ -57721,6 +57945,8 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass:
+                  "text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded",
                 class: { "opacity-25": _vm.takeHolidayForm.processing },
                 attrs: { disabled: _vm.takeHolidayForm.processing },
                 on: {
@@ -57835,14 +58061,91 @@ var render = function() {
                                           "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                       },
                                       [
-                                        _c("img", {
-                                          staticClass:
-                                            "w-full h-full rounded-full",
-                                          attrs: {
-                                            src:
-                                              "../storage/profile-photos/default/default-avatar.png"
-                                          }
-                                        })
+                                        _c(
+                                          "svg",
+                                          {
+                                            attrs: {
+                                              width: "32px",
+                                              height: "32px",
+                                              viewBox: "0 0 32 32",
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg"
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "g",
+                                              {
+                                                attrs: {
+                                                  id: "avatar",
+                                                  transform:
+                                                    "translate(-1407 -182)"
+                                                }
+                                              },
+                                              [
+                                                _c("circle", {
+                                                  attrs: {
+                                                    id: "Ellipse_16",
+                                                    "data-name": "Ellipse 16",
+                                                    cx: "15",
+                                                    cy: "15",
+                                                    r: "15",
+                                                    transform:
+                                                      "translate(1408 183)",
+                                                    fill: "#e8f7f9",
+                                                    stroke: "#333",
+                                                    "stroke-linecap": "round",
+                                                    "stroke-linejoin": "round",
+                                                    "stroke-width": "2"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "g",
+                                                  {
+                                                    attrs: {
+                                                      id: "Group_49",
+                                                      "data-name": "Group 49"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("circle", {
+                                                      attrs: {
+                                                        id: "Ellipse_17",
+                                                        "data-name":
+                                                          "Ellipse 17",
+                                                        cx: "4.565",
+                                                        cy: "4.565",
+                                                        r: "4.565",
+                                                        transform:
+                                                          "translate(1418.435 192.13)",
+                                                        fill: "#fff1b6",
+                                                        stroke: "#333",
+                                                        "stroke-miterlimit":
+                                                          "10",
+                                                        "stroke-width": "2"
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("path", {
+                                                      attrs: {
+                                                        id: "Path_53",
+                                                        "data-name": "Path 53",
+                                                        d:
+                                                          "M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z",
+                                                        fill: "#fff1b6",
+                                                        stroke: "#333",
+                                                        "stroke-miterlimit":
+                                                          "10",
+                                                        "stroke-width": "2"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
                                       ]
                                     )
                                   : _c(
@@ -58234,6 +58537,88 @@ var render = function() {
             "m126.8 153.6c17.342 0 33.72-5.659 47.364-16.365 3.55-2.785 4.169-7.922 1.385-11.471-2.788-3.551-7.923-4.169-11.471-1.385-10.738 8.426-23.628 12.881-37.277 12.881-33.338 0-60.46-27.122-60.46-60.46s27.121-60.46 60.458-60.46c13.649 0 26.539 4.454 37.278 12.881 3.548 2.785 8.685 2.167 11.471-1.383s2.166-8.685-1.385-11.471c-13.641-10.708-30.021-16.367-47.363-16.367-42.348 0-76.8 34.452-76.8 76.8s34.451 76.8 76.8 76.8z"
         }
       })
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      staticStyle: { "enable-background": "new 0 0 300.136 300.136" },
+      attrs: {
+        version: "1.1",
+        id: "Layer_1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+        x: "0px",
+        y: "0px",
+        viewBox: "0 0 300.136 300.136",
+        "xml:space": "preserve"
+      }
+    },
+    [
+      _c("g", [
+        _c("g", [
+          _c("path", {
+            attrs: {
+              d:
+                "M217.742,102.562c14.269-13.819,22.453-33.063,22.453-52.799V9c0-4.971-4.029-9-9-9H68.942c-4.971,0-9,4.029-9,9v40.763\n\t\t\tc0,20.607,9.063,39.97,24.874,53.151l52.765,47.154l-52.765,47.154c-15.811,13.182-24.874,32.544-24.874,53.151v40.763\n\t\t\tc0,4.971,4.029,9,9,9h162.253c4.971,0,9-4.029,9-9v-40.763c0-19.735-8.184-38.979-22.453-52.799\n\t\t\tc-0.086-0.084-0.174-0.166-0.264-0.246l-52.884-47.261l52.884-47.261C217.567,102.728,217.656,102.646,217.742,102.562z\n\t\t\t M77.942,18h144.252v9.069H77.971c-0.01,0-0.019,0.001-0.029,0.001V18z M222.195,282.137H77.942v-9.724\n\t\t\tc0.01,0,0.019,0.001,0.029,0.001h144.224V282.137z M79.223,254.415l72.095-38.127l69.73,38.127H79.223z M205.343,210.626\n\t\t\tc6.419,6.255,11.18,13.966,13.978,22.329l-63.614-34.783c-2.652-1.451-5.854-1.473-8.525-0.06L80.833,233.2\n\t\t\tc3.006-8.554,8.294-16.167,15.607-22.234c0.085-0.07,0.168-0.143,0.25-0.216l54.396-48.612L205.343,210.626z M151.087,137.999\n\t\t\tl-29.015-25.93h58.03L151.087,137.999z M200.197,94.109c-0.27-0.024-0.542-0.041-0.818-0.041H103.4\n\t\t\tc-0.459,0-0.906,0.045-1.346,0.112l-5.365-4.794c-0.082-0.073-0.166-0.146-0.25-0.216c-11.928-9.896-18.498-23.891-18.498-39.407\n\t\t\tv-4.696c0.01,0,0.019,0.001,0.029,0.001h144.224v4.694c0,14.832-6.14,29.309-16.852,39.748L200.197,94.109z"
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g")
     ]
   )
 }

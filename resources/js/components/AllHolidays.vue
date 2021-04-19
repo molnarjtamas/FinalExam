@@ -48,6 +48,11 @@
                             >
                                 Until
                             </th>
+                            <th
+                                class="px-5 py-3 border-b-2   "
+                            >
+                                Action
+                            </th>
                         </tr>
                         </thead>
                         <tbody class="text-xs sm:text-lg">
@@ -84,7 +89,13 @@
 
                             <td v-if="holiday" class="py-3 px-5">{{ formatDate(holiday.start_date )}}</td>
                             <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date )}}</td>
+                            <td v-if="holiday" class="py-3 px-5">
+                                <div class="flex">
+                                    <CheckMark class="h-8 w-8 ml-2 text-green-700"></CheckMark>
+                                    <Decline class="h-8 w-8 ml-4 text-red-700"></Decline>
+                                </div>
 
+                            </td>
                         </tr>
 
                         </tbody>
@@ -122,12 +133,17 @@
 import axios from "axios";
 import moment from "moment";
 import HolidayMark from "@/components/HolidayMark"
+import CheckMark from "@/components/CheckMark"
 
+import Decline from "./Decline";
 
 export default {
     name: "AllHolidays",
     components: {
+        Decline,
         HolidayMark,
+        CheckMark
+
     },
     data() {
         return {
