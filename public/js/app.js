@@ -5042,6 +5042,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Jetstream_ApplicationLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/ApplicationLogo */ "./resources/js/Jetstream/ApplicationLogo.vue");
+/* harmony import */ var _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/ApplicationMark */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
 //
 //
 //
@@ -5080,148 +5083,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    JetApplicationLogo: _Jetstream_ApplicationLogo__WEBPACK_IMPORTED_MODULE_0__.default,
+    JetApplicationMark: _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_1__.default,
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__.default
+  },
   props: {
     canLogin: Boolean,
-    canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String
   }
@@ -5244,7 +5116,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ApplicationMark */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
+/* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
+/* harmony import */ var _Decline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Decline */ "./resources/js/components/Decline.vue");
 //
 //
 //
@@ -5357,13 +5231,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "AllHolidays",
   components: {
-    JetApplicationMark: _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__.default
+    Decline: _Decline__WEBPACK_IMPORTED_MODULE_4__.default,
+    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
+    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
@@ -5403,7 +5304,7 @@ __webpack_require__.r(__webpack_exports__);
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYY-MM-DD");
     },
     formatDate: function formatDate(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do YY");
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do, YY");
     }
   }
 });
@@ -5465,6 +5366,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -5485,7 +5387,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      link: 'http://127.0.0.1:8000/api/roles',
+      link: '/api/roles',
       roles: [],
       inviteUserForm: this.$inertia.form({
         email: '',
@@ -5544,8 +5446,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ApplicationMark */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
 /* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
+/* harmony import */ var _components_Waiting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/Waiting */ "./resources/js/components/Waiting.vue");
 //
 //
 //
@@ -5651,27 +5554,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -5679,8 +5562,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "MyHolidays",
   components: {
-    JetApplicationMark: _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_2__.default,
-    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default
+    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
+    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default,
+    Waiting: _components_Waiting__WEBPACK_IMPORTED_MODULE_4__.default
   },
   data: function data() {
     return {
@@ -5719,6 +5603,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     getToday: function getToday() {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYY-MM-DD");
+    },
+    formatDate: function formatDate(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do, YY");
     }
   }
 });
@@ -5831,7 +5718,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      link: 'http://127.0.0.1:8000/api/roles',
+      link: '/api/roles',
       roles: [],
       takeHolidayForm: this.$inertia.form({
         type: '',
@@ -5899,7 +5786,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_InviteUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/InviteUser */ "./resources/js/components/InviteUser.vue");
-/* harmony import */ var _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/ApplicationMark */ "./resources/js/Jetstream/ApplicationMark.vue");
+/* harmony import */ var _components_UsersLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/UsersLogo */ "./resources/js/components/UsersLogo.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6022,7 +5914,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "Users",
   components: {
     InviteUser: _components_InviteUser__WEBPACK_IMPORTED_MODULE_2__.default,
-    JetApplicationMark: _Jetstream_ApplicationMark__WEBPACK_IMPORTED_MODULE_3__.default
+    UsersLogo: _components_UsersLogo__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
@@ -6164,30 +6056,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".v-select{position:relative;font-famil
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-gray-100[data-v-317d1a6e] {\n    background-color: #f7fafc;\n    background-color: rgba(247, 250, 252, var(--tw-bg-opacity));\n}\n.border-gray-200[data-v-317d1a6e] {\n    border-color: #edf2f7;\n    border-color: rgba(237, 242, 247, var(--tw-border-opacity));\n}\n.text-gray-400[data-v-317d1a6e] {\n    color: #cbd5e0;\n    color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n.text-gray-500[data-v-317d1a6e] {\n    color: #a0aec0;\n    color: rgba(160, 174, 192, var(--tw-text-opacity));\n}\n.text-gray-600[data-v-317d1a6e] {\n    color: #718096;\n    color: rgba(113, 128, 150, var(--tw-text-opacity));\n}\n.text-gray-700[data-v-317d1a6e] {\n    color: #4a5568;\n    color: rgba(74, 85, 104, var(--tw-text-opacity));\n}\n.text-gray-900[data-v-317d1a6e] {\n    color: #1a202c;\n    color: rgba(26, 32, 44, var(--tw-text-opacity));\n}\n@media (prefers-color-scheme: dark) {\n.dark\\:bg-gray-800[data-v-317d1a6e] {\n        background-color: #2d3748;\n        background-color: rgba(45, 55, 72, var(--tw-bg-opacity));\n}\n.dark\\:bg-gray-900[data-v-317d1a6e] {\n        background-color: #1a202c;\n        background-color: rgba(26, 32, 44, var(--tw-bg-opacity));\n}\n.dark\\:border-gray-700[data-v-317d1a6e] {\n        border-color: #4a5568;\n        border-color: rgba(74, 85, 104, var(--tw-border-opacity));\n}\n.dark\\:text-white[data-v-317d1a6e] {\n        color: #fff;\n        color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.dark\\:text-gray-400[data-v-317d1a6e] {\n        color: #cbd5e0;\n        color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css& ***!
@@ -6205,7 +6073,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.active-background {\n    background-color: rgb(150, 255, 50);\n}\n.outdated-background {\n    background-color: rgb(160, 160, 160);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.active-background {\n    background-color:#34D399!important;\n}\n.outdated-background {\n    background-color: rgb(160, 160, 160);\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n#role #vs1__listbox >li{\n    color:black;\n    background-color: white;\n}\n#role #vs1__listbox >li:hover{\n    background-color: #047857;\n    color:white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -46793,36 +46685,6 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css& ***!
@@ -46850,6 +46712,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AllHolidays_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_InviteUser_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InviteUser.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_InviteUser_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_InviteUser_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -47236,6 +47128,43 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/Jetstream/ActionSection.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Jetstream/ApplicationLogo.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/Jetstream/ApplicationLogo.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ApplicationLogo.vue?vue&type=template&id=4e07f5d2& */ "./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Jetstream/ApplicationLogo.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -48918,25 +48847,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Welcome.vue?vue&type=template&id=317d1a6e&scoped=true& */ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true&");
+/* harmony import */ var _Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Welcome.vue?vue&type=template&id=317d1a6e& */ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&");
 /* harmony import */ var _Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Welcome.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Welcome.vue?vue&type=script&lang=js&");
-/* harmony import */ var _Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& */ "./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
-;
 
 
 /* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
   _Welcome_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  "317d1a6e",
+  null,
   null
   
 )
@@ -49026,6 +48953,80 @@ component.options.__file = "resources/js/components/CheckMark.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Decline.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Decline.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Decline.vue?vue&type=template&id=01c5bd4a& */ "./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Decline.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HolidayMark.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/HolidayMark.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HolidayMark.vue?vue&type=template&id=021987aa& */ "./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__.render,
+  _HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/HolidayMark.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/InviteUser.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/InviteUser.vue ***!
@@ -49039,15 +49040,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _InviteUser_vue_vue_type_template_id_6dd5351f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InviteUser.vue?vue&type=template&id=6dd5351f& */ "./resources/js/components/InviteUser.vue?vue&type=template&id=6dd5351f&");
 /* harmony import */ var _InviteUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InviteUser.vue?vue&type=script&lang=js& */ "./resources/js/components/InviteUser.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _InviteUser_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InviteUser.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
   _InviteUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _InviteUser_vue_vue_type_template_id_6dd5351f___WEBPACK_IMPORTED_MODULE_0__.render,
   _InviteUser_vue_vue_type_template_id_6dd5351f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -49180,6 +49183,80 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/Users.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/UsersLogo.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/UsersLogo.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UsersLogo.vue?vue&type=template&id=42cb0c78& */ "./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__.render,
+  _UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/UsersLogo.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Waiting.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Waiting.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Waiting.vue?vue&type=template&id=189e5d9c& */ "./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Waiting.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -49920,19 +49997,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& ***!
-  \*************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css&");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css&":
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css& ***!
@@ -49942,6 +50006,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AllHolidays_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AllHolidays.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AllHolidays.vue?vue&type=style&index=0&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_InviteUser_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InviteUser.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InviteUser.vue?vue&type=style&index=0&lang=css&");
 
 
 /***/ }),
@@ -49989,6 +50066,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActionSection_vue_vue_type_template_id_1016a66a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActionSection_vue_vue_type_template_id_1016a66a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ActionSection.vue?vue&type=template&id=1016a66a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ActionSection.vue?vue&type=template&id=1016a66a&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ApplicationLogo_vue_vue_type_template_id_4e07f5d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ApplicationLogo.vue?vue&type=template&id=4e07f5d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2&");
 
 
 /***/ }),
@@ -50724,19 +50818,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true& ***!
-  \***********************************************************************************/
+/***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e& ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=template&id=317d1a6e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Welcome_vue_vue_type_template_id_317d1a6e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Welcome.vue?vue&type=template&id=317d1a6e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&");
 
 
 /***/ }),
@@ -50771,6 +50865,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckMark_vue_vue_type_template_id_674f78cc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckMark_vue_vue_type_template_id_674f78cc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CheckMark.vue?vue&type=template&id=674f78cc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/CheckMark.vue?vue&type=template&id=674f78cc&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Decline_vue_vue_type_template_id_01c5bd4a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Decline.vue?vue&type=template&id=01c5bd4a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HolidayMark_vue_vue_type_template_id_021987aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HolidayMark.vue?vue&type=template&id=021987aa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa&");
 
 
 /***/ }),
@@ -50839,6 +50967,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Users_vue_vue_type_template_id_30c27aa6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Users_vue_vue_type_template_id_30c27aa6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Users.vue?vue&type=template&id=30c27aa6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Users.vue?vue&type=template&id=30c27aa6&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UsersLogo_vue_vue_type_template_id_42cb0c78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UsersLogo.vue?vue&type=template&id=42cb0c78& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Waiting_vue_vue_type_template_id_189e5d9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Waiting.vue?vue&type=template&id=189e5d9c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&");
 
 
 /***/ }),
@@ -50963,6 +51125,65 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ApplicationLogo.vue?vue&type=template&id=4e07f5d2& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        viewBox: "0 0 317 48",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg"
+      }
+    },
+    [
+      _c("path", {
+        attrs: {
+          d:
+            "M74.09 30.04V13h-4.14v21H82.1v-3.96h-8.01zM95.379 19v1.77c-1.08-1.35-2.7-2.19-4.89-2.19-3.99 0-7.29 3.45-7.29 7.92s3.3 7.92 7.29 7.92c2.19 0 3.81-.84 4.89-2.19V34h3.87V19h-3.87zm-4.17 11.73c-2.37 0-4.14-1.71-4.14-4.23 0-2.52 1.77-4.23 4.14-4.23 2.4 0 4.17 1.71 4.17 4.23 0 2.52-1.77 4.23-4.17 4.23zM106.628 21.58V19h-3.87v15h3.87v-7.17c0-3.15 2.55-4.05 4.56-3.81V18.7c-1.89 0-3.78.84-4.56 2.88zM124.295 19v1.77c-1.08-1.35-2.7-2.19-4.89-2.19-3.99 0-7.29 3.45-7.29 7.92s3.3 7.92 7.29 7.92c2.19 0 3.81-.84 4.89-2.19V34h3.87V19h-3.87zm-4.17 11.73c-2.37 0-4.14-1.71-4.14-4.23 0-2.52 1.77-4.23 4.14-4.23 2.4 0 4.17 1.71 4.17 4.23 0 2.52-1.77 4.23-4.17 4.23zM141.544 19l-3.66 10.5-3.63-10.5h-4.26l5.7 15h4.41l5.7-15h-4.26zM150.354 28.09h11.31c.09-.51.15-1.02.15-1.59 0-4.41-3.15-7.92-7.59-7.92-4.71 0-7.92 3.45-7.92 7.92s3.18 7.92 8.22 7.92c2.88 0 5.13-1.17 6.54-3.21l-3.12-1.8c-.66.87-1.86 1.5-3.36 1.5-2.04 0-3.69-.84-4.23-2.82zm-.06-3c.45-1.92 1.86-3.03 3.93-3.03 1.62 0 3.24.87 3.72 3.03h-7.65zM164.516 34h3.87V12.1h-3.87V34zM185.248 34.36c3.69 0 6.9-2.01 6.9-6.3V13h-2.1v15.06c0 3.03-2.07 4.26-4.8 4.26-2.19 0-3.93-.78-4.62-2.61l-1.77 1.05c1.05 2.43 3.57 3.6 6.39 3.6zM203.124 18.64c-4.65 0-7.83 3.45-7.83 7.86 0 4.53 3.24 7.86 7.98 7.86 3.03 0 5.34-1.41 6.6-3.45l-1.74-1.02c-.81 1.44-2.46 2.55-4.83 2.55-3.18 0-5.55-1.89-5.97-4.95h13.17c.03-.3.06-.63.06-.93 0-4.11-2.85-7.92-7.44-7.92zm0 1.92c2.58 0 4.98 1.71 5.4 5.01h-11.19c.39-2.94 2.64-5.01 5.79-5.01zM221.224 20.92V19h-4.32v-4.2l-1.98.6V19h-3.15v1.92h3.15v9.09c0 3.6 2.25 4.59 6.3 3.99v-1.74c-2.91.12-4.32.33-4.32-2.25v-9.09h4.32zM225.176 22.93c0-1.62 1.59-2.37 3.15-2.37 1.44 0 2.97.57 3.6 2.1l1.65-.96c-.87-1.86-2.79-3.06-5.25-3.06-3 0-5.13 1.89-5.13 4.29 0 5.52 8.76 3.39 8.76 7.11 0 1.77-1.68 2.4-3.45 2.4-2.01 0-3.57-.99-4.11-2.52l-1.68.99c.75 1.92 2.79 3.45 5.79 3.45 3.21 0 5.43-1.77 5.43-4.32 0-5.52-8.76-3.39-8.76-7.11zM244.603 20.92V19h-4.32v-4.2l-1.98.6V19h-3.15v1.92h3.15v9.09c0 3.6 2.25 4.59 6.3 3.99v-1.74c-2.91.12-4.32.33-4.32-2.25v-9.09h4.32zM249.883 21.49V19h-1.98v15h1.98v-8.34c0-3.72 2.34-4.98 4.74-4.98v-1.92c-1.92 0-3.69.63-4.74 2.73zM263.358 18.64c-4.65 0-7.83 3.45-7.83 7.86 0 4.53 3.24 7.86 7.98 7.86 3.03 0 5.34-1.41 6.6-3.45l-1.74-1.02c-.81 1.44-2.46 2.55-4.83 2.55-3.18 0-5.55-1.89-5.97-4.95h13.17c.03-.3.06-.63.06-.93 0-4.11-2.85-7.92-7.44-7.92zm0 1.92c2.58 0 4.98 1.71 5.4 5.01h-11.19c.39-2.94 2.64-5.01 5.79-5.01zM286.848 19v2.94c-1.26-2.01-3.39-3.3-6.06-3.3-4.23 0-7.74 3.42-7.74 7.86s3.51 7.86 7.74 7.86c2.67 0 4.8-1.29 6.06-3.3V34h1.98V19h-1.98zm-5.91 13.44c-3.33 0-5.91-2.61-5.91-5.94 0-3.33 2.58-5.94 5.91-5.94s5.91 2.61 5.91 5.94c0 3.33-2.58 5.94-5.91 5.94zM309.01 18.64c-1.92 0-3.75.87-4.86 2.73-.84-1.74-2.46-2.73-4.56-2.73-1.8 0-3.42.72-4.59 2.55V19h-1.98v15H295v-8.31c0-3.72 2.16-5.13 4.32-5.13 2.13 0 3.51 1.41 3.51 4.08V34h1.98v-8.31c0-3.72 1.86-5.13 4.17-5.13 2.13 0 3.66 1.41 3.66 4.08V34h1.98v-9.36c0-3.75-2.31-6-5.61-6z",
+          fill: "#000"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z",
+          fill: "#6875F5"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z",
+          fill: "#6875F5"
+        }
+      })
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ApplicationMark.vue?vue&type=template&id=6ed2e539&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Jetstream/ApplicationMark.vue?vue&type=template&id=6ed2e539& ***!
@@ -50983,8 +51204,8 @@ var render = function() {
     "svg",
     {
       attrs: {
-        viewBox: "0 0 48 48",
-        fill: "none",
+        version: "1.1",
+        viewBox: "0 0 720.63 597.19",
         xmlns: "http://www.w3.org/2000/svg"
       }
     },
@@ -50992,18 +51213,341 @@ var render = function() {
       _c("path", {
         attrs: {
           d:
-            "M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z",
-          fill: "#6875F5"
+            "m563.41 6.0112c-0.73333 0.1-1.3333 0.76667-2.9 3.1333-1.1 1.6333-2.0666 2.9667-2.1666 2.9667-0.0667 0-0.76668-1.3667-1.5334-3.0333l-1.4333-3.0333-1.5 0.23333c-17.3 2.4333-32.7 10.233-42.4 21.4-2.8667 3.2667-5.4333 6.9333-6.6333 9.3667-0.46667 0.93333-0.9 1.7-1 1.7s-0.7-1.0667-1.3333-2.4c-3.6667-7.4667-11.333-15.033-19.633-19.367-3.6-1.8667-8.5333-3.8333-9.8333-3.9333-0.36667-0.0333-1.7333 0.6-3 1.3667-1.2333 0.76667-2.3333 1.3333-2.4333 1.2333-0.1-0.0667-0.56667-1.5333-1.0667-3.2333-1.0333-3.6-0.66667-3.4-6.6667-3.9333-16.833-1.5333-31.767 1.4-42.2 8.2667-2.4333 1.6-7.1667 5.9333-7.1667 6.5667 0 0.23334 0.83333 0.13334 2.4333-0.23333 6.0333-1.5333 16-2.2333 21.433-1.5333l2.0333 0.26666 2.5667-1.9c1.4-1.0333 2.6333-1.8 2.7-1.7333 0.1 0.0667 0.33333 1.2667 0.53333 2.6333l0.36667 2.5 3.8667 0.43334c20.633 2.2 38.467 10.733 46.767 22.433 0.7 0.96666 0.73333 1.0333 0.1 0.8-6.1-2.5-10.633-3.5-17.367-3.7667l-5.0667-0.2-1.7 1.5667c-0.96666 0.83333-1.8667 1.5333-2 1.5333-0.16666 0-0.96666-0.76667-1.8-1.7l-1.5667-1.7333-2.5667 0.0667c-8.1667 0.2-17.633 2.8-24.833 6.8333-7.6333 4.2667-15.9 13.267-19.1 20.767l-0.93333 2.2 2.1333 1.9 2.1 1.9-2.7667 1.3-2.7667 1.2667 0.2 4.0333c0.36666 7.2667 2.1667 14.367 5.1667 20.333 1.4 2.8333 3.7667 6.6 4.3 6.9333 0.16667 0.1 0.26667-2.6333 0.26667-6.0333 0-5.1333 0.13333-6.9 0.76667-9.9667 1.6333-8.1 5.0333-15.767 9.7667-21.933l1.2667-1.7 0.1-3.7333 0.1-3.7333 5.8667 4.2667 3.2333-1.4333c5.3667-2.3667 10.5-3.7333 17.4-4.6667 4.1333-0.56667 14.933-0.66667 19.6-0.16667 3.8667 0.43333 10.8 1.6333 11.167 2 0.13334 0.13333-0.83333 0.33333-2.1667 0.43333-10.067 0.9-21.467 5.7333-27.933 11.8l-2.1333 2 1.0667 2.7667c0.6 1.5333 1.0333 2.8333 0.93333 2.9-0.0667 0.0667-1.5667 0.36667-3.3333 0.66667-2.2667 0.36666-3.3333 0.7-3.5333 1.1-0.56666 1.0333-3 10.533-3.9667 15.5-2.6667 13.433-2.7333 27.167-0.23334 36.867 0.93334 3.5333 2.8667 8.4 3.9 9.6333l0.66667 0.83333-0.23333-1.5667c-0.5-3.7667 1.2-12.767 3.7-19.267 2.6333-6.9667 7.8-16.4 12.9-23.7l2.5-3.5333-2.1-2.8c-1.1667-1.5333-2.1333-2.9-2.1333-3s1.5333-0.13333 3.4333-0.0667l3.4 0.16666 2.1-2.8667c2.2333-3.0333 8.5667-10.367 10.4-12.033 0.86666-0.8 1.1333-0.9 1.2667-0.5 0.0667 0.26667 0.76667 1.1 1.5333 1.8333 2.1 2.0333 4.9667 2.7 7.4 1.6667 0.9-0.36666 1.2-0.36666 1.3-0.0667 0.76666 2.4 3.8333 17.133 5.3 25.4 4.3667 24.4 6.1333 43.333 6.4333 67.733 0.26667 23.067-0.7 37.9-3.7667 56.867-0.46666 2.9-0.8 5.3333-0.73333 5.4 0.43333 0.43334 6.9667 1.8667 9.8333 2.1667 4.8667 0.5 10.433-0.26667 13.567-1.9l0.96667-0.5-0.23334-5.2c-2.1333-49.733-9.4-101.5-20.567-146.23-1.1-4.4-2.0667-8.2333-2.1333-8.5-0.1-0.33333 0.2-0.66667 0.9-0.93333 1.4-0.5 1.3333-0.56667 10.867 8.9l7.7667 7.7 3.1667-0.53334c1.7333-0.3 3.2333-0.46666 3.3-0.4 0.1 0.0667-0.13333 1.1-0.5 2.2667-0.36666 1.1667-0.6 2.1667-0.56666 2.2 0.0334 0 2.3333 1.2 5.1333 2.6 13.433 6.8333 24.367 16.067 31.167 26.2 1.3 1.9333 2.3667 3.5333 2.4334 3.6 0.13332 0.16667-0.16668-2.8-0.7-6.7667-1.3334-9.7-4.7667-19.1-9.4667-25.8l-1.6667-2.3333-5-0.2 1.3667-2.2667 1.3333-2.2667-1.3-1.5667c-7.5-8.9333-22.533-17.2-41.9-23.067-3.1-0.93333-5.9-1.8333-6.1667-1.9333-0.86667-0.4 4.0333-0.43333 7.5333-0.1 8.2333 0.83333 17.2 3.6333 23.567 7.3333l2.2333 1.3333 2.9333-4.3333 1.7 2.8 1.6667 2.8 3.6333-0.16666c4.1334-0.16667 14 0.4 19.9 1.1333 5.8 0.73333 16.4 2.9333 22.267 4.6 5.0667 1.4667 12.9 4.1667 14.667 5.1 0.5333 0.26667 1.0333 0.43333 1.1 0.36667 0.26665-0.3-5.3667-7.1333-9.0334-10.9-6-6.2-12.467-11.267-19.4-15.3l-2.3666-1.4-3.3667 1.9667c-1.8333 1.1-3.4 1.9-3.5 1.7667-0.0667-0.13333-0.33332-1.6333-0.56667-3.3667-0.23333-1.7333-0.63333-3.3-0.83333-3.5333-0.4-0.4-6.7-1.7333-12.533-2.6667-9.6333-1.5-23.8-1.9333-32.667-1-5.5333 0.56667-11.767 1.8-15.667 3.0667-1.6 0.53333-2.8 0.83333-2.7333 0.7 0.0667-0.1 2.2667-1.5 4.9-3.0667 13.033-7.8 27.033-12.433 41-13.6 4.0333-0.33334 4.9-0.5 4.9-0.9 0-0.3-0.23332-1.8667-0.53332-3.5-0.26668-1.6-0.43335-3-0.36668-3.0667 0.0667-0.1 2.3667 0.8 5.1 2l4.9667 2.1333 1.1666-0.73333c9.9-6 20.867-9.9 34.667-12.3l4.5-0.8-4.6666-2.3333c-8.9-4.4667-17.633-7.5333-26.167-9.2333-6.1667-1.2333-13.2-1.7667-16.433-1.3z",
+          fill: "#263740",
+          "stroke-width": ".033333"
+        }
+      }),
+      _vm._v(" "),
+      _c("circle", {
+        attrs: { cx: "339.05", cy: "341.19", r: "256", fill: "#065f46" }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m83.047 489.19h512v12c0 6.6-5.4 12-12 12h-488c-6.596 0-12-5.4-12-12z",
+          fill: "#b3b3b3"
+        }
+      }),
+      _vm._v(" "),
+      _c("polygon", {
+        attrs: {
+          transform: "translate(83.047 85.194)",
+          points: "432 332 80 332 0 404 512 404",
+          fill: "#e6e6e6"
+        }
+      }),
+      _vm._v(" "),
+      _c("polygon", {
+        attrs: {
+          transform: "translate(83.047 85.194)",
+          points: "41.696 388 86.14 348 425.86 348 470.3 388",
+          fill: "#f5f5f5"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d: "m371.05 489.19c0 4.416-3.584 8-8 8h-56c-4.416 0-8-3.584-8-8z",
+          fill: "#e6e6e6"
         }
       }),
       _vm._v(" "),
       _c("path", {
         attrs: {
           d:
-            "M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z",
-          fill: "#6875F5"
+            "m163.05 417.19v-216c0-6.6 5.404-12 12-12h328c6.6 0 12 5.4 12 12v216z",
+          fill: "#263740"
         }
-      })
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m623.78 93.911c-4.9334 0.36666-12.633 2.0333-14.967 3.2667-0.73334 0.36666-1.0667 0.93334-1.6667 3.0333l-0.73333 2.5667-3.6667-3.6-2.2333 1.1667c-3.2 1.6333-8.4667 5.2333-11.4 7.7667-5.5667 4.8-10.267 11.433-12.833 18.167l-0.93333 2.4333-1.2-2.3c-2.6-4.8667-6.4667-9.4333-10.767-12.6-3.4-2.5-3.7-2.6-5.6667-1.9333-1.1333 0.36667-1.7667 0.43334-2 0.2-0.2-0.2-0.43333-1.3333-0.53333-2.5667l-0.16667-2.2333-1.5333-0.66666c-4.2-1.8-11.567-3.6333-17.167-4.3-3.9333-0.46667-18.633 0.0667-24.2 0.9-10.867 1.5667-19.9 5.6-25.8 11.533-1.2667 1.2667-2.2333 2.3667-2.1333 2.4333 0.1 0.1 1.4333-0.1 2.9667-0.46666 1.5333-0.36667 4-0.83334 5.4667-1.1 2.8667-0.43334 14.1-0.6 15.533-0.2 0.7 0.2 1.2667-0.0667 3.3333-1.5667 1.3667-1 2.5667-1.8333 2.6667-1.8333 0.13334 0 0.33334 1.0667 0.46667 2.3333 0.13333 1.3 0.36667 2.4 0.5 2.5 0.16667 0.1 2.1333 0.4 4.4 0.7 2.2667 0.26667 5.8667 0.83333 8 1.2667 4.1667 0.83333 12.267 3.1667 12.267 3.5 0 0.13333-1.3 0.46666-2.8667 0.8-6.6 1.3667-14.967 4.7-20.133 8.0667-1.3667 0.9-4.0667 3.2-6 5.1333-2.7667 2.7667-3.8333 4.1-4.9 6.2-1.1333 2.2-1.8333 3.0333-3.8 4.6667-4.3 3.5667-9.8 10.967-11.5 15.4l-0.56667 1.4667 3.8 3.8667-2.5667 1.2333-2.5667 1.2 0.2 4.1c0.36666 6.9667 2.0667 13.6 4.9333 19.3 1.3333 2.6333 3.6667 6.3667 4.2 6.7 0.16667 0.1 0.23333-2.2333 0.16667-5.1667-0.1-6.1667 0.56666-11.067 2.2667-16.267 1.1667-3.6333 4.5667-10.767 4.9667-10.533 0.16667 0.1 0.36667 0.6 0.46667 1.1 0.1 0.53333 0.43333 1.5333 0.76666 2.2667l0.56667 1.3333 0.46667-2.3333c0.9-4.4667 3.9667-12.3 5.1-13 0.16666-0.1 0.83333 0.2 1.4667 0.66666l1.1333 0.86667 1.9667-0.96667c3.5-1.7667 9.9-3.7667 14.6-4.5667l1.3333-0.23334-2.8667 2.9667c-3.3333 3.4-5.2 6.1-7.0333 10-1.5 3.2-2.9333 8.4667-2.9333 10.767v1.6l3.6667 1.5333-1.6333 1.6667-1.6667 1.7 1.1667 2.8333c1.1667 2.8333 1.1667 2.8333 0.8 5.6667-0.43334 3.5333-0.43334 6.5667 0 9.1667 0.16666 1.1 0.36666 5.2333 0.46666 9.1667 0.13334 7.5667 0.76667 12.367 2.2 17.167 0.73334 2.4 3.3 8.1667 3.6333 8.1667 0.1 0 0.2-1.7667 0.23333-3.9333 0.0334-4.4333 0.63333-7.8 2.3667-13 2.4333-7.3667 6.5667-15.467 12.3-23.967l3.4-5.0667-1.9667-2.6c-1.0667-1.4333-1.9667-2.7333-1.9667-2.8667 0-0.16667 1.4-0.2 3.1-0.0667l3.1333 0.23333 2.2667-2.8667 0.56667 5.3333c1.6333 14.9 6 26.6 12.433 33.233 1.5333 1.6333 2.2 1.9 1.5333 0.63333-0.7-1.3333-1.7-6.2667-1.9-9.5667-0.4-6.1667 1.1667-17.033 3.5333-24.5 0.53333-1.7333 1-3.1667 1-3.2 0 0-0.96667-0.7-2.1667-1.5s-2.1667-1.5333-2.1667-1.6333c0-0.13333 1.0333-0.46666 2.3-0.8 2-0.53333 2.3667-0.73333 2.6333-1.5333 0.3-0.83333 0.5-0.9 2.6-1.1 1.2667-0.1 2.3333-0.13333 2.3667-0.1 0.0334 0 0.73333 3.3333 1.6 7.3333 4.5667 21.767 7.3333 42.5 8.5333 64.433 0.5 9.5333 0.23333 36.5-0.5 44.767-0.63334 7.4-1.9667 18.167-3 24.267l-0.73334 4.4333 2.1667 0.66667c6.8667 2.1 14.233 2.1333 19.533 0.0333l1.6667-0.66667-0.1-3.9333c-0.36667-14.367-2.2333-37.8-4.6-57.8-2.9667-25.1-8.1-54.433-13.6-77.5-1.1667-4.9667-2.1-9.0333-2.0333-9.1 0.0667-0.0667 0.83333 1.1667 1.7 2.7 1.7667 3.1 1.9667 3.2333 5.4 3.2333h1.4333l-0.9 1.6667-0.9 1.6333 1.1333 0.93333c2.2 1.7667 8.4 7.9667 10.3 10.267 4.1667 5.0667 8 11.767 9.8333 17.133l0.73333 2.2 0.46667-2.5c0.3-1.5667 0.43333-4.7667 0.43333-8.5 0-5.7-0.16665-7.2-1.3333-11.633l-0.23332-0.96667 1.9666 1.1c3.6334 2 10.267 6.6333 13.633 9.4333 5.5666 4.6667 10.533 10.233 13.667 15.4l1.2334 2-0.2-3.1333c-0.6-9.2333-4.2333-20.367-9.0667-27.6l-1.8333-2.7667h-2.5c-1.3667 0-2.4667-0.0667-2.4667-0.16667 0-0.0667 0.6-1.1333 1.3-2.3l1.3333-2.1333-2.1333-2.5c-1.2-1.3667-2.4-2.6-2.7-2.7-0.3-0.13334-0.5-0.3-0.4-0.4 0.3-0.26667 6.7667 2.7 11.333 5.2333 4.3 2.3667 9.4333 5.6 11.7 7.3667 0.7667 0.6 1.2334 0.83333 1.2334 0.53333 0-0.23333-0.73335-1.9667-1.6666-3.8667-0.9-1.8667-1.5-3.4-1.3334-3.4 0.13335 0 0.33335 0.2 0.43335 0.4 0.0667 0.23334 0.2333 0.33334 0.36665 0.23334 0.3-0.3-3.2334-7.3-5.1333-10.1-0.9-1.3667-2.4-3.4-3.3333-4.5-2-2.4-2.2333-2.3 3.9333-1.5333 9.7334 1.2 20.8 3.8 29.733 6.9333 2.8334 1 5.7334 2.0667 6.4666 2.3667l1.2667 0.56667-0.7667-1.1c-4.5666-6.5333-12.833-14.767-20.2-20.033-2.4333-1.7667-8.1666-5.2333-8.6333-5.2333-0.2 0-1.8 0.83333-3.5 1.8333l-3.1334 1.8333-0.53335-3.3333c-0.26665-1.8333-0.66665-3.4667-0.8333-3.6333-0.33335-0.3-8.6-2.0333-9.7667-2.0333-0.4 0-0.7-0.13334-0.7-0.26667 0-0.46667 7.8334-1.7333 12.6-2.0667 2.6334-0.16666 6.1667-0.16666 9.1 0 6.3334 0.43334 5.8 0.43334 5.2667-0.23333-0.43335-0.5-0.2667-0.53333 1.9666-0.33333 1.3 0.1 2.4 0.13333 2.4 0.1 0-0.2-5.5-3.7667-7.7-4.9667-1.2-0.66667-3.6666-1.8667-5.5-2.7-1.8-0.8-4.2-2-5.3-2.6667-3.2333-2-8.4-4.3667-12.067-5.5333-2.7333-0.86667-3.4333-1.2-3.4333-1.7 0-0.36667 0.0666-0.63333 0.13332-0.63333 0.1 0 2.2667 0.9 4.8667 2l4.7333 1.9667 3.4667-2c8-4.6667 19.733-8.6 31.5-10.533 4.0334-0.66667 4.1-0.56667-2.2-3.6-11.2-5.3667-21.4-8.3667-31.8-9.3333l-2.4667-0.23334 2.8-1.6333c1.5333-0.9 3.5-2 4.3667-2.4s1.5666-0.83333 1.6-0.93333c0-0.23334-4.7667-0.9-9.3333-1.3-3.3666-0.3-8.4666-0.33334-11.667-0.1zm-80.767 29.633 2.0667 0.9-0.9 1.1c-0.5 0.63333-0.96667 1.1333-1.0667 1.1333s-0.46667-0.5-0.86667-1.1c-0.36666-0.56666-0.96666-1.4667-1.2667-2-0.76667-1.1333-0.56667-1.1333 2.0333-0.0333z",
+          fill: "#263740",
+          "stroke-width": ".033333"
+        }
+      }),
+      _vm._v(" "),
+      _c("rect", {
+        attrs: {
+          x: "187.05",
+          y: "213.19",
+          width: "304",
+          height: "184",
+          fill: "#fff"
+        }
+      }),
+      _vm._v(" "),
+      _c("circle", {
+        attrs: { cx: "495.05", cy: "425.19", r: "4", fill: "#065f46" }
+      }),
+      _vm._v(" "),
+      _c("circle", {
+        attrs: { cx: "339.05", cy: "201.19", r: "4", fill: "#065f46" }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m543.05 505.19h-40c-2.208 0-4-1.788-4-4s1.792-4 4-4h40c2.212 0 4 1.788 4 4s-1.788 4-4 4z",
+          fill: "#263740"
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "g",
+        {
+          attrs: {
+            transform: "matrix(.66395 0 0 .642 -40.032 -6.603e-5)",
+            fill: "#263740"
+          }
+        },
+        [
+          _c("g", { attrs: { id: "Layer_1_16_", fill: "#263740" } }, [
+            _c("g", { attrs: { fill: "#263740" } }, [
+              _c("path", {
+                attrs: {
+                  d:
+                    "m351.03 176.62-50.863-30.197s-12.303-6.998-23.23-18.43c-21.667-22.667-41.416-33.667-74.481-31.573l-65.874 5.922-3.282 0.714c-8.933 1.959-15.822 9.687-16.316 19.26l-3.68 71.223c-0.445 8.472 5.298 16.264 13.856 18.121 9.507 2.063 18.886-3.973 20.948-13.479l11.08-51.088 22.501-1.978s-21.491 82.675-22.018 85.017l-11.206 49.861-72.481 27.276c-11.617 4.411-18.223 17.09-14.77 29.27 3.646 12.87 17.035 20.346 29.904 16.7l90.242-25.573c8.139-2.373 15.123-8.725 17.765-17.443l0.639-2.104 12.856-42.404 32.277 40.113 1.945 91.063c0.3 12.493 10.163 22.951 22.855 23.661 13.354 0.747 24.786-9.472 25.533-22.824l5.685-101.59c0.3-5.364-1.119-10.882-4.422-15.636l-32.492-46.783c4.536-12.117 10.998-30.312 16.445-49.213l52.703 25.424c8.737 4.182 19.452 1.107 24.492-7.383 5.337-8.986 2.377-20.596-6.611-25.931z"
+                }
+              }),
+              _vm._v(" "),
+              _c("path", {
+                attrs: {
+                  d:
+                    "m271.05 107.46c28.821 10.054 60.327-5.155 70.382-33.975 10.052-28.814-5.154-60.328-33.971-70.38-28.82-10.055-60.331 5.157-70.384 33.973-10.053 28.821 5.153 60.328 33.973 70.382z"
+                }
+              })
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "g",
+        { attrs: { transform: "matrix(.37616 0 0 .30618 179.29 121.39)" } },
+        [
+          _c("path", {
+            attrs: {
+              d:
+                "m375.81 686.75-0.80148 0.3206c-8.7406 2.1431-16.018 8.879-19.396 17.152-7.7174 14.756-19.379 27.831-34.464 35.265-18.795 4.6897-38.251 5.7554-57.547 5.931-18.031 0.31341-36.03 1.1116-54.02-0.48064-13.776-1.2593-27.586-3.2714-40.876-7.2134-5.7021-1.2841-11.24-3.1964-16.991-4.1677-5.5342-1.0605-12.13 2.2597-12.503 8.3354-0.0734 1.869 0.416 3.5532 1.2824 4.9692-0.6693 4.0368-2.1279 8.0902-2.2442 12.183-1.8774 11.226-4.2885 22.718-1.7633 33.983 1.2582 11.8 3.3858 13.764 7.0531 20.839 7.7042 11.092 20.926 18.86 33.502 26.289 7.5699 4.5259 16.287 7.6886 25.487 9.4575 32.278 7.9678 64.503 16.358 96.499 25.006 9.0072 3.6549 19.121 4.1647 27.892 4.328 50.967 0.63462 101.96 1.2263 152.92 2.0839 6.3124 0.24827 12.613 0.40882 18.915-0.16004l76.141-3.5265c14.088-1.587 28.271-2.9052 42.318-4.8089 5.036-1.0089 9.7958-2.9208 14.427-5.1295 6.4502-2.8193 17.458-6.5752 22.484-11.541 29.138-34.133 56.325-70.874 84.755-105.48 0.30059-0.55101 0.058-1.2252-0.48064-1.7633 0.10516-0.0103 0.21544 0.0103 0.3206 0 1.3142-1.9354-4.9858-2.7978-6.5722-3.6868-6.5392-1.0184-13.101-1.8765-19.556-3.3662-24.872-4.6204-49.864-8.9493-75.179-10.099-32.082-1.9474-26.551-1.7296-58.669-2.8854-18.377-27.375-61.969-40.169-104.95-44.33-42.98-4.1604-83.92-1.4033-97.987 2.4921z",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m675.24 820.76c-6.0576 7.9892-11.688 15.625-16.991 22.922l-6.4119 6.5722c-4.1634 4.2467-9.057 7.6495-13.786 11.221-5.7549 3.0215-11.986 5.1868-18.434 6.0913-13.235 2.3596-26.645 4.4784-40.074 5.2898-8.6998 0.55116-17.262 1.7346-25.968 2.2442-20.401 1.291-40.807 1.5254-61.233 2.2442-17.517 0.47961-35.057 1.2921-52.577 1.603-9.0688-0.0205-18.186 0.68525-27.25 0.16004-31.116-0.99702-62.184-2.5032-93.293-3.6868-19.407-6.0102-95.206-23.087-115.09-30.296-8.0523-3.0896-13.736-5.8302-19.396-8.9766 48.94 13.49 146.5 15.626 262.25 8.8163 33.694-1.898 183.59-11.574 215.28-17.472 4.9123-0.89935 9.1239-3.4427 12.984-6.7325z",
+              fill: "#fff"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m380.78 696.05c10.285-0.0918 19.997 2.9125 28.212 9.6178 9.2698 7.5658 3.9518 41.094 7.2134 53.219 0.3011 0.29187 0.5803 0.48782 0.80148 0.80149-189.69 8.4717-221.23-0.3565-260.96-13.465 51.856 4.112 126.5 15.291 188.67 0.96178 0.0626-0.0585 0.0944-0.10053 0.16004-0.16004 5.1979-2.3005 23.475 3.9599 16.671-37.189 0.39292-7.598 8.0266-12.039 14.908-13.465 1.4905-0.13439 2.8587-0.30726 4.328-0.32059z",
+              fill: "#fff"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m382.39 701.47c-11.552 0.98441-14.519 5.2908-14.533 9.2072-0.81539 11.615-0.21852 23.371 0.62913 35.149 0.16415 9.8456 0.54717 19.715 0.88643 29.579-3.6718 2.5177 5.8629 6.5176 14.873 7.2873 6.7264 1.1032-7.0454 4.018-0.16363 2.505 6.3515-1.4514 17.117-1.6554 18.578-4.7003 4.438-9.3262 6.9722-15.792 6.8846-25.644-0.6949-12.308-1.4069-25.615-1.4396-37.865-0.71685-3.1843 2.3365-6.3472-3.3107-9.7102-3.9618-1.7395-16.762-6.1965-22.418-5.8083z",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("g", { attrs: { fill: "#fff" } }, [
+            _c("path", {
+              attrs: {
+                d:
+                  "m433.3 701.05c8.8074 0.709 14.109 1.7075 21.258 2.5342 4.6424 1.1046 4.6712 4.0777 4.8233 7.6026l0.71454 42.237c-0.13234 4.4161-2.2465 5.8524-5.3592 5.4908-7.5129-0.10874-14.749 0.14055-22.509-0.21082-5.0525-0.29648-6.8556 0.11131-6.2524-7.3914l-1.0719-43.293c-0.0682-3.1101 3.2492-7.6265 8.3961-6.9694z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                d:
+                  "m479.99 705.45c11.933-1.9781 33.724 1.043 41.807 2.9724 8.0829 1.9294 7.9819 5.4329 8.1778 7.7402l1.1098 37.909c0.47448 2.9315-1.3424 4.1943-7.5118 4.3124-12.333 0.26468-26.708 0.41447-39.397 0.42062-11.421-0.34829-10.961-2.2305-10.834-7.5621l-2.7085-40.541c1.485-5.266 5.6292-5.0226 9.3568-5.2515z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                d:
+                  "m555.64 718.54c4.9274 3.1279 23.072 18.112 27.17 33.276 0.58 4.1563-1.5444 3.3953-4.2678 3.4515-2.7234 0.0564-20.943 1.2708-31.989 2.0728-1.7924 0.10926-2.0453-0.52234-2.0875-4.5013l-0.98887-33.146c-0.21903-9.1868 7.2366-4.2805 12.164-1.1526z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                d:
+                  "m142.58 749.42c2.2826 2.0492 5.397 3.446 8.1751 4.328 18.552 6.3498 38.231 8.0657 57.547 10.74 28.176 2.7648 56.481 4.5377 84.797 4.6486 52.677 0.91628 105.38-0.40882 158.05-1.2824 49.583-0.98579 99.106-2.2504 148.6-5.6104 29.756-1.6333 59.339-4.8741 88.965-8.0148 13.606-1.4844 27.27-3.1686 40.876-4.6486-10.527 14.065-22.902 30.242-35.426 46.486-188.68 11.714-407.99 25.644-550.78-2.8853-0.56091-10.213-1.838-28.529-1.1221-37.99 0.0154-1.8962 0.2021-3.8042 0.32059-5.7707z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                d:
+                  "m584.85 736.99c3.6478 3.7828 3.9214 6.0129 10.751 13.576 13.719 0.15286 69.074-2.9719 82.728-2.7703 14.805-0.50321 27.024-0.62585 28.173-1.5532-40.247-9.9437-86.501-8.7177-121.65-9.2522z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              attrs: {
+                transform: "matrix(5.1295 0 0 5.1295 -1089.8 -480.37)",
+                d:
+                  "m285.11 237.61a0.74482 0.92007 0 0 1 1.0524 0.0427 0.74482 0.92007 0 0 1-0.034 1.3001 0.74482 0.92007 0 0 1-1.0525-0.0412 0.74482 0.92007 0 0 1 0.0327-1.3002"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              transform: "matrix(3.2213 0 0 3.5421 -544.54 -101.86)",
+              d:
+                "m285.11 237.61a0.74482 0.92007 0 0 1 1.0524 0.0427 0.74482 0.92007 0 0 1-0.034 1.3001 0.74482 0.92007 0 0 1-1.0525-0.0412 0.74482 0.92007 0 0 1 0.0327-1.3002",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d: "m366.42 761.57c13.519-2.4022 27.275-3.4654 41.658-1.8244z",
+              fill: "#fff"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m434.88 703.02c7.3917 0.62021 7.8074-1.1653 17.977 2.3505 3.9257 1.0245 3.9501 3.7822 4.0787 7.0516l0.60425 39.176c-0.11182 4.0961-1.8997 5.4282-4.5319 5.0929-6.3531-0.10105-12.472 0.1308-19.034-0.19543-4.2725-0.27494-5.7974 0.10259-5.2872-6.8557l-0.90639-40.155c0.099-4.3041 2.0709-6.7428 7.1-6.4645z",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m435.95 705.3c6.3771 0.60107 10.216 1.4476 15.392 2.1485 3.3614 0.93649 3.3823 3.4573 3.4924 6.4458l0.51741 37.623c-0.0954 3.7442-1.6267 3.1497-3.8804 2.8431-5.4398-0.0923-10.679 0.11952-16.298-0.1785-3.6583-0.25135-4.9639 1.9061-4.5271-4.4545l-0.7761-38.518c0.49192-4.9564 2.1612-6.4948 6.0793-5.9093z",
+              fill: "#fff"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m481.71 707.12c5.8933-0.42267 27.231 1.8368 37.178 4.7392 9.9469 2.9025 7.0651 4.3016 7.2335 6.4234l0.48012 33.619c0.0154 1.9911-0.76147 2.8918-6.0354 3.0187-10.702 0.2298-23.175 0.35958-34.187 0.36471-7.6872 0.0816-9.5132-1.9336-9.4013-6.562l-2.3504-35.179c-0.42934-3.9899 5.4557-6.6686 7.0822-6.4238 1.6266 0.24468-5.8934 0.42267-1.5e-4 1.6e-4z",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m484.04 709.46c13.968 0.11285 23.734 2.7767 34.085 4.345 4.7112 0.37291 6.2931 4.3423 5.8882 5.6296l0.15902 29.893c0.17748 2.2098-0.41344 3.5886-5.2522 3.6965-9.8114 0.21083-21.247 0.32983-31.342 0.33445-6.0496 0.38163-8.7201-1.7281-8.6191-6.016l-2.1549-32.252c-0.35855-3.9345 4.254-6.1539 7.2364-5.6298z",
+              fill: "#fff"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m556.03 721.51c4.2606 2.6453 20.432 15.54 23.493 28.141 0.15902 3.393-1.4001 2.5665-3.6903 2.9188-2.2903 0.3524-18.109 1.0747-27.661 1.753-1.5498 0.0923-1.7685-0.44165-1.8051-3.8067l-0.85493-28.031c-0.1898-7.7691 6.2573-3.6199 10.518-0.97471z",
+              fill: "#263740"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            attrs: {
+              d:
+                "m556.21 723.24c3.8811 2.3953 18.612 14.072 21.401 25.481 1.1686 3.3823-1.5147 2.2042-3.3617 2.6429-1.847 0.43857-16.497 0.97317-25.198 1.5873-1.4118 0.0836-1.6111-0.39959-1.6443-3.4469l-0.77891-25.382c-0.17287-7.0348 5.7002-3.2778 9.5815-0.88264z",
+              fill: "#fff"
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "g",
+        {
+          attrs: {
+            transform: "matrix(.40778 0 0 .31937 154.43 110.28)",
+            "shape-rendering": "auto"
+          }
+        },
+        [
+          _c("path", {
+            staticStyle: {
+              isolation: "auto",
+              "mix-blend-mode": "normal",
+              "text-decoration-color": "#000000",
+              "text-decoration-line": "none",
+              "text-decoration-style": "solid",
+              "text-indent": "0",
+              "text-transform": "none",
+              "white-space": "normal"
+            },
+            attrs: {
+              d:
+                "m74.967 805.82v96.555h754.54v-96.555h-7.0156l-0.0527 3.4473c-0.0755 5.0516-2.662 9.2187-7.3594 13.064-4.6974 3.8458-11.43 7.0748-18.732 9.5488-14.597 4.9458-31.545 6.939-38.855 7.0254-22.632-0.0146-42.402-5.7819-52.432-13.467l-2.6699-2.0469-2.1504 2.5859c-7.7429 9.3128-30.215 17.433-56.709 17.422-23.458-0.01-43.837-6.2335-53.5-14.299l-1.7559-1.4668-2.0469 1.0195c-10.943 5.449-27.187 9.0312-45.295 9.0234-20.031-9e-3 -37.809-4.4478-48.596-10.861l-1.8809-1.1191-1.8301 1.2031c-10.567 6.9436-29.206 11.898-50.324 11.889-22.086-0.01-41.438-5.4856-51.689-12.91l-1.9492-1.4121-2.0156 1.3164c-10.588 6.9098-29.151 11.831-50.197 11.822-22.411-0.01-42.027-5.6547-52.154-13.232l-2.4688-1.8457-2.1426 2.2148c-8.583 8.8735-30.26 16.234-55.598 16.223-14.021-6e-3 -26.94-2.1512-37.137-5.6738l-1.1426-0.39453-1.1406 0.39258c-10.201 3.5132-23.115 5.6348-37.139 5.6289l-0.56836-2e-3 -0.53906 0.18164c-14.949 4.9868-29.092-2.9007-40.408-12.715-5.658-4.9071-10.47-10.209-14.09-14.33-1.8101-2.0604-3.3132-3.8168-4.5508-5.1504-0.61879-0.66679-1.158-1.2231-1.7441-1.7246-0.58611-0.50156-0.84126-1.3574-3.1641-1.3574h-3.5z",
+              color: "#000000",
+              "color-rendering": "auto",
+              fill: "#263740",
+              "image-rendering": "auto",
+              "solid-color": "#000000"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: {
+              isolation: "auto",
+              "mix-blend-mode": "normal",
+              "text-decoration-color": "#000000",
+              "text-decoration-line": "none",
+              "text-decoration-style": "solid",
+              "text-indent": "0",
+              "text-transform": "none",
+              "white-space": "normal"
+            },
+            attrs: {
+              d:
+                "m77.078 812.49c0.02255 0.0193 0.10436 0.10706 0.13281 0.13281-0.25671-0.12206-0.24746-0.23092-0.13281-0.13281z",
+              color: "#000000",
+              "color-rendering": "auto",
+              "image-rendering": "auto",
+              "solid-color": "#000000"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: {
+              isolation: "auto",
+              "mix-blend-mode": "normal",
+              "text-decoration-color": "#000000",
+              "text-decoration-line": "none",
+              "text-decoration-style": "solid",
+              "text-indent": "0",
+              "text-transform": "none",
+              "white-space": "normal"
+            },
+            attrs: {
+              d:
+                "m81.967 817.88c0.27454 0.31392 0.40786 0.46132 0.69922 0.79297 3.6831 4.1924 8.7067 9.745 14.764 14.998 11.953 10.367 28.482 19.843 46.49 14.232 14.092-0.0321 27.098-2.105 37.885-5.6641 10.882 3.6035 24.034 5.7187 38.283 5.7246 25.044 0.0109 46.66-6.1286 58.404-16.422 12.372 8.14 31.834 13.053 53.957 13.062 20.998 9e-3 39.596-4.4379 52.029-11.805 12.375 8.0828 31.771 12.979 53.822 12.988 21.208 9e-3 39.99-4.5184 52.424-12.021 12.393 6.7721 30.16 10.901 50.209 10.91 18.058 8e-3 34.255-3.3534 46.383-8.9258 12.163 9.1307 32.684 14.638 56.213 14.648 26.079 0.0113 48.496-6.5526 59.82-17.701 12.358 8.2338 31.916 13.197 54.17 13.207h0.041c8.3798-0.097 25.444-2.1119 41.035-7.3945 7.7957-2.6413 15.204-6.084 20.92-10.764 1.0839-0.8874 2.0428-1.881 2.9942-2.877v40.442h-740.54v-47.432z",
+              color: "#000000",
+              "color-rendering": "auto",
+              fill: "#fff",
+              "image-rendering": "auto",
+              "solid-color": "#000000"
+            }
+          })
+        ]
+      )
     ]
   )
 }
@@ -51318,7 +51862,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
+        "inline-flex items-center px-4 py-2 bg-green-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-900 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
       attrs: { type: _vm.type }
     },
     [_vm._t("default")],
@@ -51986,7 +52530,7 @@ var render = function() {
   return _c("input", {
     ref: "input",
     staticClass:
-      "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
+      "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
     domProps: { value: _vm.value },
     on: {
       input: function($event) {
@@ -54790,11 +55334,13 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    { staticClass: "flex" },
+                    { staticClass: "xl:flex " },
                     [
                       _c("MyHolidays"),
                       _vm._v(" "),
-                      _c("TakeHolidayForm", { staticClass: "self-end mb-6" })
+                      _c("TakeHolidayForm", {
+                        staticClass: "self-end mb-6 mr-6"
+                      })
                     ],
                     1
                   )
@@ -56175,10 +56721,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e& ***!
+  \**************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -56195,356 +56741,78 @@ var render = function() {
     "div",
     {
       staticClass:
-        "relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"
+        "container mx-auto sm:flex justify-center md:flex-row items-center my-12 md:my-24"
     },
     [
-      _vm.canLogin
-        ? _c(
-            "div",
-            { staticClass: "hidden fixed top-0 right-0 px-6 py-4 sm:block" },
-            [
-              _vm.$page.props.user
-                ? _c(
-                    "inertia-link",
-                    {
-                      staticClass: "text-sm text-gray-700 underline",
-                      attrs: { href: "/dashboard" }
-                    },
-                    [_vm._v("\n            Dashboard\n        ")]
-                  )
-                : [
-                    _c(
-                      "inertia-link",
-                      {
-                        staticClass: "text-sm text-gray-700 underline",
-                        attrs: { href: _vm.route("login") }
-                      },
-                      [_vm._v("\n                Login\n            ")]
-                    ),
-                    _vm._v(" "),
-                    _vm.canRegister
-                      ? _c(
-                          "inertia-link",
-                          {
-                            staticClass: "ml-4 text-sm text-gray-700 underline",
-                            attrs: { href: _vm.route("register") }
-                          },
-                          [_vm._v("\n                Register\n            ")]
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6"
+        },
+        [
+          _c("p", { staticClass: "uppercase tracking-loose" }, [
+            _vm._v("The application your employer wants you to use the least.")
+          ]),
+          _vm._v(" "),
+          _c("h1", { staticClass: "font-bold text-8xl my-4 text-green-800" }, [
+            _vm._v("Holi-Day-Off")
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm.canLogin
+            ? _c(
+                "div",
+                { staticClass: "flex justify-center w-full" },
+                [
+                  _vm.$page.props.user
+                    ? _c(
+                        "jet-button",
+                        [
+                          _c(
+                            "inertia-link",
+                            { attrs: { href: "/dashboard" } },
+                            [
+                              _vm._v(
+                                "\n                    Go to site\n                "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    : [
+                        _c(
+                          "jet-button",
+                          { staticClass: "self-center" },
+                          [
+                            _c(
+                              "inertia-link",
+                              { attrs: { href: _vm.route("login") } },
+                              [
+                                _vm._v(
+                                  "\n                        Login\n                    "
+                                )
+                              ]
+                            )
+                          ],
+                          1
                         )
-                      : _vm._e()
-                  ]
-            ],
-            2
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "max-w-6xl mx-auto sm:px-6 lg:px-8" }, [
-        _c(
-          "div",
-          { staticClass: "flex justify-center pt-8 sm:justify-start sm:pt-0" },
-          [
-            _c(
-              "svg",
-              {
-                staticClass: "h-16 w-auto text-gray-700 sm:h-20",
-                attrs: {
-                  viewBox: "0 0 651 192",
-                  fill: "none",
-                  xmlns: "http://www.w3.org/2000/svg"
-                }
-              },
-              [
-                _c(
-                  "g",
-                  { attrs: { "clip-path": "url(#clip0)", fill: "#EF3B2D" } },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"
-                      }
-                    })
-                  ]
-                )
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg"
-          },
-          [
-            _c("div", { staticClass: "grid grid-cols-1 md:grid-cols-2" }, [
-              _c("div", { staticClass: "p-6" }, [
-                _c("div", { staticClass: "flex items-center" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "w-8 h-8 text-gray-500",
-                      attrs: {
-                        fill: "none",
-                        stroke: "currentColor",
-                        "stroke-linecap": "round",
-                        "stroke-linejoin": "round",
-                        "stroke-width": "2",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(0)
-                ]),
-                _vm._v(" "),
-                _vm._m(1)
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l"
-                },
-                [
-                  _c("div", { staticClass: "flex items-center" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "w-8 h-8 text-gray-500",
-                        attrs: {
-                          fill: "none",
-                          stroke: "currentColor",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          viewBox: "0 0 24 24"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            d:
-                              "M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                          }
-                        }),
-                        _c("path", {
-                          attrs: { d: "M15 13a3 3 0 11-6 0 3 3 0 016 0z" }
-                        })
                       ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(2)
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(3)
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "p-6 border-t border-gray-200 dark:border-gray-700"
-                },
-                [
-                  _c("div", { staticClass: "flex items-center" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "w-8 h-8 text-gray-500",
-                        attrs: {
-                          fill: "none",
-                          stroke: "currentColor",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          viewBox: "0 0 24 24"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            d:
-                              "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(4)
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(5)
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "p-6 border-t border-gray-200 dark:border-gray-700 md:border-l"
-                },
-                [
-                  _c("div", { staticClass: "flex items-center" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "w-8 h-8 text-gray-500",
-                        attrs: {
-                          fill: "none",
-                          stroke: "currentColor",
-                          "stroke-linecap": "round",
-                          "stroke-linejoin": "round",
-                          "stroke-width": "2",
-                          viewBox: "0 0 24 24"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            d:
-                              "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white"
-                      },
-                      [_vm._v("Vibrant Ecosystem")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(6)
-                ]
+                ],
+                2
               )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "flex justify-center mt-4 sm:items-center sm:justify-between"
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "text-center text-sm text-gray-500 sm:text-left" },
-              [
-                _c("div", { staticClass: "flex items-center" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "-mt-px w-5 h-5 text-gray-400",
-                      attrs: {
-                        fill: "none",
-                        "stroke-linecap": "round",
-                        "stroke-linejoin": "round",
-                        "stroke-width": "2",
-                        viewBox: "0 0 24 24",
-                        stroke: "currentColor"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "ml-1 underline",
-                      attrs: { href: "https://laravel.bigcartel.com" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Shop\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "ml-4 -mt-px w-5 h-5 text-gray-400",
-                      attrs: {
-                        fill: "none",
-                        stroke: "currentColor",
-                        "stroke-linecap": "round",
-                        "stroke-linejoin": "round",
-                        "stroke-width": "2",
-                        viewBox: "0 0 24 24"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "ml-1 underline",
-                      attrs: {
-                        href: "https://github.com/sponsors/taylorotwell"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Sponsor\n                    "
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0"
-              },
-              [
-                _vm._v(
-                  "\n                Laravel v" +
-                    _vm._s(_vm.laravelVersion) +
-                    " (PHP v" +
-                    _vm._s(_vm.phpVersion) +
-                    ")\n            "
-                )
-              ]
-            )
-          ]
-        )
-      ])
+            : _vm._e()
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "w-full lg:w-1/2 lg:py-6 flex justify-end" },
+        [_c("jet-application-mark", { staticClass: " h-auto " })],
+        1
+      )
     ]
   )
 }
@@ -56553,198 +56821,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-4 text-lg leading-7 font-semibold" }, [
-      _c(
-        "a",
-        {
-          staticClass: "underline text-gray-900 dark:text-white",
-          attrs: { href: "https://laravel.com/docs" }
-        },
-        [_vm._v("Documentation")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-12" }, [
-      _c(
-        "div",
-        { staticClass: "mt-2 text-gray-600 dark:text-gray-400 text-sm" },
-        [
-          _vm._v(
-            "\n                            Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.\n                        "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-4 text-lg leading-7 font-semibold" }, [
-      _c(
-        "a",
-        {
-          staticClass: "underline text-gray-900 dark:text-white",
-          attrs: { href: "https://laracasts.com" }
-        },
-        [_vm._v("Laracasts")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-12" }, [
-      _c(
-        "div",
-        { staticClass: "mt-2 text-gray-600 dark:text-gray-400 text-sm" },
-        [
-          _vm._v(
-            "\n                            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.\n                        "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-4 text-lg leading-7 font-semibold" }, [
-      _c(
-        "a",
-        {
-          staticClass: "underline text-gray-900 dark:text-white",
-          attrs: { href: "https://laravel-news.com/" }
-        },
-        [_vm._v("Laravel News")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-12" }, [
-      _c(
-        "div",
-        { staticClass: "mt-2 text-gray-600 dark:text-gray-400 text-sm" },
-        [
-          _vm._v(
-            "\n                            Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.\n                        "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-12" }, [
-      _c(
-        "div",
-        { staticClass: "mt-2 text-gray-600 dark:text-gray-400 text-sm" },
-        [
-          _vm._v(
-            "\n                            Laravel's robust library of first-party tools and libraries, such as "
-          ),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://forge.laravel.com" }
-            },
-            [_vm._v("Forge")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://vapor.laravel.com" }
-            },
-            [_vm._v("Vapor")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://nova.laravel.com" }
-            },
-            [_vm._v("Nova")]
-          ),
-          _vm._v(", and "),
-          _c(
-            "a",
-            { staticClass: "underline", attrs: { href: "https://envoyer.io" } },
-            [_vm._v("Envoyer")]
-          ),
-          _vm._v(
-            " help you take your projects to the next level. Pair them with powerful open source libraries like "
-          ),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/billing" }
-            },
-            [_vm._v("Cashier")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/dusk" }
-            },
-            [_vm._v("Dusk")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/broadcasting" }
-            },
-            [_vm._v("Echo")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/horizon" }
-            },
-            [_vm._v("Horizon")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/sanctum" }
-            },
-            [_vm._v("Sanctum")]
-          ),
-          _vm._v(", "),
-          _c(
-            "a",
-            {
-              staticClass: "underline",
-              attrs: { href: "https://laravel.com/docs/telescope" }
-            },
-            [_vm._v("Telescope")]
-          ),
-          _vm._v(", and more.\n                        ")
-        ]
-      )
+    return _c("p", { staticClass: "leading-normal mb-4" }, [
+      _vm._v(
+        "“Do not wait until you are dying to go on vacation. I think if I had to give you one piece of advice that would be it. We put things off. We do not mean to, but we do. We carry around the assumption that there is plenty of time to do whatever needs to be done.” – "
+      ),
+      _c("i", [_vm._v("Marty Cauley")])
     ])
   }
 ]
@@ -56772,12 +56853,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
-      _c("div", { staticClass: "flex justify-between " }, [
-        _c("div", { staticClass: "flex" }, [
+      _c("div", { staticClass: "lg:flex justify-between " }, [
+        _c("div", { staticClass: "flex pl-6" }, [
           _c(
             "div",
             { staticClass: "flex items-center" },
-            [_c("jet-application-mark", { staticClass: "block h-44 w-auto" })],
+            [
+              _c("HolidayMark", {
+                staticClass: "self-center block h-24 sm:h-44 w-auto"
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -56785,12 +56870,12 @@ var render = function() {
             "div",
             {
               staticClass:
-                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
             },
             [
               _vm._v(
                 "\n                    " +
-                  _vm._s(_vm.getToday()) +
+                  _vm._s(_vm.formatDate()) +
                   "\n                "
               )
             ]
@@ -56814,6 +56899,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
                   _vm._l(_vm.holidays, function(holiday) {
                     return _c(
                       "tr",
@@ -56823,7 +56909,7 @@ var render = function() {
                           ? _c(
                               "td",
                               {
-                                staticClass: "px-5 py-5  bg-white text-sm",
+                                staticClass: "px-2 py-5  bg-white ",
                                 class: _vm.holidayStatusClass(holiday)
                               },
                               [
@@ -56836,7 +56922,7 @@ var render = function() {
                                           "div",
                                           {
                                             staticClass:
-                                              "flex-shrink-0 w-10 h-10"
+                                              "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                           },
                                           [
                                             _c("img", {
@@ -56853,12 +56939,12 @@ var render = function() {
                                           "div",
                                           {
                                             staticClass:
-                                              "flex-shrink-0 w-10 h-10"
+                                              " flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                           },
                                           [
                                             _c("img", {
                                               staticClass:
-                                                "w-full h-full rounded-full",
+                                                " w-full h-full rounded-full",
                                               attrs: {
                                                 src:
                                                   "/storage/" +
@@ -56870,20 +56956,13 @@ var render = function() {
                                         ),
                                     _vm._v(" "),
                                     _c("div", { staticClass: "ml-3" }, [
-                                      _c(
-                                        "p",
-                                        {
-                                          staticClass:
-                                            "text-gray-900 whitespace-no-wrap"
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(holiday.user.name) +
-                                              "\n                                    "
-                                          )
-                                        ]
-                                      )
+                                      _c("p", [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(holiday.user.name) +
+                                            "\n                                    "
+                                        )
+                                      ])
                                     ])
                                   ]
                                 )
@@ -56892,9 +56971,19 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
-                          ? _c("td", { staticClass: "py-3 px-5 " }, [
-                              _vm._v(_vm._s(holiday.type))
-                            ])
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.type))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.description))]
+                            )
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
@@ -56906,6 +56995,53 @@ var render = function() {
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
                               _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _c(
+                                "div",
+                                { staticClass: "flex" },
+                                [
+                                  _c(
+                                    "inertia-link",
+                                    {
+                                      attrs: {
+                                        href: _vm.route(
+                                          "holiday.approve",
+                                          holiday.id
+                                        )
+                                      }
+                                    },
+                                    [
+                                      _c("CheckMark", {
+                                        staticClass: "h-8 w-8  text-green-700"
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "inertia-link",
+                                    {
+                                      attrs: {
+                                        href: _vm.route(
+                                          "holiday.decline",
+                                          holiday.id
+                                        )
+                                      }
+                                    },
+                                    [
+                                      _c("Decline", {
+                                        staticClass: "h-8 w-8 ml-4 text-red-700"
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
                             ])
                           : _vm._e()
                       ]
@@ -56943,7 +57079,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("prev")
@@ -56961,7 +57097,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("next")
@@ -56989,61 +57125,60 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "border-green-200 bg-green-200" }, [
-      _c("tr", [
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+    return _c(
+      "thead",
+      {
+        staticClass:
+          "border-green-800 bg-green-800 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider"
+      },
+      [
+        _c("tr", [
+          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
             _vm._v(
               "\n                            User\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Type\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Type\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Description\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
             _vm._v(
               "\n                            Leaves on\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
             _vm._v(
-              "\n                            Returns on\n                        "
+              "\n                            Until\n                        "
             )
-          ]
-        )
-      ])
-    ])
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
+            _vm._v(
+              "\n                            Action\n                        "
+            )
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -57088,11 +57223,131 @@ var render = function() {
           attrs: {
             d:
               "M3.179,332.702 L0,331.316 C58.162,299.934 102.129,272.143 165.059,241.357 C196.247,287.963 216.275,322.209 244.491,380.721 C317.446,243.823 400.046,84.169 579.494,-0 C573.704,75.61 572.435,133.976 590.088,199.231 C450.006,268.799 337.296,390.748 256.067,520.027 L254.581,522.431 C179.674,436.203 104.663,377.515 3.179,332.702 z",
-            fill: "#D40000",
+            fill: "#065F46",
             id: "path880"
           }
         })
       ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Decline.vue?vue&type=template&id=01c5bd4a& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      staticStyle: { "enable-background": "new 0 0 297 297" },
+      attrs: {
+        version: "1.1",
+        id: "Capa_1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+        x: "0px",
+        y: "0px",
+        viewBox: "0 0 297 297",
+        "xml:space": "preserve"
+      }
+    },
+    [
+      _c("g", [
+        _c("path", {
+          attrs: {
+            d:
+              "M293.805,219.495l-71.019-71.003l70.998-71.015c4.258-4.259,4.256-11.163-0.002-15.422L234.921,3.194\n\t\tC232.875,1.149,230.101,0,227.209,0c-2.893,0-5.667,1.15-7.712,3.196l-70.999,71.025L77.477,3.219\n\t\tc-4.26-4.258-11.162-4.257-15.422,0.001L3.194,62.081C1.149,64.127,0,66.901,0,69.794c0,2.893,1.15,5.666,3.196,7.711l71.035,71.01\n\t\tL3.248,219.525c-4.257,4.258-4.257,11.16,0,15.419l58.834,58.859c2.045,2.046,4.819,3.196,7.712,3.196h0.001\n\t\tc2.893,0,5.667-1.149,7.712-3.195l71.013-71.029l71.005,70.979c4.258,4.258,11.161,4.258,15.419,0l58.86-58.834\n\t\tc2.046-2.045,3.196-4.819,3.196-7.713C297,224.315,295.851,221.541,293.805,219.495z"
+          }
+        })
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HolidayMark.vue?vue&type=template&id=021987aa& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        version: "1.1",
+        viewBox: "0 0 720.63 597.19",
+        xmlns: "http://www.w3.org/2000/svg"
+      }
+    },
+    [
+      _c("g", { attrs: { fill: "#263740" } }, [
+        _c("path", {
+          attrs: {
+            d:
+              "m529.01 131.65c-0.36666 0.05-0.66665 0.38334-1.45 1.5666-0.55 0.81665-1.0333 1.4834-1.0833 1.4834-0.0333 0-0.38334-0.68335-0.7667-1.5166l-0.71665-1.5166-0.75 0.11667c-8.65 1.2166-16.35 5.1165-21.2 10.7-1.4334 1.6334-2.7166 3.4666-3.3166 4.6834-0.23333 0.46666-0.45 0.85-0.5 0.85s-0.35-0.53335-0.66665-1.2c-1.8334-3.7334-5.6665-7.5165-9.8165-9.6835-1.8-0.93335-4.2666-1.9166-4.9166-1.9666-0.18333-0.0166-0.86665 0.3-1.5 0.68335-0.61665 0.38333-1.1666 0.66665-1.2166 0.61665-0.05-0.0334-0.28333-0.76665-0.53335-1.6166-0.51665-1.8-0.33333-1.7-3.3334-1.9666-8.4165-0.76665-15.884 0.7-21.1 4.1334-1.2166 0.8-3.5834 2.9666-3.5834 3.2834 0 0.11667 0.41667 0.0667 1.2166-0.11667 3.0166-0.76665 8-1.1166 10.716-0.76665l1.0166 0.13333 1.2834-0.95c0.7-0.51665 1.3166-0.9 1.35-0.86665 0.05 0.0333 0.16667 0.63335 0.26667 1.3166l0.18333 1.25 1.9334 0.21667c10.316 1.1 19.234 5.3665 23.384 11.216 0.35 0.48333 0.36667 0.51665 0.05 0.4-3.05-1.25-5.3165-1.75-8.6835-1.8834l-2.5334-0.1-0.85 0.78335c-0.48333 0.41667-0.93335 0.76665-1 0.76665-0.0833 0-0.48333-0.38333-0.9-0.85l-0.78335-0.86665-1.2834 0.0333c-4.0834 0.1-8.8165 1.4-12.416 3.4166-3.8166 2.1334-7.95 6.6335-9.55 10.384l-0.46666 1.1 1.0666 0.95 1.05 0.95-1.3834 0.65-1.3834 0.63335 0.1 2.0166c0.18333 3.6334 1.0834 7.1835 2.5834 10.166 0.7 1.4166 1.8834 3.3 2.15 3.4666 0.0833 0.05 0.13333-1.3166 0.13333-3.0166 0-2.5666 0.0667-3.45 0.38334-4.9834 0.81665-4.05 2.5166-7.8835 4.8834-10.966l0.63335-0.85 0.1-3.7333 2.9334 2.1334 1.6166-0.71665c2.6834-1.1834 5.25-1.8666 8.7-2.3334 2.0666-0.28333 7.4665-0.33333 9.8-0.0833 1.9334 0.21667 5.4 0.81665 5.5835 1 0.0667 0.0667-0.41667 0.16667-1.0834 0.21667-5.0335 0.45-10.734 2.8666-13.966 5.9l-1.0666 1 0.53335 1.3834c0.3 0.76665 0.51665 1.4166 0.46666 1.45-0.0333 0.0333-0.78335 0.18334-1.6666 0.33334-1.1334 0.18333-1.6666 0.35-1.7666 0.55-0.28333 0.51665-1.5 5.2665-1.9834 7.75-1.3334 6.7165-1.3666 13.584-0.11667 18.434 0.46667 1.7666 1.4334 4.2 1.95 4.8166l0.33334 0.41666-0.11667-0.78335c-0.25-1.8834 0.6-6.3835 1.85-9.6335 1.3166-3.4834 3.9-8.2 6.45-11.85l1.25-1.7666-1.05-1.4c-0.58335-0.76665-1.0666-1.45-1.0666-1.5s0.76665-0.0667 1.7166-0.0333l1.7 0.0833 1.05-1.4334c1.1166-1.5166 4.2834-5.1835 5.2-6.0165 0.43333-0.4 0.56665-0.45 0.63335-0.25 0.0334 0.13334 0.38334 0.55 0.76665 0.91665 1.05 1.0166 2.4834 1.35 3.7 0.83335 0.45-0.18333 0.6-0.18333 0.65-0.0333 0.38333 1.2 1.9166 8.5665 2.65 12.7 2.1834 12.2 3.0666 21.666 3.2166 33.866 0.13334 11.534-0.35 18.95-1.8834 28.434-0.23333 1.45-0.4 2.6666-0.36666 2.7 0.21666 0.21667 3.4834 0.93335 4.9166 1.0834 2.4334 0.25 5.2165-0.13333 6.7835-0.95l0.48333-0.25-0.11667-2.6c-1.0666-24.866-4.7-50.75-10.284-73.115-0.55-2.2-1.0334-4.1166-1.0666-4.25-0.05-0.16667 0.1-0.33334 0.45-0.46667 0.7-0.25 0.66665-0.28333 5.4335 4.45l3.8834 3.85 1.5834-0.26667c0.86665-0.15 1.6166-0.23333 1.65-0.2 0.05 0.0333-0.0667 0.55-0.25 1.1334-0.18333 0.58335-0.3 1.0834-0.28333 1.1 0.0167 0 1.1666 0.6 2.5666 1.3 6.7165 3.4166 12.184 8.0335 15.584 13.1 0.65 0.96665 1.1834 1.7666 1.2167 1.8 0.0667 0.0833-0.0833-1.4-0.35-3.3834-0.6667-4.85-2.3834-9.55-4.7334-12.9l-0.83335-1.1666-2.5-0.1 0.68335-1.1334 0.66665-1.1334-0.65-0.78335c-3.75-4.4666-11.266-8.6-20.95-11.534-1.55-0.46666-2.95-0.91665-3.0834-0.96665-0.43333-0.2 2.0166-0.21666 3.7666-0.05 4.1166 0.41667 8.6 1.8166 11.784 3.6666l1.1166 0.66665 1.4666-2.1666 0.85 1.4 0.83335 1.4 1.8166-0.0833c2.0667-0.0833 7 0.2 9.95 0.56665 2.9 0.36667 8.2 1.4666 11.134 2.3 2.5334 0.73335 6.45 2.0834 7.3335 2.55 0.26665 0.13333 0.51665 0.21666 0.55 0.18333 0.13333-0.15-2.6834-3.5666-4.5167-5.45-3-3.1-6.2335-5.6335-9.7-7.65l-1.1833-0.7-1.6834 0.98335c-0.91665 0.55-1.7 0.95-1.75 0.88335-0.0334-0.0667-0.16666-0.81665-0.28333-1.6834-0.11667-0.86665-0.31667-1.65-0.41667-1.7666-0.2-0.2-3.35-0.86665-6.2665-1.3334-4.8166-0.75-11.9-0.96665-16.334-0.5-2.7666 0.28333-5.8835 0.9-7.8335 1.5334-0.8 0.26666-1.4 0.41666-1.3666 0.35 0.0334-0.05 1.1334-0.75 2.45-1.5334 6.5165-3.9 13.516-6.2165 20.5-6.8 2.0166-0.16667 2.45-0.25 2.45-0.45 0-0.15-0.11666-0.93335-0.26666-1.75-0.13334-0.8-0.21667-1.5-0.18334-1.5334 0.0333-0.05 1.1834 0.4 2.55 1l2.4834 1.0666 0.5833-0.36667c4.95-3 10.434-4.95 17.334-6.15l2.25-0.4-2.3333-1.1666c-4.45-2.2334-8.8165-3.7666-13.084-4.6166-3.0834-0.61665-6.6-0.88335-8.2165-0.65z",
+            "stroke-width": ".5"
+          }
+        }),
+        _vm._v(" "),
+        _c("path", {
+          attrs: {
+            d:
+              "m601.47 171.79c-4.9334 0.36666-12.633 2.0333-14.967 3.2667-0.73334 0.36666-1.0667 0.93334-1.6667 3.0333l-0.73333 2.5667-3.6667-3.6-2.2333 1.1667c-3.2 1.6333-8.4667 5.2333-11.4 7.7667-5.5667 4.8-10.267 11.433-12.833 18.167l-0.93333 2.4333-1.2-2.3c-2.6-4.8667-6.4667-9.4333-10.767-12.6-3.4-2.5-3.7-2.6-5.6667-1.9333-1.1333 0.36667-1.7667 0.43334-2 0.2-0.2-0.2-0.43333-1.3333-0.53333-2.5667l-0.16667-2.2333-1.5333-0.66666c-4.2-1.8-11.567-3.6333-17.167-4.3-3.9333-0.46667-18.633 0.0667-24.2 0.9-10.867 1.5667-19.9 5.6-25.8 11.533-1.2667 1.2667-2.2333 2.3667-2.1333 2.4333 0.1 0.1 1.4333-0.1 2.9667-0.46666 1.5333-0.36667 4-0.83334 5.4667-1.1 2.8667-0.43334 14.1-0.6 15.533-0.2 0.7 0.2 1.2667-0.0667 3.3333-1.5667 1.3667-1 2.5667-1.8333 2.6667-1.8333 0.13334 0 0.33334 1.0667 0.46667 2.3333 0.13333 1.3 0.36667 2.4 0.5 2.5 0.16667 0.1 2.1333 0.4 4.4 0.7 2.2667 0.26667 5.8667 0.83333 8 1.2667 4.1667 0.83333 12.267 3.1667 12.267 3.5 0 0.13333-1.3 0.46666-2.8667 0.8-6.6 1.3667-14.967 4.7-20.133 8.0667-1.3667 0.9-4.0667 3.2-6 5.1333-2.7667 2.7667-3.8333 4.1-4.9 6.2-1.1333 2.2-1.8333 3.0333-3.8 4.6667-4.3 3.5667-9.8 10.967-11.5 15.4l-0.56667 1.4667 3.8 3.8667-2.5667 1.2333-2.5667 1.2 0.2 4.1c0.36666 6.9667 2.0667 13.6 4.9333 19.3 1.3333 2.6333 3.6667 6.3667 4.2 6.7 0.16667 0.1 0.23333-2.2333 0.16667-5.1667-0.1-6.1667 0.56666-11.067 2.2667-16.267 1.1667-3.6333 4.5667-10.767 4.9667-10.533 0.16667 0.1 0.36667 0.6 0.46667 1.1 0.1 0.53333 0.43333 1.5333 0.76666 2.2667l0.56667 1.3333 0.46667-2.3333c0.9-4.4667 3.9667-12.3 5.1-13 0.16666-0.1 0.83333 0.2 1.4667 0.66666l1.1333 0.86667 1.9667-0.96667c3.5-1.7667 9.9-3.7667 14.6-4.5667l1.3333-0.23334-2.8667 2.9667c-3.3333 3.4-5.2 6.1-7.0333 10-1.5 3.2-2.9333 8.4667-2.9333 10.767v1.6l3.6667 1.5333-1.6333 1.6667-1.6667 1.7 1.1667 2.8333c1.1667 2.8333 1.1667 2.8333 0.8 5.6667-0.43334 3.5333-0.43334 6.5667 0 9.1667 0.16666 1.1 0.36666 5.2333 0.46666 9.1667 0.13334 7.5667 0.76667 12.367 2.2 17.167 0.73334 2.4 3.3 8.1667 3.6333 8.1667 0.1 0 0.2-1.7667 0.23333-3.9333 0.0334-4.4333 0.63333-7.8 2.3667-13 2.4333-7.3667 6.5667-15.467 12.3-23.967l3.4-5.0667-1.9667-2.6c-1.0667-1.4333-1.9667-2.7333-1.9667-2.8667 0-0.16667 1.4-0.2 3.1-0.0667l3.1333 0.23333 2.2667-2.8667 0.56667 5.3333c1.6333 14.9 6 26.6 12.433 33.233 1.5333 1.6333 2.2 1.9 1.5333 0.63333-0.7-1.3333-1.7-6.2667-1.9-9.5667-0.4-6.1667 1.1667-17.033 3.5333-24.5 0.53333-1.7333 1-3.1667 1-3.2 0 0-0.96667-0.7-2.1667-1.5s-2.1667-1.5333-2.1667-1.6333c0-0.13333 1.0333-0.46666 2.3-0.8 2-0.53333 2.3667-0.73333 2.6333-1.5333 0.3-0.83333 0.5-0.9 2.6-1.1 1.2667-0.1 2.3333-0.13333 2.3667-0.1 0.0334 0 0.73333 3.3333 1.6 7.3333 4.5667 21.767 7.3333 42.5 8.5333 64.433 0.5 9.5333 0.23333 36.5-0.5 44.767-0.63334 7.4-1.9667 18.167-3 24.267l-0.73334 4.4333 2.1667 0.66667c6.8667 2.1 14.233 2.1333 19.533 0.0333l1.6667-0.66667-0.1-3.9333c-0.36667-14.367-2.2333-37.8-4.6-57.8-2.9667-25.1-8.1-54.433-13.6-77.5-1.1667-4.9667-2.1-9.0333-2.0333-9.1s0.83333 1.1667 1.7 2.7c1.7667 3.1 1.9667 3.2333 5.4 3.2333h1.4333l-0.9 1.6667-0.9 1.6333 1.1333 0.93333c2.2 1.7667 8.4 7.9667 10.3 10.267 4.1667 5.0667 8 11.767 9.8333 17.133l0.73333 2.2 0.46667-2.5c0.3-1.5667 0.43333-4.7667 0.43333-8.5 0-5.7-0.16665-7.2-1.3333-11.633l-0.23332-0.96667 1.9666 1.1c3.6334 2 10.267 6.6333 13.633 9.4333 5.5666 4.6667 10.533 10.233 13.667 15.4l1.2334 2-0.2-3.1333c-0.6-9.2333-4.2333-20.367-9.0667-27.6l-1.8333-2.7667h-2.5c-1.3667 0-2.4667-0.0667-2.4667-0.16667 0-0.0667 0.6-1.1333 1.3-2.3l1.3333-2.1333-2.1333-2.5c-1.2-1.3667-2.4-2.6-2.7-2.7-0.3-0.13334-0.5-0.3-0.4-0.4 0.3-0.26667 6.7667 2.7 11.333 5.2333 4.3 2.3667 9.4333 5.6 11.7 7.3667 0.7667 0.6 1.2334 0.83333 1.2334 0.53333 0-0.23333-0.73335-1.9667-1.6666-3.8667-0.9-1.8667-1.5-3.4-1.3334-3.4 0.13335 0 0.33335 0.2 0.43335 0.4 0.0667 0.23334 0.2333 0.33334 0.36665 0.23334 0.3-0.3-3.2334-7.3-5.1333-10.1-0.9-1.3667-2.4-3.4-3.3333-4.5-2-2.4-2.2333-2.3 3.9333-1.5333 9.7334 1.2 20.8 3.8 29.733 6.9333 2.8334 1 5.7334 2.0667 6.4666 2.3667l1.2667 0.56667-0.7667-1.1c-4.5666-6.5333-12.833-14.767-20.2-20.033-2.4333-1.7667-8.1666-5.2333-8.6333-5.2333-0.2 0-1.8 0.83333-3.5 1.8333l-3.1334 1.8333-0.53335-3.3333c-0.26665-1.8333-0.66665-3.4667-0.8333-3.6333-0.33335-0.3-8.6-2.0333-9.7667-2.0333-0.4 0-0.7-0.13334-0.7-0.26667 0-0.46667 7.8334-1.7333 12.6-2.0667 2.6334-0.16666 6.1667-0.16666 9.1 0 6.3334 0.43334 5.8 0.43334 5.2667-0.23333-0.43335-0.5-0.2667-0.53333 1.9666-0.33333 1.3 0.1 2.4 0.13333 2.4 0.1 0-0.2-5.5-3.7667-7.7-4.9667-1.2-0.66667-3.6666-1.8667-5.5-2.7-1.8-0.8-4.2-2-5.3-2.6667-3.2333-2-8.4-4.3667-12.067-5.5333-2.7333-0.86667-3.4333-1.2-3.4333-1.7 0-0.36667 0.0666-0.63333 0.13332-0.63333 0.1 0 2.2667 0.9 4.8667 2l4.7333 1.9667 3.4667-2c8-4.6667 19.733-8.6 31.5-10.533 4.0334-0.66667 4.1-0.56667-2.2-3.6-11.2-5.3667-21.4-8.3667-31.8-9.3333l-2.4667-0.23334 2.8-1.6333c1.5333-0.9 3.5-2 4.3667-2.4s1.5666-0.83333 1.6-0.93333c0-0.23334-4.7667-0.9-9.3333-1.3-3.3666-0.3-8.4666-0.33334-11.667-0.1zm-80.767 29.633 2.0667 0.9-0.9 1.1c-0.5 0.63333-0.96667 1.1333-1.0667 1.1333s-0.46667-0.5-0.86667-1.1c-0.36666-0.56666-0.96666-1.4667-1.2667-2-0.76667-1.1333-0.56667-1.1333 2.0333-0.0333z",
+            "stroke-width": ".033333"
+          }
+        }),
+        _vm._v(" "),
+        _c("path", {
+          attrs: {
+            d:
+              "m340.82 104.14c-4.0333 1.8667-7.2333 3.7333-8.2333 4.8333-1.3667 1.5667-6.2333 8.0333-13.767 18.367-8.3667 11.5-11.5 15.567-15.867 20.633-3.0667 3.5667-13.933 14-19.1 18.333-1.5667 1.3-3.3333 3.0667-3.9667 3.9333-3.6667 5.1333-8.9 15.233-17.9 34.467-5.3 11.333-5.5 11.867-5.5 13.9v2.1l-2.7333-0.1c-2.2667-0.0667-2.7667-0.2-2.7-0.6 0.0667-0.3-0.56667-1.2-1.4-2-0.9-0.9-1.5-1.7667-1.5-2.2333 0-0.63333-0.16667-0.76666-1.1-0.76666-1.6 0-3.7-1.7-5.3667-4.3-0.8-1.2-3.3333-5.3667-5.7-9.2-4.1333-6.8-7.8333-11.733-15.233-20.333-2.4333-2.8667-2.7-3.0667-4.8667-3.7667-1.2667-0.4-2.8-0.73334-3.4667-0.73334-1.5667 0-4.9 1.1667-5.8667 2.1-1.1333 1.0333-5.7333 7.4333-11.9 16.567-7.8 11.567-13 18.767-14.333 19.967-1.8 1.5667-3.5333 2.3333-6.0333 2.5667-4 0.4-8.3333 3.3667-10.967 7.4667-3.7333 5.8-16.1 29.7-30.4 58.833-10.467 21.3-10.767 21.933-10.767 23.2 0 0.73333-0.16667 0.96667-0.66667 0.96667-0.43333 0-0.66666 0.23333-0.66666 0.63333 0 0.43333-0.26667 0.7-0.76667 0.76667-0.6 0.0667-0.73333 0.33333-0.83333 1.6-0.1 1.2333-0.33334 1.7667-1.5667 3-1.4 1.4667-7.0667 11.933-19.833 36.7-10.267 19.9-17.033 31.167-22.2 36.933-0.8 0.9-1.4667 1.8667-1.4667 2.1333 0 0.3-0.33333 0.56667-0.76667 0.63333-0.43333 0.0667-0.73333 0.33334-0.73333 0.66667s-0.63333 1.2333-1.4333 2.0333c-1.2 1.2333-1.4 1.6333-1.4 2.8333v1.4h-2.6667v1.3333c0 1.1667 0.1 1.3333 0.76667 1.3333 0.43333 0 1.0667-0.3 1.4-0.66666 0.33333-0.36667 0.93333-0.66667 1.3333-0.66667 0.36667 0 1.2667-0.6 2-1.3333 0.7-0.7 1.5667-1.3333 1.9667-1.4 0.36666-0.0667 0.76666-0.4 0.86666-0.76667s0.4-0.66667 0.66667-0.66667 0.53333-0.33333 0.6-0.76666c0.0667-0.46667 0.33333-0.73334 0.76667-0.73334 0.4 0 0.63333-0.23333 0.63333-0.66666 0-0.43334 0.23333-0.66667 0.66667-0.66667 0.43333 0 0.66666-0.23333 0.66666-0.66667 0-0.46666 0.23334-0.66666 0.76667-0.66666 0.5 0 2.0333-1.3 4.9-4.1667 2.3-2.3 5.6333-5.3333 7.4-6.7667 2.4-1.8667 3.2667-2.7667 3.2667-3.3333s0.2-0.73333 0.83333-0.73333c0.76667 0 0.83333-0.13334 0.83333-1.3333 0-1.1 0.1-1.3333 0.66667-1.3333 0.46667 0 0.66667-0.23333 0.66667-0.8s0.16666-0.76667 0.56666-0.73333c0.46667 0.0333 0.63334-0.26667 0.7-1.3667 0.1-1.1667 0.23334-1.4333 0.76667-1.4333 0.4 0 0.63333-0.23334 0.63333-0.66667s0.23334-0.66667 0.66667-0.66667 0.66667-0.23333 0.66667-0.66666c0-0.4 0.73333-1.7667 1.6-3.1 2.5333-3.7667 6.3333-10.333 20.8-35.9 29.867-52.833 32.6-57.767 32.6-59.1 0-1 0.13333-1.2333 0.66667-1.2333 0.43333 0 0.66666-0.23334 0.66666-0.66667s0.23334-0.66667 0.66667-0.66667c0.56667 0 0.66667-0.23333 0.66667-1.5333 0-1.3667 0.0667-1.5 0.66666-1.3 0.53334 0.16667 0.66667 0.0667 0.66667-0.63333 0-0.8 0.13333-0.86667 1.3-0.86667 1.1 0 1.3333 0.13333 1.4333 0.73333 0.0667 0.53334 0.3 0.73334 0.66667 0.66667 0.53333-0.1 0.6 0.23333 0.6 2.9333 0 3.0333 0 3.0333-2.9 10.267-3.2333 8.1-11.367 24.533-20.167 40.733-6.7 12.367-7.4 13.567-8.6 14.833-0.7 0.73333-1 1.4-1.0667 2.5-0.1 1.2667-0.23333 1.5333-0.83333 1.6-0.5 0.0667-0.76667 0.33333-0.76667 0.76666 0 0.4-0.23333 0.63334-0.66666 0.63334-0.56667 0-0.66667 0.23333-0.66667 1.3333s-0.1 1.3333-0.66667 1.3333c-0.43333 0-0.66666 0.23334-0.66666 0.66667 0 0.56667 0.23333 0.66667 1.4333 0.66667 1.2333 0 1.6-0.2 2.7333-1.3333l1.3-1.3333h2.7667c2.5333 0 2.7667-0.0667 2.7667-0.66667 0-0.43333 0.23333-0.66666 0.66666-0.66666 0.43334 0 0.66667-0.23334 0.66667-0.63334 0-0.43333 0.26667-0.7 0.73333-0.76666 0.83334-0.1 3.0667-3.1 9.1667-12.167 3.2-4.7333 4.0333-5.7667 4.6667-5.7667 0.56667 0 0.76667-0.16666 0.7-0.56666-0.0667-0.4 0.13333-0.63334 0.63333-0.7 0.53334-0.0667 0.76667-0.33334 0.76667-0.86667 0-0.4 0.56667-1.3 1.3333-2.0333 0.76667-0.73334 1.3333-1.6333 1.3333-2.0333 0-0.56666 0.13333-0.7 0.66666-0.56666 0.53334 0.13333 0.66667 0 0.66667-0.7 0-0.63334 0.16667-0.86667 0.66667-0.86667 0.6 0 0.66666 0.23333 0.66666 2.1333 0 1.6-0.33333 3.1667-1.3333 6.2-1.1333 3.4333-1.3333 4.4667-1.3333 6.8667 0 2.5667 0.0667 2.8 0.66666 2.8 0.43334 0 0.66667-0.23333 0.66667-0.66667 0-0.43333 0.23333-0.66666 0.66667-0.66666 0.6 0 0.66666-0.23334 0.66666-2 0-2.1333 0.73334-4.0667 2.1333-5.6667 0.5-0.56667 2.8333-7.3333 7.1667-21 10-31.433 10.667-33.5 12.6-39.333 7.0667-21.233 10.3-26.367 18.6-29.667 6.1333-2.4333 12.133-3.1 15.5-1.6667 5.5667 2.3667 14.4 10.667 17.3 16.3 2.2333 4.4 2.5333 5.6333 2.5333 10.867 0 3.8667-0.13333 5.1333-0.76666 7.3333-1.0667 3.7333-7.8667 16.867-18 34.833-13.933 24.733-18.1 29.133-47.233 50-11.9 8.5333-31.8 21.867-34.667 23.233-0.83334 0.4-1.1667 0.76666-1.1667 1.3333 0 0.53333-0.2 0.76667-0.66667 0.76667-0.43333 0-0.66666 0.23333-0.66666 0.66666 0 0.43334-0.23334 0.66667-0.66667 0.66667s-0.66667 0.23333-0.66667 0.66667c0 0.43333-0.23333 0.66666-0.66666 0.66666-0.43334 0-0.66667 0.23334-0.66667 0.66667 0 0.5-0.23333 0.66667-0.83333 0.66667s-0.83334 0.16666-0.83334 0.66666c0 0.43334-0.23333 0.66667-0.66666 0.66667-0.56667 0-0.66667 0.23333-0.66667 1.3333v1.3333h2.1667c1.9333 0 2.1667-0.0667 2.1667-0.66667 0-0.43333 0.23334-0.66667 0.66667-0.66667s0.66667-0.23333 0.66667-0.66666c0-0.56667 0.23333-0.66667 1.4333-0.66667 1.1333 0 1.6333-0.2 2.2667-0.86667 1.0667-1.2 6.4667-3.7333 15.8-7.4333 21-8.3667 32.4-15.833 47.9-31.467 6.2333-6.2667 11-11.867 17.1-20.067 12.267-16.467 21.467-31.667 31.2-51.667 7.7333-15.867 11.8-25.667 24.3-58.333 1.3667-3.5 7.4-18.3 9.5-23.233 0.96666-2.2 1.4333-2.9333 1.9667-3 0.43334-0.0667 0.73334-0.4 0.8-0.86667 0.0667-0.5 0.33334-0.73333 0.86667-0.73333 0.4 0 1.3-0.56667 2.0333-1.3333l1.3-1.3333h8.2v8.0333l-3.2 9.5667c-5.1667 15.433-8.2 21.833-17.8 37.9-7.6667 12.833-10.933 19.433-15.2 30.733-4 10.633-4.8 14-5.0333 21l-0.2 5.4333h1.5c1.2667 0 1.6333-0.16667 2.8667-1.4333l1.4-1.4333v-3.1333c0-3.7 0.4-5.3 2.3-9.8333 4.6-10.8 11.1-21.533 30.033-49.467 5.4667-8.1 8.8667-14.433 12.033-22.467 2.6-6.6 4.1333-11.533 8.8-28.4 4.2-15.1 5.0667-17.7 6.4667-18.967 0.5-0.46666 0.7-1.0333 0.7-2.1v-1.4333h1.2667c0.86666 0 1.5 0.23333 1.9 0.66667 0.33333 0.36666 0.96666 0.66666 1.4 0.66666 0.53333 0 0.76666 0.2 0.76666 0.63334 0 0.33333 0.83334 2.8333 1.8667 5.5667 1.0333 2.7333 2.3333 6.4667 2.8667 8.3 2.4333 8.2667 4.8667 11.233 11.767 14.167 2.8667 1.2 5.7 2.8667 6.4667 3.7667 0.23333 0.33333 0.73333 0.56667 1.0667 0.56667 0.53333 0 0.63333 0.26666 0.63333 1.4 0 1.4-0.0667 1.4667-2.4333 3-1.3 0.86666-3.0667 2.2667-3.9 3.1-1.4333 1.4333-1.5 1.6-1.6 3.8333-0.13334 2.1-0.0667 2.3333 0.46666 2.3333 0.33334 0 1.2333 0.63333 2 1.3667l1.4 1.4 5.1333-0.73334c7.9-1.0667 13.267-1.6333 19.233-2 4.1-0.26666 6.6667-0.63333 10.5-1.5 2.7667-0.66666 5.6333-1.2333 6.3667-1.2667 0.96667-0.0667 1.3667-0.26667 1.4333-0.7 0.0667-0.4-0.1-0.56667-0.6-0.56667-0.43334 0-0.8-0.26667-0.9-0.66667-0.1-0.36666-0.43334-0.66666-0.73334-0.66666s-1.2333-0.66667-2.0333-1.5c-1.2333-1.2333-1.6667-1.5-2.7333-1.5-1.7333 0-5.9-2-7.8-3.7333-1.6-1.5-4.0333-4.9-5.4667-7.7333-0.46666-0.9-1.7333-2.5667-2.8333-3.7-1.7-1.7667-2.6667-2.4-6.5-4.2333-2.4667-1.1667-5.4333-2.5-6.6-2.9333-1.4-0.5-2.3667-1.1-2.9-1.8-1.0333-1.3667-2.3-5.8-2.9667-10.4-0.43333-2.9667-1.8667-16.167-1.8667-17.2 0-0.13333 0.3-0.26666 0.66666-0.26666 0.43334 0 0.66667 0.23333 0.66667 0.66666 0 0.43334 0.23333 0.66667 0.66667 0.66667 0.43333 0 0.66666 0.23333 0.66666 0.66667 0 0.56666 0.23334 0.66666 1.3333 0.66666s1.3333 0.1 1.3333 0.66667c0 0.43333 0.23333 0.66667 0.66667 0.66667 0.43333 0 0.66666 0.23333 0.66666 0.63333 0 0.43333 0.26667 0.7 0.76667 0.76667 0.46667 0.0667 0.76667 0.36666 0.83333 0.83333 0.0667 0.5 0.33334 0.76667 0.76667 0.76667 0.4 0 0.63333 0.23333 0.63333 0.66666 0 0.86667 6.3 10.3 8.3 12.433 3 3.2333 6.7667 5.4333 13.2 7.7667 5.3667 1.9333 13.1 6.1667 19.733 10.8 17.767 12.433 24.867 16.5 36.267 20.8 8.5667 3.2333 13.933 6.1333 26.267 14.267 3.9666 2.6333 9 5.9 11.133 7.2667 2.1667 1.3667 4.7333 3.1333 5.6667 3.9 1.7333 1.4 1.8 1.4333 4.3333 1.4333 2.9 0 8.1-1.1667 8.1-1.8333 0-0.23334 0.3-0.8 0.66667-1.2667 0.86665-1.1 0.86665-2.2333 0.0333-2.2333-0.33332 0-0.7-0.2-0.8-0.46667-0.1-0.23333-0.86667-0.76667-1.6667-1.1667-0.83333-0.4-3.2333-2.3667-5.3666-4.3667-3.3-3.1-4.7-4.1333-10.1-7.3667-23.333-13.967-46.633-28.9-55.867-35.767-5.9667-4.4333-11.967-10.767-19.2-20.367-4.6-6.1-10.267-13.233-15.833-19.933-3.8-4.5667-5.0667-5.8333-8.2667-8.2333-2.0333-1.5667-6.4-4.9667-9.6667-7.6-3.3-2.6333-7.0333-5.4333-8.3-6.3-4.4333-2.8333-10.333-5.1333-13.167-5.0667-0.53333 0-2.4 0.66666-4.1333 1.4333z",
+            "stroke-width": ".033333"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m403.09 228.78c-2.3 1.8667-3.8667 3.8667-5.1667 6.5333-1.1667 2.5-2.1 6.1-2.1 8.3667v1.3333l-5.5333 1.1c-3.0333 0.6-5.5667 1.0333-5.6333 0.96667-0.0667-0.0667-0.5-1.0667-0.93333-2.2667-0.46667-1.2-1-2.1333-1.2333-2.0667-1 0.23334-7.6667 3.5333-7.6667 3.8 0 0.16667 0.23333 0.83334 0.5 1.4667 0.53333 1.2667 0.43333 1.8-0.33334 1.8-1.6333 0-29.733 8.9333-44.1 14.033-17.233 6.1333-34.167 13.167-51.467 21.4l-4.5667 2.2-0.9-2.3333c-0.5-1.2667-1-2.3-1.1333-2.3s-1.9667 0.83333-4.1 1.8333l-3.9 1.8333 0.96667 2.6333 1 2.6-0.9 0.43333c-3.2667 1.4667-26.433 14.6-27.233 15.4-0.23333 0.23334-0.23333 0.3 0 0.16667 0.6-0.3 29.267-11.567 29.5-11.567 0.4 0 1.7 3.7667 1.4333 4-0.13334 0.13334-12.867 4.7667-28.267 10.333-15.4 5.5667-28.2 10.233-28.4 10.433-0.23333 0.16666-0.43333 0.7-0.43333 1.2 0 1.5333-0.36667 2.3-1.1667 2.5-0.93333 0.23333-0.93333 0.2-1.8667 5.7667-0.66666 3.8667-0.83333 4.4333-1.5333 4.8-0.63333 0.33334-0.76667 0.66667-0.76667 2.0333 0 0.86666-0.0333 1.7-0.0333 1.8333-0.0333 0.13333 2.0333 1.5667 4.5667 3.1667l4.6 2.9333h6.2v1.9667l-6.2333 0.1-6.2667 0.1-2.2 1.0667c-2.3667 1.1667-5.4333 3.6333-5.1 4.1333 0.1 0.16666-0.76667 2.6-1.9667 5.4-2.7333 6.4667-5.2667 13.233-6.4 17.067-1.0667 3.6667-5.7333 25.467-7.2333 33.667-1 5.5667-1.0667 6.5-1.0333 12.9 0 5.7-0.0667 6.9333-0.43333 6.9333-0.4 0-0.46667 1.3333-0.46667 7.3333v7.3333h1.8667l0.7 11.733c0.4 6.4333 0.66667 11.833 0.56667 12-0.1 0.13333-0.93334 0.26667-1.8667 0.26667-3.2667 0-5.5333 2.0667-5.8667 5.3333-0.23333 2.4333 0.16667 3.9 1.5 5.3333 1.5333 1.7333 2.6333 2 8.2667 2 4.5 0 4.8667 0.0667 9.1667 1.3333 4.3333 1.2667 4.9333 1.3667 15.4 2.2333l10.9 0.9 0.1 1.1667 0.1 1.2h1.7l1.7333-0.0334 0.16666 4.3667c0.26667 7.7333 2.7333 13.833 7.9667 19.933 2.0333 2.3333 6.2667 5.5666 9.2333 7.0333 13.967 7 30.733 3.1333 40.033-9.1667 2.3333-3.1 4.3667-7.1666 5.3333-10.7 0.76667-2.7667 1.3-8.0333 1.0667-10.2l-0.13333-1.4h1.4333c0.8 0 10.767-0.23334 22.133-0.5 11.367-0.26667 22.267-0.5 24.267-0.5h3.5667v-1.5c0-0.83334 0.0334-1.5 0.1-1.5333 0.4-0.1 103.57-1.6 110.53-1.6333h9.1l-0.2 0.73333c-1.2333 4.6-1.1 12.067 0.26667 16.733 4.2667 14.333 17.633 23.9 32.2 23.1 14.4-0.8 25.9-10.233 29.567-24.233 1.1-4.1667 1.1667-10.767 0.16666-14.733l-0.63333-2.6h2.5333c1.4 0 12.133-0.16667 23.867-0.36667 11.733-0.2 24.6-0.36666 28.6-0.33333l7.2667 0.0667 0.96667-1.0333c2.3333-2.5 2.1333-8.6333-0.4-11-0.6-0.53333-1.1667-0.66666-3.2667-0.66666h-2.5333l0.1-9.7667c0.0666-5.3333 0.2-11.133 0.3-12.8 0.2-3 0.23333-3.1 1-3.1h0.8v-11h-1c-1 0-1-0.0334-1-1.8333 0-1 0.16665-1.8333 0.33333-1.8333 0.2 0 0.33332-1.5 0.33332-3.8333 0-3.6-0.0333-3.8333-0.66665-3.8333-0.46667 0-0.66667-0.23334-0.66667-0.76667 0-1.4667-4.6-9.6-11.4-20.2l-3.1-4.8333-3.2667-0.93334c-1.8-0.5-3.9-1.2667-4.6666-1.6333-3.3667-1.7-3.2-1.4333-10.933-17.1l-7.2333-14.7 2.3-0.1c1.2667-0.0667 2.3-0.16666 2.3-0.26666 0-0.0667-1.1333-1.8333-2.5-3.9-2.7-4-8.1-9.9333-12.933-14.2-2.6333-2.3333-3.2-2.6667-6.0667-3.6333-4.4333-1.5333-6.8-1.6667-33.333-2.0667-32.6-0.46667-42.067-0.46667-42.267 0.13333-0.43333 1.1333-0.56667 3.7333-0.33333 7.7667l0.26666 4.4333h-1.6667c-0.9 0-2.0333 0.1-2.5 0.2-0.76667 0.16667-0.8 0.13333-0.23334-0.3 0.56667-0.46667 0.56667-0.56667 0.0667-1.7667-0.86667-2.1-2.4333-8.3333-3.1333-12.633-2.6667-16-3.4333-37.4-2.6-71.167 0-0.26667-0.1-1.8667-0.23334-3.5l-0.23333-3 5.0333-1.8c4.5333-1.6 4.9667-1.8333 4.5667-2.3333-0.26667-0.3-0.56667-1.6667-0.7-3.2-0.23333-2.8333-0.7-5.0333-1.1667-5.3333-0.16666-0.0667-0.86666 0.0334-1.5667 0.26667-1.2667 0.46666-1.2667 0.46666-3.2667-1.1667-1.1-0.86667-2.1667-1.6-2.3667-1.6-0.23333 0-11.6 4.0667-25.333 9-13.7 4.9667-24.967 8.9667-25.033 8.9333-0.23334-0.26666-1.4667-3.3667-1.4667-3.7667 0-0.26667 1.7-0.96667 4.4333-1.8333 22.633-7.1333 30.7-9.8 32.5-10.833l0.9-0.53333-1 0.16666c-3.4667 0.56667-19.533 2.2667-19.7 2.1-0.23333-0.23333 0.43334-13.033 0.73334-14.167 0.3-1.0333-0.13334-0.9-1.9333 0.56666zm-24.067 29.333c0.43333 1.1667 0.76666 2.2 0.7 2.2333-0.33334 0.36667-100.73 36.467-101.03 36.367-0.43334-0.16667-1.7333-3.8-1.4667-4.0667 0.33333-0.33333 34.833-13.633 57.933-22.333 13.033-4.9333 41.933-14.633 42.8-14.4 0.13333 0.0667 0.63333 1.0333 1.0667 2.2zm33.467 35.167c0 0.0667 1.1333 8.5667 2.5 18.9 1.3667 10.333 2.4333 18.8 2.4 18.867-0.0667 0.0334-16.433 0.16667-36.433 0.26667-19.967 0.1-42.9 0.23333-50.967 0.33333-11.533 0.1-14.5 0.0333-13.867-0.26667 1.4667-0.73333 95.533-38.167 95.967-38.2 0.2-0.0334 0.4 0.0333 0.4 0.1zm31.6 66.933c0.56667 0.56666 0.53334 4.7333-0.0667 5.2333-0.33334 0.26667-12.8 0.33333-46.733 0.3l-46.3-0.1-0.1-2.9333-0.1-2.9h46.467c35.667 0 46.533 0.1 46.833 0.4zm-117.27 3.4333v2.5h-83.333v-5h83.333zm175.67 12.833v11.667h-36.333v-3.4333c0-1.8667-0.1-7.1-0.23334-11.667l-0.2-8.2333h36.767zm13.133-0.4c2 6.1667 3.7 11.433 3.8 11.633 0.1 0.33333-1.4333 0.43333-7.0667 0.43333h-7.2v-23.333h6.8333zm-71.767-7.9333c0.53333 0.3 0.63333 0.73333 0.63333 2.6 0 1.3333-0.16666 2.4333-0.4 2.6667-0.3 0.3-11.167 0.4-46.833 0.4h-46.433v-2.8c0-1.9333 0.13333-2.8667 0.43333-2.9667 0.83333-0.36667 91.933-0.23333 92.6 0.1zm-117.03 3.8333v2.5l-41.567-0.0667-41.6-0.1-0.1-2.4333-0.1-2.4h83.367zm117.07 4.4c0.46667 0.4 0.6 1.0333 0.6 2.6 0 1.1333-0.16666 2.2-0.4 2.4333-0.3 0.3-11.167 0.4-46.833 0.4h-46.433v-2.7667c0-1.5333 0.1-2.9 0.23333-3 0.1-0.13333 20.9-0.23333 46.2-0.23333 42.333 0 46.067 0.0333 46.633 0.56666zm-116.8 3.4333-0.1 2.3333-41.6 0.1-41.567 0.0667v-5l41.667 0.1 41.7 0.0667zm117.07 4.6667c0.16667 0.26667 0.33333 1.4333 0.33333 2.5667 0 1.8333-0.1 2.1667-0.76666 2.6-0.7 0.43333-6 0.5-46.767 0.43333l-45.967-0.1-0.1-2.9c-0.0667-2.5333-0.0334-2.9 0.5-3.0333 0.33334-0.1 21.267-0.13333 46.533-0.1 40.433 0.0333 45.967 0.1 46.233 0.53333zm-117.07 3.4-0.1 2.4333-41.567 0.1-41.6 0.0667v-5h83.367z",
+          fill: "#065f46",
+          "stroke-width": ".033333"
+        }
+      })
     ]
   )
 }
@@ -57127,7 +57382,7 @@ var render = function() {
           return [
             _c(
               "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
+              { staticClass: "col-span-4 " },
               [
                 _c("jet-label", { attrs: { for: "email", value: "Email" } }),
                 _vm._v(" "),
@@ -57152,12 +57407,12 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
+              { staticClass: "col-span-4 flex-shrink-0" },
               [
                 _c("jet-label", { attrs: { for: "role", value: "Role" } }),
                 _vm._v(" "),
                 _c("v-select", {
-                  staticClass: "text-xl capitalize",
+                  staticClass: "text-xl capitalize w-56 lg:w-full ",
                   attrs: { id: "role", options: _vm.roles },
                   model: {
                     value: _vm.inviteUserForm.role,
@@ -57195,12 +57450,14 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.inviteUserForm.recentlySuccessful }
               },
-              [_vm._v("\n            Sent.\n        ")]
+              [_vm._v("\n            Invitation sent.\n        ")]
             ),
             _vm._v(" "),
             _c(
               "button",
               {
+                staticClass:
+                  "text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded",
                 class: { "opacity-25": _vm.inviteUserForm.processing },
                 attrs: { disabled: _vm.inviteUserForm.processing },
                 on: {
@@ -57243,12 +57500,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
-      _c("div", { staticClass: "flex justify-between " }, [
-        _c("div", { staticClass: "flex" }, [
+      _c("div", { staticClass: "lg:flex justify-between " }, [
+        _c("div", { staticClass: "lg:flex pl-6" }, [
           _c(
             "div",
-            { staticClass: "flex items-center" },
-            [_c("jet-application-mark", { staticClass: "block h-44 w-auto" })],
+            { staticClass: "flex  items-center" },
+            [
+              _c("HolidayMark", {
+                staticClass: "self-center block h-44 w-full"
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -57256,9 +57517,9 @@ var render = function() {
             "div",
             {
               staticClass:
-                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
             },
-            [_vm._v("\n                    My Holidays\n                ")]
+            [_vm._v("\n                    My holidays\n                ")]
           )
         ])
       ]),
@@ -57279,6 +57540,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
                   _vm._l(_vm.holidays, function(holiday) {
                     return _c(
                       "tr",
@@ -57287,87 +57549,28 @@ var render = function() {
                         holiday
                           ? _c(
                               "td",
-                              {
-                                staticClass: "px-5 py-5   bg-white ",
-                                class: _vm.holidayStatusClass(holiday)
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex items-center" },
-                                  [
-                                    holiday.user.profile_photo_path === null
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "/storage/profile-photos/default/default-avatar.png"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      : _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "/storage/" +
-                                                  holiday.user
-                                                    .profile_photo_path
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "ml-3" }, [
-                                      _c(
-                                        "p",
-                                        { staticClass: "whitespace-no-wrap" },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(holiday.user.name) +
-                                              "\n                                    "
-                                          )
-                                        ]
-                                      )
-                                    ])
-                                  ]
-                                )
-                              ]
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.type))]
                             )
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
-                          ? _c("td", { staticClass: "py-3 px-5 " }, [
-                              _vm._v(_vm._s(holiday.type))
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.description))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _vm._v(_vm._s(_vm.formatDate(holiday.start_date)))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.start_date))
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        holiday
-                          ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(holiday.end_date))
+                              _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
@@ -57378,12 +57581,21 @@ var render = function() {
                                     "div",
                                     [
                                       _c("CheckMark", {
-                                        staticClass: "h-10 w-10"
+                                        staticClass:
+                                          "h-8 w-8 ml-2 text-green-700"
                                       })
                                     ],
                                     1
                                   )
-                                : _vm._e()
+                                : _c(
+                                    "div",
+                                    [
+                                      _c("Waiting", {
+                                        staticClass: "h-8 w-8 ml-2"
+                                      })
+                                    ],
+                                    1
+                                  )
                             ])
                           : _vm._e()
                       ]
@@ -57421,7 +57633,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("prev")
@@ -57439,7 +57651,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("next")
@@ -57467,74 +57679,54 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "border-green-200 bg-green-200 h-12" }, [
-      _c("tr", [
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+    return _c(
+      "thead",
+      {
+        staticClass:
+          "border-green-800 bg-green-800 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider"
+      },
+      [
+        _c("tr", [
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell " },
+            [
+              _vm._v(
+                "\n                            Type\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Description\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
-              "\n                            User\n                        "
+              "\n                            I leave on\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2  " }, [
             _vm._v(
-              "\n                            Type\n                        "
+              "\n                            Until\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Leaves on\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Returns on\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
               "\n                            Status\n                        "
             )
-          ]
-        )
-      ])
-    ])
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -57692,6 +57884,8 @@ var render = function() {
                       expression: "takeHolidayForm.start_date"
                     }
                   ],
+                  staticClass:
+                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
                   attrs: {
                     id: "start_date",
                     type: "date",
@@ -57735,6 +57929,8 @@ var render = function() {
                       expression: "takeHolidayForm.end_date"
                     }
                   ],
+                  staticClass:
+                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
                   attrs: {
                     id: "end_date",
                     type: "date",
@@ -57782,6 +57978,8 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass:
+                  "text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded",
                 class: { "opacity-25": _vm.takeHolidayForm.processing },
                 attrs: { disabled: _vm.takeHolidayForm.processing },
                 on: {
@@ -57824,12 +58022,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-8" }, [
     _c("div", { staticClass: "mt-6" }, [
-      _c("div", { staticClass: "flex justify-between " }, [
-        _c("div", { staticClass: "flex" }, [
+      _c("div", { staticClass: "lg:flex justify-between " }, [
+        _c("div", { staticClass: " flex pl-6" }, [
           _c(
             "div",
             { staticClass: "flex items-center" },
-            [_c("jet-application-mark", { staticClass: "block h-44 w-auto" })],
+            [
+              _c("UsersLogo", {
+                staticClass: " self-center block h-24 sm:h-44 w-auto"
+              })
+            ],
             1
           ),
           _vm._v(" "),
@@ -57837,7 +58039,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "self-center text-5xl ml-16 font-semibold text-gray-600 uppercase"
+                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
             },
             [_vm._v("\n                    Users\n                ")]
           )
@@ -57876,77 +58078,144 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
                   _vm._l(_vm.users, function(user) {
                     return _c(
                       "tr",
                       [
                         user
-                          ? _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "px-5 py-5 border-b  bg-white text-sm"
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex items-center" },
-                                  [
-                                    user.profile_photo_path === "/storage/"
-                                      ? _c(
-                                          "div",
+                          ? _c("td", { staticClass: "px-2 py-5 " }, [
+                              _c("div", { staticClass: "flex items-center" }, [
+                                user.profile_photo_path === "/storage/"
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
+                                      },
+                                      [
+                                        _c(
+                                          "svg",
                                           {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
+                                            attrs: {
+                                              width: "32px",
+                                              height: "32px",
+                                              viewBox: "0 0 32 32",
+                                              xmlns:
+                                                "http://www.w3.org/2000/svg"
+                                            }
                                           },
                                           [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "../storage/profile-photos/default/default-avatar.png"
-                                              }
-                                            })
+                                            _c(
+                                              "g",
+                                              {
+                                                attrs: {
+                                                  id: "avatar",
+                                                  transform:
+                                                    "translate(-1407 -182)"
+                                                }
+                                              },
+                                              [
+                                                _c("circle", {
+                                                  attrs: {
+                                                    id: "Ellipse_16",
+                                                    "data-name": "Ellipse 16",
+                                                    cx: "15",
+                                                    cy: "15",
+                                                    r: "15",
+                                                    transform:
+                                                      "translate(1408 183)",
+                                                    fill: "#e8f7f9",
+                                                    stroke: "#333",
+                                                    "stroke-linecap": "round",
+                                                    "stroke-linejoin": "round",
+                                                    "stroke-width": "2"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "g",
+                                                  {
+                                                    attrs: {
+                                                      id: "Group_49",
+                                                      "data-name": "Group 49"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("circle", {
+                                                      attrs: {
+                                                        id: "Ellipse_17",
+                                                        "data-name":
+                                                          "Ellipse 17",
+                                                        cx: "4.565",
+                                                        cy: "4.565",
+                                                        r: "4.565",
+                                                        transform:
+                                                          "translate(1418.435 192.13)",
+                                                        fill: "#fff1b6",
+                                                        stroke: "#333",
+                                                        "stroke-miterlimit":
+                                                          "10",
+                                                        "stroke-width": "2"
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("path", {
+                                                      attrs: {
+                                                        id: "Path_53",
+                                                        "data-name": "Path 53",
+                                                        d:
+                                                          "M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z",
+                                                        fill: "#fff1b6",
+                                                        stroke: "#333",
+                                                        "stroke-miterlimit":
+                                                          "10",
+                                                        "stroke-width": "2"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ]
+                                            )
                                           ]
                                         )
-                                      : _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "flex-shrink-0 w-10 h-10"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src: user.profile_photo_path
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "ml-3" }, [
-                                      _c(
-                                        "p",
-                                        {
+                                      ]
+                                    )
+                                  : _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
+                                      },
+                                      [
+                                        _c("img", {
                                           staticClass:
-                                            "text-gray-900 whitespace-no-wrap"
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(user.name) +
-                                              "\n                                    "
-                                          )
-                                        ]
+                                            "w-full h-full rounded-full",
+                                          attrs: {
+                                            src: user.profile_photo_path
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "ml-3" }, [
+                                  _c(
+                                    "p",
+                                    {
+                                      staticClass:
+                                        "text-gray-900 whitespace-no-wrap"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(user.name) +
+                                          "\n                                    "
                                       )
-                                    ])
-                                  ]
-                                )
-                              ]
-                            )
+                                    ]
+                                  )
+                                ])
+                              ])
+                            ])
                           : _vm._e(),
                         _vm._v(" "),
                         user
@@ -57956,16 +58225,23 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         user
-                          ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _vm._v(_vm._s(_vm.registeredSince(user)))
-                            ])
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(_vm.registeredSince(user)))]
+                            )
                           : _vm._e(),
                         _vm._v(" "),
                         _vm._l(user.roles, function(role) {
                           return user
-                            ? _c("td", { staticClass: "py-3 px-5 uppercase" }, [
-                                _vm._v(_vm._s(role))
-                              ])
+                            ? _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "py-3 px-5 capitalize hidden sm:table-cell"
+                                },
+                                [_vm._v(_vm._s(role))]
+                              )
                             : _vm._e()
                         })
                       ],
@@ -58004,7 +58280,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("prev")
@@ -58022,7 +58298,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r",
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
                         on: {
                           click: function($event) {
                             return _vm.clickPage("next")
@@ -58050,63 +58326,336 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "border-green-200 bg-green-200" }, [
-      _c("tr", [
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+    return _c(
+      "thead",
+      {
+        staticClass:
+          "border-green-700 bg-green-700 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider"
+      },
+      [
+        _c("tr", [
+          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
             _vm._v(
               "\n                            User\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2 " }, [
             _vm._v(
               "\n                            Email\n                        "
             )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Registered\n                        "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "th",
-          {
-            staticClass:
-              "px-5 py-3 border-b-2   text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-          },
-          [
-            _vm._v(
-              "\n                            Role\n                        "
-            )
-          ]
-        )
-      ])
-    ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Registered\n                        "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
+            [
+              _vm._v(
+                "\n                            Role\n                        "
+              )
+            ]
+          )
+        ])
+      ]
+    )
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/UsersLogo.vue?vue&type=template&id=42cb0c78& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        "enable-background": "new 0 0 512 512",
+        version: "1.1",
+        viewBox: "0 0 512 512",
+        "xml:space": "preserve",
+        xmlns: "http://www.w3.org/2000/svg"
+      }
+    },
+    [
+      _c("path", {
+        attrs: {
+          d:
+            "m128 178.1 87.149 119.83h32.681c0-66.179-53.651-119.83-119.83-119.83z",
+          fill: "#065f46"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m129.21 8.172v137.26c37.899 0 68.63-30.731 68.63-68.63 0-37.91-30.731-68.63-68.63-68.63z",
+          fill: "#FF9269"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m128 178.1c48.128 0 87.149 53.651 87.149 119.83h-206.98c0-66.179 53.651-119.83 119.83-119.83z",
+          fill: "#059669"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m129.21 8.172c19.848 0 35.949 30.72 35.949 68.63 0 37.899-16.101 68.63-35.949 68.63-37.91 0-68.63-30.731-68.63-68.63 0-37.91 30.72-68.63 68.63-68.63z",
+          fill: "#FFB082"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m384 178.1 87.149 119.83h32.681c0-66.179-53.651-119.83-119.83-119.83z",
+          fill: "#065f46"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m385.21 8.172v137.26c37.899 0 68.63-30.731 68.63-68.63 0-37.91-30.731-68.63-68.63-68.63z",
+          fill: "#FF9269"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m384 178.1c48.128 0 87.149 53.651 87.149 119.83h-206.98c0-66.179 53.651-119.83 119.83-119.83z",
+          fill: "#059669"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m385.21 8.172c19.848 0 35.949 30.72 35.949 68.63 0 37.899-16.101 68.63-35.949 68.63-37.91 0-68.63-30.731-68.63-68.63 0-37.91 30.72-68.63 68.63-68.63z",
+          fill: "#FFB082"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m256 178.1 87.149 119.83h32.681c0-66.179-53.651-119.83-119.83-119.83z",
+          fill: "#FF4719"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m257.21 8.172v137.26c37.899 0 68.63-30.731 68.63-68.63 0-37.91-30.731-68.63-68.63-68.63z",
+          fill: "#FFDB8A"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m256 178.1c48.128 0 87.149 53.651 87.149 119.83h-206.98c0-66.179 53.651-119.83 119.83-119.83z",
+          fill: "#FF754F"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m257.21 8.172c19.848 0 35.949 30.72 35.949 68.63 0 37.899-16.101 68.63-35.949 68.63-37.91 0-68.63-30.731-68.63-68.63 0-37.91 30.72-68.63 68.63-68.63z",
+          fill: "#FFEAB5"
+        }
+      }),
+      _vm._v(" "),
+      _c("g", { attrs: { fill: "#78E3EC" } }, [
+        _c("circle", { attrs: { cx: "69.251", cy: "487.49", r: "16.34" } }),
+        _vm._v(" "),
+        _c("circle", { attrs: { cx: "134.61", cy: "487.49", r: "16.34" } }),
+        _vm._v(" "),
+        _c("circle", { attrs: { cx: "290.74", cy: "487.49", r: "16.34" } })
+      ]),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m257.2 153.6c42.348 0 76.8-34.452 76.8-76.8s-34.452-76.8-76.8-76.8-76.8 34.452-76.8 76.8 34.452 76.8 76.8 76.8zm0-137.26c33.338 0 60.46 27.122 60.46 60.46s-27.122 60.46-60.46 60.46-60.46-27.122-60.46-60.46 27.123-60.46 60.46-60.46z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m384 169.93c-10.593 0-21.14 1.304-31.351 3.876-4.376 1.102-7.029 5.543-5.926 9.919 1.102 4.376 5.542 7.03 9.918 5.927 8.907-2.244 18.112-3.381 27.359-3.381 58.822 0 107.17 45.719 111.36 103.49h-86.854c-4.513 0-8.17 3.658-8.17 8.17s3.657 8.17 8.17 8.17h95.319c4.513 0 8.17-3.658 8.17-8.17 1e-3 -70.58-57.419-128-128-128z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m76.42 464.05v-65.855l33.785-63.563c0.627-1.181 0.955-2.497 0.955-3.835v-32.867c0-4.512-3.657-8.17-8.17-8.17h-86.354c4.197-57.77 52.541-103.49 111.36-103.49 9.248 0 18.453 1.137 27.359 3.381 4.377 1.1 8.816-1.551 9.918-5.927s-1.551-8.816-5.926-9.919c-10.211-2.572-20.759-3.876-31.351-3.876-70.58 0-128 57.42-128 128 0 4.512 3.657 8.17 8.17 8.17h86.65v22.66l-33.785 63.564c-0.627 1.181-0.955 2.497-0.955 3.835v68.605c-8.985 3.638-15.341 12.45-15.341 22.724 0 13.516 10.996 24.511 24.511 24.511s24.511-10.995 24.511-24.511c-2e-3 -11.021-7.314-20.363-17.341-23.437zm-7.171 31.608c-4.506 0-8.17-3.665-8.17-8.17s3.665-8.17 8.17-8.17c4.506 0 8.17 3.665 8.17 8.17s-3.665 8.17-8.17 8.17z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m298.91 464.38v-68.225c0-1.338-0.329-2.654-0.955-3.835l-33.785-63.563v-22.661h111.66c4.513 0 8.17-3.658 8.17-8.17 0-70.58-57.42-128-128-128s-128 57.42-128 128c0 4.512 3.657 8.17 8.17 8.17h25.01v22.661l-33.784 63.563c-0.627 1.181-0.955 2.497-0.955 3.835v68.225c-9.509 3.373-16.34 12.454-16.34 23.105 0 13.516 10.996 24.511 24.511 24.511s24.511-10.995 24.511-24.511c0-10.651-6.831-19.733-16.34-23.105v-66.187l33.784-63.563c0.627-1.181 0.955-2.497 0.955-3.835v-24.697h70.31v24.697c0 1.338 0.329 2.654 0.955 3.835l33.785 63.563v66.187c-9.509 3.373-16.34 12.454-16.34 23.105 0 13.516 10.996 24.511 24.511 24.511s24.511-10.995 24.511-24.511c-4e-3 -10.65-6.835-19.732-16.344-23.105zm-164.3 31.276c-4.506 0-8.17-3.665-8.17-8.17s3.665-8.17 8.17-8.17 8.17 3.665 8.17 8.17-3.664 8.17-8.17 8.17zm121.39-309.39c58.822 0 107.17 45.719 111.36 103.49h-222.73c4.197-57.771 52.542-103.49 111.36-103.49zm34.741 309.39c-4.506 0-8.17-3.665-8.17-8.17s3.665-8.17 8.17-8.17 8.17 3.665 8.17 8.17-3.666 8.17-8.17 8.17z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m459.09 387.99h-135.67c-4.513 0-8.17 3.658-8.17 8.17s3.657 8.17 8.17 8.17h135.67c4.513 0 8.17-3.658 8.17-8.17s-3.658-8.17-8.17-8.17z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m459.09 420.67h-135.67c-4.513 0-8.17 3.658-8.17 8.17s3.657 8.17 8.17 8.17h135.67c4.513 0 8.17-3.658 8.17-8.17s-3.658-8.17-8.17-8.17z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m459.09 453.35h-67.836c-4.513 0-8.17 3.658-8.17 8.17s3.657 8.17 8.17 8.17h67.836c4.513 0 8.17-3.658 8.17-8.17s-3.658-8.17-8.17-8.17z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m347.93 29.221c10.738-8.426 23.628-12.881 37.278-12.881 33.338 0 60.46 27.122 60.46 60.46s-27.122 60.46-60.46 60.46c-13.649 0-26.539-4.453-37.278-12.881-3.549-2.787-8.685-2.167-11.471 1.385-2.785 3.549-2.166 8.685 1.385 11.471 13.643 10.706 30.023 16.365 47.364 16.365 42.348 0 76.8-34.452 76.8-76.8s-34.452-76.8-76.8-76.8c-17.344 0-33.722 5.659-47.365 16.367-3.55 2.785-4.169 7.921-1.385 11.471 2.786 3.55 7.924 4.169 11.472 1.383z"
+        }
+      }),
+      _vm._v(" "),
+      _c("path", {
+        attrs: {
+          d:
+            "m126.8 153.6c17.342 0 33.72-5.659 47.364-16.365 3.55-2.785 4.169-7.922 1.385-11.471-2.788-3.551-7.923-4.169-11.471-1.385-10.738 8.426-23.628 12.881-37.277 12.881-33.338 0-60.46-27.122-60.46-60.46s27.121-60.46 60.458-60.46c13.649 0 26.539 4.454 37.278 12.881 3.548 2.785 8.685 2.167 11.471-1.383s2.166-8.685-1.385-11.471c-13.641-10.708-30.021-16.367-47.363-16.367-42.348 0-76.8 34.452-76.8 76.8s34.451 76.8 76.8 76.8z"
+        }
+      })
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Waiting.vue?vue&type=template&id=189e5d9c& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      staticStyle: { "enable-background": "new 0 0 300.136 300.136" },
+      attrs: {
+        version: "1.1",
+        id: "Layer_1",
+        xmlns: "http://www.w3.org/2000/svg",
+        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+        x: "0px",
+        y: "0px",
+        viewBox: "0 0 300.136 300.136",
+        "xml:space": "preserve"
+      }
+    },
+    [
+      _c("g", [
+        _c("g", [
+          _c("path", {
+            attrs: {
+              d:
+                "M217.742,102.562c14.269-13.819,22.453-33.063,22.453-52.799V9c0-4.971-4.029-9-9-9H68.942c-4.971,0-9,4.029-9,9v40.763\n\t\t\tc0,20.607,9.063,39.97,24.874,53.151l52.765,47.154l-52.765,47.154c-15.811,13.182-24.874,32.544-24.874,53.151v40.763\n\t\t\tc0,4.971,4.029,9,9,9h162.253c4.971,0,9-4.029,9-9v-40.763c0-19.735-8.184-38.979-22.453-52.799\n\t\t\tc-0.086-0.084-0.174-0.166-0.264-0.246l-52.884-47.261l52.884-47.261C217.567,102.728,217.656,102.646,217.742,102.562z\n\t\t\t M77.942,18h144.252v9.069H77.971c-0.01,0-0.019,0.001-0.029,0.001V18z M222.195,282.137H77.942v-9.724\n\t\t\tc0.01,0,0.019,0.001,0.029,0.001h144.224V282.137z M79.223,254.415l72.095-38.127l69.73,38.127H79.223z M205.343,210.626\n\t\t\tc6.419,6.255,11.18,13.966,13.978,22.329l-63.614-34.783c-2.652-1.451-5.854-1.473-8.525-0.06L80.833,233.2\n\t\t\tc3.006-8.554,8.294-16.167,15.607-22.234c0.085-0.07,0.168-0.143,0.25-0.216l54.396-48.612L205.343,210.626z M151.087,137.999\n\t\t\tl-29.015-25.93h58.03L151.087,137.999z M200.197,94.109c-0.27-0.024-0.542-0.041-0.818-0.041H103.4\n\t\t\tc-0.459,0-0.906,0.045-1.346,0.112l-5.365-4.794c-0.082-0.073-0.166-0.146-0.25-0.216c-11.928-9.896-18.498-23.891-18.498-39.407\n\t\t\tv-4.696c0.01,0,0.019,0.001,0.029,0.001h144.224v4.694c0,14.832-6.14,29.309-16.852,39.748L200.197,94.109z"
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g"),
+      _vm._v(" "),
+      _c("g")
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

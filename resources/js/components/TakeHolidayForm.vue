@@ -32,13 +32,13 @@
             <div class="col-span-4 sm:col-span-4">
 
                 <jet-label for="start_date" value="Starting on"/>
-                <input id="start_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.start_date"/>
+                <input class="border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm" id="start_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.start_date"/>
                 <jet-input-error :message="takeHolidayForm.errors.start_date" class="mt-2" />
             </div>
             <div class="col-span-4 sm:col-span-4">
 
                 <jet-label for="end_date" value="Until"/>
-                <input id="end_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.end_date" />
+                <input class="border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm" id="end_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.end_date" />
                 <jet-input-error :message="takeHolidayForm.errors.end_date" class="mt-2" />
             </div>
 
@@ -51,7 +51,7 @@
                 Requested.
             </jet-action-message>
 
-            <button v-on:click="requestHoliday()" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
+            <button class="text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded" v-on:click="requestHoliday()" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
                 Give me a break!
             </button>
         </template>
@@ -91,7 +91,7 @@ export default {
     data() {
 
         return {
-            link: 'http://127.0.0.1:8000/api/roles',
+            link: '/api/roles',
             roles: [],
             takeHolidayForm: this.$inertia.form({
                 type: '',

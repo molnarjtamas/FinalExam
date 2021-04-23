@@ -21,6 +21,7 @@ class HolidayResource extends JsonResource
             'id' => $this->id,
             'user' => User::find($this->user_id),
             'type' => $this->type,
+            'description'=> $this->description,
             'start_date' => $this->start_date,
             'end_date'=> $this->end_date,
             'approved' => $this->approved,
