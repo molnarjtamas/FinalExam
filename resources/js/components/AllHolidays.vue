@@ -91,8 +91,13 @@
                             <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date )}}</td>
                             <td v-if="holiday" class="py-3 px-5">
                                 <div class="flex">
-                                    <CheckMark class="h-8 w-8 ml-2 text-green-700"></CheckMark>
-                                    <Decline class="h-8 w-8 ml-4 text-red-700"></Decline>
+
+                                    <inertia-link :href="route('holiday.approve',holiday.id)">
+                                        <CheckMark class="h-8 w-8  text-green-700"></CheckMark>
+                                    </inertia-link>
+                                    <inertia-link :href="route('holiday.decline',holiday.id)">
+                                        <Decline class="h-8 w-8 ml-4 text-red-700"></Decline>
+                                    </inertia-link>
                                 </div>
 
                             </td>

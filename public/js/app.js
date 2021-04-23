@@ -5249,6 +5249,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -56999,13 +57004,41 @@ var render = function() {
                                 "div",
                                 { staticClass: "flex" },
                                 [
-                                  _c("CheckMark", {
-                                    staticClass: "h-8 w-8 ml-2 text-green-700"
-                                  }),
+                                  _c(
+                                    "inertia-link",
+                                    {
+                                      attrs: {
+                                        href: _vm.route(
+                                          "holiday.approve",
+                                          holiday.id
+                                        )
+                                      }
+                                    },
+                                    [
+                                      _c("CheckMark", {
+                                        staticClass: "h-8 w-8  text-green-700"
+                                      })
+                                    ],
+                                    1
+                                  ),
                                   _vm._v(" "),
-                                  _c("Decline", {
-                                    staticClass: "h-8 w-8 ml-4 text-red-700"
-                                  })
+                                  _c(
+                                    "inertia-link",
+                                    {
+                                      attrs: {
+                                        href: _vm.route(
+                                          "holiday.decline",
+                                          holiday.id
+                                        )
+                                      }
+                                    },
+                                    [
+                                      _c("Decline", {
+                                        staticClass: "h-8 w-8 ml-4 text-red-700"
+                                      })
+                                    ],
+                                    1
+                                  )
                                 ],
                                 1
                               )

@@ -141,7 +141,9 @@ export default {
         }
     },
     mounted() {
+        console.log()
         this.fetchUsers()
+        //get permissions
     },
 
     methods: {
