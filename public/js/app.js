@@ -4088,6 +4088,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AllHolidays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/AllHolidays */ "./resources/js/components/AllHolidays.vue");
 /* harmony import */ var _components_MyHolidays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/MyHolidays */ "./resources/js/components/MyHolidays.vue");
 /* harmony import */ var _components_TakeHolidayForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/TakeHolidayForm */ "./resources/js/components/TakeHolidayForm.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
 //
 //
 //
@@ -4116,6 +4120,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 
 
@@ -4126,6 +4132,38 @@ __webpack_require__.r(__webpack_exports__);
     AllHolidays: _components_AllHolidays__WEBPACK_IMPORTED_MODULE_1__.default,
     MyHolidays: _components_MyHolidays__WEBPACK_IMPORTED_MODULE_2__.default,
     TakeHolidayForm: _components_TakeHolidayForm__WEBPACK_IMPORTED_MODULE_3__.default
+  },
+  data: function data() {
+    return {
+      permissions: null
+    };
+  },
+  computed: {
+    canViewAllHolidays: function canViewAllHolidays() {
+      return this.permissions ? this.checkPermission(this.permissions, 'view-all-holidays') : false;
+    },
+    canViewOwnHolidays: function canViewOwnHolidays() {
+      return this.permissions ? this.checkPermission(this.permissions, 'view-own-holidays') : false;
+    }
+  },
+  mounted: function mounted() {
+    this.fetchPermissions();
+  },
+  methods: {
+    fetchPermissions: function fetchPermissions() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_4___default().get('user/permissions').then(function (response) {
+        _this.permissions = response.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    checkPermission: function checkPermission(permissions, permission) {
+      return permissions.some(function (element) {
+        return element === permission;
+      });
+    }
   }
 });
 
@@ -5254,6 +5292,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5415,8 +5462,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get(this.link).then(function (res) {
-        console.log(res);
-
         _this2.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
@@ -5748,8 +5793,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get(this.link).then(function (res) {
-        console.log(res);
-
         _this2.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
@@ -5757,7 +5800,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     prepareParams: function prepareParams(res) {
       this.roles = Object.values(res.data);
-      console.log(this.roles);
     },
     getMinStartDate: function getMinStartDate() {
       return moment__WEBPACK_IMPORTED_MODULE_9___default()().add(15, 'days').format("YYYY-MM-DD");
@@ -5921,18 +5963,34 @@ __webpack_require__.r(__webpack_exports__);
       link: '/api/users',
       users: {},
       links: {},
-      meta: {}
+      meta: {},
+      permissions: null
     };
+  },
+  computed: {
+    canInvite: function canInvite() {
+      return this.permissions ? this.checkPermission(this.permissions, 'invite-users') : false;
+    }
   },
   mounted: function mounted() {
     this.fetchUsers();
+    this.fetchPermissions();
   },
   methods: {
-    fetchUsers: function fetchUsers() {
+    fetchPermissions: function fetchPermissions() {
       var _this = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('user/permissions').then(function (response) {
+        _this.permissions = response.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    fetchUsers: function fetchUsers() {
+      var _this2 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get(this.link).then(function (res) {
-        _this.prepareParams(res);
+        _this2.prepareParams(res);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -5945,6 +6003,11 @@ __webpack_require__.r(__webpack_exports__);
     clickPage: function clickPage(button) {
       if (button === 'prev') this.link = this.links.prev;else this.link = this.links.next;
       this.fetchUsers();
+    },
+    checkPermission: function checkPermission(permissions, permission) {
+      return permissions.some(function (element) {
+        return element === permission;
+      });
     },
     registeredSince: function registeredSince(user) {
       return moment__WEBPACK_IMPORTED_MODULE_1___default()(user.created_at).fromNow();
@@ -5978,13 +6041,6 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.mixin({
 });
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.plugin);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(portal_vue__WEBPACK_IMPORTED_MODULE_1__.default);
-vue__WEBPACK_IMPORTED_MODULE_2__.default.directive('can', function (el, binding, vnode) {
-  if (Permissions.indexOf(binding.value) !== -1) {
-    return vnode.elm.hidden = false;
-  } else {
-    return vnode.elm.hidden = true;
-  }
-});
 var app = document.getElementById('app');
 new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   render: function render(h) {
@@ -55303,49 +55359,26 @@ var render = function() {
             "div",
             { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
             [
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "can",
-                      rawName: "v-can",
-                      value: "view-all-holidays",
-                      expression: "'view-all-holidays'"
-                    }
-                  ]
-                },
-                [_c("AllHolidays")],
-                1
-              ),
+              _vm.canViewAllHolidays
+                ? _c("div", [_c("AllHolidays")], 1)
+                : _vm._e(),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "can",
-                      rawName: "v-can",
-                      value: "view-own-holidays",
-                      expression: "'view-own-holidays'"
-                    }
-                  ]
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "xl:flex " },
-                    [
-                      _c("MyHolidays"),
-                      _vm._v(" "),
-                      _c("TakeHolidayForm", {
-                        staticClass: "self-end mb-6 mr-6"
-                      })
-                    ],
-                    1
-                  )
-                ]
-              )
+              _vm.canViewOwnHolidays
+                ? _c("div", [
+                    _c(
+                      "div",
+                      { staticClass: "xl:flex " },
+                      [
+                        _c("MyHolidays"),
+                        _vm._v(" "),
+                        _c("TakeHolidayForm", {
+                          staticClass: "self-end mb-6 mr-6"
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
             ]
           )
         ])
@@ -56925,14 +56958,96 @@ var render = function() {
                                               "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                           },
                                           [
-                                            _c("img", {
-                                              staticClass:
-                                                "w-full h-full rounded-full",
-                                              attrs: {
-                                                src:
-                                                  "/storage/profile-photos/default/default-avatar.png"
-                                              }
-                                            })
+                                            _c(
+                                              "svg",
+                                              {
+                                                attrs: {
+                                                  width: "32px",
+                                                  height: "32px",
+                                                  viewBox: "0 0 32 32",
+                                                  xmlns:
+                                                    "http://www.w3.org/2000/svg"
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "g",
+                                                  {
+                                                    attrs: {
+                                                      id: "avatar",
+                                                      transform:
+                                                        "translate(-1407 -182)"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("circle", {
+                                                      attrs: {
+                                                        id: "Ellipse_16",
+                                                        "data-name":
+                                                          "Ellipse 16",
+                                                        cx: "15",
+                                                        cy: "15",
+                                                        r: "15",
+                                                        transform:
+                                                          "translate(1408 183)",
+                                                        fill: "#e8f7f9",
+                                                        stroke: "#333",
+                                                        "stroke-linecap":
+                                                          "round",
+                                                        "stroke-linejoin":
+                                                          "round",
+                                                        "stroke-width": "2"
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "g",
+                                                      {
+                                                        attrs: {
+                                                          id: "Group_49",
+                                                          "data-name":
+                                                            "Group 49"
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("circle", {
+                                                          attrs: {
+                                                            id: "Ellipse_17",
+                                                            "data-name":
+                                                              "Ellipse 17",
+                                                            cx: "4.565",
+                                                            cy: "4.565",
+                                                            r: "4.565",
+                                                            transform:
+                                                              "translate(1418.435 192.13)",
+                                                            fill: "#fff1b6",
+                                                            stroke: "#333",
+                                                            "stroke-miterlimit":
+                                                              "10",
+                                                            "stroke-width": "2"
+                                                          }
+                                                        }),
+                                                        _vm._v(" "),
+                                                        _c("path", {
+                                                          attrs: {
+                                                            id: "Path_53",
+                                                            "data-name":
+                                                              "Path 53",
+                                                            d:
+                                                              "M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z",
+                                                            fill: "#fff1b6",
+                                                            stroke: "#333",
+                                                            "stroke-miterlimit":
+                                                              "10",
+                                                            "stroke-width": "2"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
                                           ]
                                         )
                                       : _c(
@@ -57000,48 +57115,56 @@ var render = function() {
                         _vm._v(" "),
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
-                              _c(
-                                "div",
-                                { staticClass: "flex" },
-                                [
-                                  _c(
-                                    "inertia-link",
-                                    {
-                                      attrs: {
-                                        href: _vm.route(
-                                          "holiday.approve",
-                                          holiday.id
-                                        )
-                                      }
-                                    },
+                              holiday.approved
+                                ? _c("div", [
+                                    _c("b", { staticClass: "uppercase" }, [
+                                      _vm._v("approved")
+                                    ])
+                                  ])
+                                : _c(
+                                    "div",
+                                    { staticClass: "flex" },
                                     [
-                                      _c("CheckMark", {
-                                        staticClass: "h-8 w-8  text-green-700"
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "inertia-link",
-                                    {
-                                      attrs: {
-                                        href: _vm.route(
-                                          "holiday.decline",
-                                          holiday.id
-                                        )
-                                      }
-                                    },
-                                    [
-                                      _c("Decline", {
-                                        staticClass: "h-8 w-8 ml-4 text-red-700"
-                                      })
+                                      _c(
+                                        "inertia-link",
+                                        {
+                                          attrs: {
+                                            href: _vm.route(
+                                              "holiday.approve",
+                                              holiday.id
+                                            )
+                                          }
+                                        },
+                                        [
+                                          _c("CheckMark", {
+                                            staticClass:
+                                              "h-8 w-8  text-green-700"
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "inertia-link",
+                                        {
+                                          attrs: {
+                                            href: _vm.route(
+                                              "holiday.decline",
+                                              holiday.id
+                                            )
+                                          }
+                                        },
+                                        [
+                                          _c("Decline", {
+                                            staticClass:
+                                              "h-8 w-8 ml-4 text-red-700"
+                                          })
+                                        ],
+                                        1
+                                      )
                                     ],
                                     1
                                   )
-                                ],
-                                1
-                              )
                             ])
                           : _vm._e()
                       ]
@@ -58045,21 +58168,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "can",
-                rawName: "v-can",
-                value: "invite-users",
-                expression: "'invite-users'"
-              }
-            ]
-          },
-          [_c("InviteUser")],
-          1
-        )
+        _vm.canInvite ? _c("div", [_c("InviteUser")], 1) : _vm._e()
       ]),
       _vm._v(" "),
       _c(

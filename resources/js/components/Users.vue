@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <div  v-can="'invite-users'">
+                <div  v-if="canInvite">
                     <InviteUser></InviteUser>
                 </div>
             </div>
@@ -138,15 +138,32 @@ export default {
             users: {},
             links: {},
             meta: {},
+            permissions: null,
         }
     },
+    computed:
+        {
+          canInvite: function (){
+              return this.permissions ? this.checkPermission(this.permissions,'invite-users') : false
+          }
+        },
     mounted() {
-        console.log()
+
         this.fetchUsers()
-        //get permissions
+        this.fetchPermissions()
+
     },
 
     methods: {
+        fetchPermissions() {
+            axios.get('user/permissions')
+                .then( response => {
+                    this.permissions = response.data
+
+                }).catch(err => {
+                    console.log(err)
+            })
+        },
 
         fetchUsers() {
             axios.get(this.link)
@@ -174,6 +191,9 @@ export default {
             this.fetchUsers();
         },
 
+        checkPermission(permissions,permission) {
+            return permissions.some(element => element === permission);
+        },
 
         registeredSince(user) {
             return moment(user.created_at).fromNow();

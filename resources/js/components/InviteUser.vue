@@ -90,7 +90,6 @@ export default {
         fetchRoles(){
             axios.get(this.link)
                 .then(res =>{
-                    console.log(res)
                     this.prepareParams(res)
                 }).catch(err =>{
                     console.log(err)
