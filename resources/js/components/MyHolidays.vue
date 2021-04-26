@@ -110,6 +110,9 @@ import moment from "moment";
 import HolidayMark from "@/components/HolidayMark"
 import CheckMark from "@/components/CheckMark"
 import Waiting from "@/components/Waiting"
+
+
+
 export default {
     name: "MyHolidays",
 
@@ -130,7 +133,9 @@ export default {
         }
     },
 
-    computed: {},
+    computed: {
+
+    },
     mounted() {
         this.fetchHolidays()
         this.getToday()
@@ -158,10 +163,8 @@ export default {
         clickPage(button) {
             if (button === 'prev')
                 this.link = this.links.prev
-
             else
                 this.link = this.links.next
-
             this.fetchHolidays();
         },
 

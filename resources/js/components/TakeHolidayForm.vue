@@ -122,7 +122,6 @@ export default {
         fetchRoles(){
             axios.get(this.link)
                 .then(res =>{
-                    console.log(res)
                     this.prepareParams(res)
                 }).catch(err =>{
                 console.log(err)
@@ -131,7 +130,7 @@ export default {
 
         prepareParams(res){
             this.roles = Object.values(res.data)
-            console.log(this.roles)
+
         },
         getMinStartDate() {
             return moment().add(15,'days').format("YYYY-MM-DD");

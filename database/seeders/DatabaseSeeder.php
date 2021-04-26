@@ -19,8 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         $user = User::factory()->create();
         $role1 = Role::create(['name' => 'admin']);
-        $role2 = Role::create(['name' => 'moderator']);
-        $role3 = Role::create(['name' => 'user']);
+        $role2 = Role::create(['name' => 'user']);
         $permission1 = Permission::create(['name' => 'invite-users']);
         $permission2 = Permission::create(['name' => 'view-users']);
         $permission3 = Permission::create(['name' => 'view-all-holidays']);
@@ -28,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $permission5 = Permission::create(['name' => 'take-holiday']);
 
         $role1->givePermissionTo([$permission1,$permission2,$permission3]);
-        $role3->givePermissionTo([$permission4,$permission5]);
+        $role2->givePermissionTo([$permission4,$permission5]);
 
         $user->assignRole('admin');
     }

@@ -7,6 +7,7 @@ use App\Models\Invitation;
 use App\Models\User;
 use App\Notifications\InvitationNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
@@ -59,6 +60,11 @@ class UserController extends Controller
 
 
         return redirect('/dashboard')->with('success', 'The Invitation has been sent successfully');
+    }
+
+    public function get_authPerms()
+    {
+        return Auth::user()->getAllPermissions()->pluck('name');
     }
 
 

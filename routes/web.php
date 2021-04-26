@@ -41,7 +41,7 @@ Route::get('holidays',[HolidayController::class,'index']);
 Route::get('holiday/approve/{holiday}',[HolidayController::class,'approve'])->name('holiday.approve');
 Route::get('holiday/decline/{holiday}',[HolidayController::class,'decline'])->name('holiday.decline');
 
-
+Route::get('user/permissions',[UserController::class,'get_authPerms']);
 
 Route::get('holidays/{user}',[HolidayController::class,'show']);
 

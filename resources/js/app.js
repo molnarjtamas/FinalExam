@@ -9,14 +9,6 @@ Vue.mixin({ methods: { route } });
 
 Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
-Vue.directive('can', function (el, binding, vnode) {
-
-    if(Permissions.indexOf(binding.value) !== -1){
-        return vnode.elm.hidden = false;
-    }else{
-        return vnode.elm.hidden = true;
-    }
-})
 const app = document.getElementById('app');
 
 new Vue({
