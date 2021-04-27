@@ -23,6 +23,9 @@
                                 <jet-nav-link :href="route('holiday')" :active="route().current('holiday')">
                                     Holiday
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('calendar')" :active="route().current('calendar')">
+                                    Calendar
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -95,6 +98,9 @@
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link :href="route('holiday')" :active="route().current('holiday')">
                             Holiday
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('calendar')" :active="route().current('calendar')">
+                            Calendar
                         </jet-responsive-nav-link>
                     </div>
 
