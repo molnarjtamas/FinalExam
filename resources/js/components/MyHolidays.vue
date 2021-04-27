@@ -16,9 +16,19 @@
                 </div>
 
             </div>
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+                <div class="flex">
+                    <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                    <div>
+                        <p class="font-bold">Everyone has 21 paid vacation days by default</p>
+                        <p class="text-sm">You have left : {{holidays[0].user.days_left}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-4 sm:px-8 py-4 overflow-x-auto">
                 <div
-                    class="inline-block min-w-1/2 shadow rounded-lg overflow-hidden"
+                    class="inline-block  shadow rounded-lg overflow-hidden"
                 >
                     <table class="min-w-full leading-normal">
                         <thead class="border-green-800 bg-green-800 text-white  text-left text-xs sm:text-sm font-semibold uppercase tracking-wider">
@@ -158,6 +168,7 @@ export default {
             this.holidays = res.data.data
             this.links = res.data.links
             this.meta = res.data.meta
+            console.log(this.holidays[0].user.days_left)
         },
 
         clickPage(button) {

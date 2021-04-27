@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
+            'days_left'=>$this->days_left,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'profile_photo_path' => Storage::url($this->profile_photo_path),
