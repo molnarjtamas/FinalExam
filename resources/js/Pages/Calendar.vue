@@ -29,16 +29,13 @@ import AppLayout from '@/Layouts/AppLayout';
 import AllCalendar from "@/components/AllCalendar";
 import MyCalendar from "@/components/MyCalendar";
 import axios from "axios";
-import moment from "moment";
+
 
 export default {
     components: {
         AppLayout,
         AllCalendar,
         MyCalendar,
-
-
-
     },
     data() {
         return {
