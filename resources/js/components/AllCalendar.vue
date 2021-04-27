@@ -42,10 +42,13 @@ export default {
         },
         convertToEvents(holidays){
             // holidays.forEach(holiday => console.log(holiday));
-            let events = holidays
-                .filter(holiday => holiday.approved > 0 )
-                .map(holiday => ({title: holiday.user.name +' - '+ holiday.description, start: holiday.start_date, end: holiday.end_date}));
-            return events;
+            return holidays
+                .filter(holiday => holiday.approved > 0)
+                .map(holiday => ({
+                    title: holiday.user.name + ' - ' + holiday.description,
+                    start: holiday.start_date,
+                    end: holiday.end_date
+                }));
         }
 
     }

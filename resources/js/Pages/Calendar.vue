@@ -15,9 +15,7 @@
 
                     <div v-if="canViewOwnHolidays" >
                         <div class="xl:flex ">
-
-                            <MyHolidays></MyHolidays>
-                            <TakeHolidayForm class="self-end mb-6 mr-6"></TakeHolidayForm>
+                            <MyCalendar></MyCalendar>
                         </div>
                     </div>
                 </div>
@@ -29,8 +27,7 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout';
 import AllCalendar from "@/components/AllCalendar";
-import MyHolidays from "@/components/MyHolidays";
-import TakeHolidayForm from "@/components/TakeHolidayForm";
+import MyCalendar from "@/components/MyCalendar";
 import axios from "axios";
 import moment from "moment";
 
@@ -38,8 +35,8 @@ export default {
     components: {
         AppLayout,
         AllCalendar,
-        MyHolidays,
-        TakeHolidayForm,
+        MyCalendar,
+
 
 
     },
