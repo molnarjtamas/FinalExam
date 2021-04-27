@@ -52,6 +52,8 @@ class HolidayController extends Controller
     {
 
         $holiday->update(['approved' => true]);
+        $days =$holiday->user['days_left'] - $holiday['start_date']->diffInDays($holiday['end_date']);
+        $holiday->user->update(['days_left' => $days]);
 
         return redirect('holiday');
 
