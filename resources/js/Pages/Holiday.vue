@@ -14,10 +14,12 @@
                     </div>
 
                     <div v-if="canViewOwnHolidays" >
-                        <div class="xl:flex ">
+                        <div class="lg:flex ">
 
                             <MyHolidays></MyHolidays>
-                            <TakeHolidayForm class="self-end mb-6 mr-6"></TakeHolidayForm>
+                            <div class="flex justify-start self-end mb-6 mx-8">
+                                 <TakeHolidayForm ></TakeHolidayForm>
+                            </div>
                         </div>
                     </div>
                 </div>
