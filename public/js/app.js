@@ -5611,6 +5611,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -57700,13 +57701,17 @@ var render = function() {
                 _vm._v("Everyone has 21 paid vacation days by default")
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "text-sm" }, [
-                _vm._v(
-                  "You have left : " +
-                    _vm._s(_vm.holidays[0].user.days_left) +
-                    " "
-                )
-              ])
+              _vm.holidays[0]
+                ? _c("p", { staticClass: "text-sm" }, [
+                    _vm._v(
+                      "You have left : " +
+                        _vm._s(_vm.holidays[0].user.days_left) +
+                        " "
+                    )
+                  ])
+                : _c("p", { staticClass: "text-sm" }, [
+                    _vm._v("You have left: 21")
+                  ])
             ])
           ])
         ]
