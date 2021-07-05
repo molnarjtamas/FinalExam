@@ -35,7 +35,6 @@ class CreateNewUser implements CreatesNewUsers
 
         abort_if($invitation==null,400,"Invalid token!");
 
-//        dd($invitation);
 
          $user =User::create([
             'name' => $input['name'],

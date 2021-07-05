@@ -27,8 +27,10 @@ class UserController extends Controller
 
     }
 
+    //this function is processing the member invitations
     public function process_invitations(Request $request)
     {
+        //validation
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:users,email'
         ]);
@@ -42,26 +44,31 @@ class UserController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         };
+        //generating token
         do {
             $token = Str::random(20);
         } while (Invitation::where('token', $token)->first());
+        //registering new record into the invitations table
         Invitation::create([
             'token' => $token,
             'email' => $request->input('email'),
             'role' => $request->input('role'),
         ]);
 
+        //generating url
         $url = URL::temporarySignedRoute(
 
             'registration', now()->addMinutes(300), ['token' => $token, 'email' => $request->input('email')],
         );
 
+        //Sending invitation through mail
         Notification::route('mail', $request->input('email'))->notify(new InvitationNotification($url));
 
-
+        //redirecting with response
         return redirect('/dashboard')->with('success', 'The Invitation has been sent successfully');
     }
 
+    //function to retrieve the permissions of users
     public function get_authPerms()
     {
         return Auth::user()->getAllPermissions()->pluck('name');

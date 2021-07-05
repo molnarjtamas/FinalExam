@@ -5456,8 +5456,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -6091,13 +6089,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_InviteUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/InviteUser */ "./resources/js/components/InviteUser.vue");
 /* harmony import */ var _components_UsersLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/UsersLogo */ "./resources/js/components/UsersLogo.vue");
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -60137,96 +60128,16 @@ var render = function() {
                                               "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                           },
                                           [
-                                            _c(
-                                              "svg",
-                                              {
-                                                attrs: {
-                                                  width: "32px",
-                                                  height: "32px",
-                                                  viewBox: "0 0 32 32",
-                                                  xmlns:
-                                                    "http://www.w3.org/2000/svg"
-                                                }
-                                              },
-                                              [
-                                                _c(
-                                                  "g",
-                                                  {
-                                                    attrs: {
-                                                      id: "avatar",
-                                                      transform:
-                                                        "translate(-1407 -182)"
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("circle", {
-                                                      attrs: {
-                                                        id: "Ellipse_16",
-                                                        "data-name":
-                                                          "Ellipse 16",
-                                                        cx: "15",
-                                                        cy: "15",
-                                                        r: "15",
-                                                        transform:
-                                                          "translate(1408 183)",
-                                                        fill: "#e8f7f9",
-                                                        stroke: "#333",
-                                                        "stroke-linecap":
-                                                          "round",
-                                                        "stroke-linejoin":
-                                                          "round",
-                                                        "stroke-width": "2"
-                                                      }
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "g",
-                                                      {
-                                                        attrs: {
-                                                          id: "Group_49",
-                                                          "data-name":
-                                                            "Group 49"
-                                                        }
-                                                      },
-                                                      [
-                                                        _c("circle", {
-                                                          attrs: {
-                                                            id: "Ellipse_17",
-                                                            "data-name":
-                                                              "Ellipse 17",
-                                                            cx: "4.565",
-                                                            cy: "4.565",
-                                                            r: "4.565",
-                                                            transform:
-                                                              "translate(1418.435 192.13)",
-                                                            fill: "#fff1b6",
-                                                            stroke: "#333",
-                                                            "stroke-miterlimit":
-                                                              "10",
-                                                            "stroke-width": "2"
-                                                          }
-                                                        }),
-                                                        _vm._v(" "),
-                                                        _c("path", {
-                                                          attrs: {
-                                                            id: "Path_53",
-                                                            "data-name":
-                                                              "Path 53",
-                                                            d:
-                                                              "M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z",
-                                                            fill: "#fff1b6",
-                                                            stroke: "#333",
-                                                            "stroke-miterlimit":
-                                                              "10",
-                                                            "stroke-width": "2"
-                                                          }
-                                                        })
-                                                      ]
-                                                    )
-                                                  ]
-                                                )
-                                              ]
-                                            )
+                                            _c("img", {
+                                              staticClass:
+                                                "w-full h-full rounded-full",
+                                              attrs: {
+                                                src:
+                                                  "https://avatar.oxro.io/avatar.svg?color=839eee&background=edf4fe&caps=1&name=" +
+                                                  holiday.user.name,
+                                                alt: holiday.user.name
+                                              }
+                                            })
                                           ]
                                         )
                                       : _c(
@@ -60289,6 +60200,12 @@ var render = function() {
                         holiday
                           ? _c("td", { staticClass: "py-3 px-5" }, [
                               _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _vm._v(_vm._s(holiday.user.days_left))
                             ])
                           : _vm._e(),
                         _vm._v(" "),
@@ -60473,9 +60390,15 @@ var staticRenderFns = [
             )
           ]),
           _vm._v(" "),
+          _c("th", { staticClass: "px-5 py-3 border-b-2" }, [
+            _vm._v(
+              "\n                            Paid left\n                        "
+            )
+          ]),
+          _vm._v(" "),
           _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
-              "\n                            Action\n                        "
+              "\n                            Action / Status\n                        "
             )
           ])
         ])
@@ -61444,91 +61367,16 @@ var render = function() {
                                           "flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10"
                                       },
                                       [
-                                        _c(
-                                          "svg",
-                                          {
-                                            attrs: {
-                                              width: "32px",
-                                              height: "32px",
-                                              viewBox: "0 0 32 32",
-                                              xmlns:
-                                                "http://www.w3.org/2000/svg"
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "g",
-                                              {
-                                                attrs: {
-                                                  id: "avatar",
-                                                  transform:
-                                                    "translate(-1407 -182)"
-                                                }
-                                              },
-                                              [
-                                                _c("circle", {
-                                                  attrs: {
-                                                    id: "Ellipse_16",
-                                                    "data-name": "Ellipse 16",
-                                                    cx: "15",
-                                                    cy: "15",
-                                                    r: "15",
-                                                    transform:
-                                                      "translate(1408 183)",
-                                                    fill: "#e8f7f9",
-                                                    stroke: "#333",
-                                                    "stroke-linecap": "round",
-                                                    "stroke-linejoin": "round",
-                                                    "stroke-width": "2"
-                                                  }
-                                                }),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "g",
-                                                  {
-                                                    attrs: {
-                                                      id: "Group_49",
-                                                      "data-name": "Group 49"
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("circle", {
-                                                      attrs: {
-                                                        id: "Ellipse_17",
-                                                        "data-name":
-                                                          "Ellipse 17",
-                                                        cx: "4.565",
-                                                        cy: "4.565",
-                                                        r: "4.565",
-                                                        transform:
-                                                          "translate(1418.435 192.13)",
-                                                        fill: "#fff1b6",
-                                                        stroke: "#333",
-                                                        "stroke-miterlimit":
-                                                          "10",
-                                                        "stroke-width": "2"
-                                                      }
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c("path", {
-                                                      attrs: {
-                                                        id: "Path_53",
-                                                        "data-name": "Path 53",
-                                                        d:
-                                                          "M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z",
-                                                        fill: "#fff1b6",
-                                                        stroke: "#333",
-                                                        "stroke-miterlimit":
-                                                          "10",
-                                                        "stroke-width": "2"
-                                                      }
-                                                    })
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
+                                        _c("img", {
+                                          staticClass:
+                                            "w-full h-full rounded-full",
+                                          attrs: {
+                                            src:
+                                              "https://avatar.oxro.io/avatar.svg?color=839eee&background=edf4fe&caps=1&name=" +
+                                              user.name,
+                                            alt: user.name
+                                          }
+                                        })
                                       ]
                                     )
                                   : _c(

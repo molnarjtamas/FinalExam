@@ -49,9 +49,14 @@
                                 Until
                             </th>
                             <th
+                                class="px-5 py-3 border-b-2"
+                            >
+                                Paid left
+                            </th>
+                            <th
                                 class="px-5 py-3 border-b-2   "
                             >
-                                Action
+                                Action / Status
                             </th>
                         </tr>
                         </thead>
@@ -65,15 +70,7 @@
                                 <div class="flex items-center">
                                     <div v-if="holiday.user.profile_photo_path === null "
                                          class="flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
-                                        <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="avatar" transform="translate(-1407 -182)">
-                                                <circle id="Ellipse_16" data-name="Ellipse 16" cx="15" cy="15" r="15" transform="translate(1408 183)" fill="#e8f7f9" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                                                <g id="Group_49" data-name="Group 49">
-                                                    <circle id="Ellipse_17" data-name="Ellipse 17" cx="4.565" cy="4.565" r="4.565" transform="translate(1418.435 192.13)" fill="#fff1b6" stroke="#333" stroke-miterlimit="10" stroke-width="2"/>
-                                                    <path id="Path_53" data-name="Path 53" d="M1423,213a14.928,14.928,0,0,0,9.4-3.323,9.773,9.773,0,0,0-18.808,0A14.928,14.928,0,0,0,1423,213Z" fill="#fff1b6" stroke="#333" stroke-miterlimit="10" stroke-width="2"/>
-                                                </g>
-                                            </g>
-                                        </svg>
+                                        <img :src="'https://avatar.oxro.io/avatar.svg?color=839eee&background=edf4fe&caps=1&name='+holiday.user.name" :alt="holiday.user.name" class="w-full h-full rounded-full">
                                     </div>
                                     <div v-else class=" flex-shrink-0 w-7 h-7 lg:w-10 lg:h-10">
                                         <img
@@ -94,6 +91,7 @@
 
                             <td v-if="holiday" class="py-3 px-5">{{ formatDate(holiday.start_date )}}</td>
                             <td v-if="holiday" class="py-3 px-5">{{formatDate(holiday.end_date )}}</td>
+                            <td v-if="holiday" class="py-3 px-5">{{holiday.user.days_left}}</td>
                             <td v-if="holiday" class="py-3 px-5">
                                 <div v-if="holiday.approved">
                                     <b class="uppercase">approved</b>

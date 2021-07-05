@@ -39,7 +39,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/calendar', function () {
     return Inertia::render('Calendar');
 })->name('calendar');
 
-Route::get('holidays',[HolidayController::class,'index']);
+Route::middleware(['auth:sanctum','can:view-all-holidays'])->get('holidays',[HolidayController::class,'index']);
 
 Route::get('holiday/approve/{holiday}',[HolidayController::class,'approve'])->name('holiday.approve');
 Route::get('holiday/decline/{holiday}',[HolidayController::class,'decline'])->name('holiday.decline');
