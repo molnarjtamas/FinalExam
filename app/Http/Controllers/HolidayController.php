@@ -50,10 +50,15 @@ class HolidayController extends Controller
 
     public function approve(Holiday $holiday)
     {
+        try {
+            $holiday->update(['approved' => true]);
+            $days =$holiday->user['days_left'] - $holiday['start_date']->diffInDays($holiday['end_date']);
+            $holiday->user->update(['days_left' => $days]);
+        }
+        catch (\Exception $e){
+            abort(400);
+        }
 
-        $holiday->update(['approved' => true]);
-        $days =$holiday->user['days_left'] - $holiday['start_date']->diffInDays($holiday['end_date']);
-        $holiday->user->update(['days_left' => $days]);
 
         return redirect('holiday');
 
@@ -61,8 +66,12 @@ class HolidayController extends Controller
 
     public function decline(Holiday $holiday)
     {
+        try {
+            $holiday->delete();
+        }catch (\Exception $e){
+            abort(404);
+        }
 
-        $holiday->delete();
 
         return redirect('holiday');
 

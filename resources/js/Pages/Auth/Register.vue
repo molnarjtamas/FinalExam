@@ -1,8 +1,6 @@
 <template>
     <jet-authentication-card>
-        <template #logo>
-            <jet-authentication-card-logo />
-        </template>
+
 
         <jet-validation-errors class="mb-4" />
 
@@ -14,7 +12,7 @@
 
             <div class="mt-4">
                 <jet-label for="email" value="Email" />
-                <jet-input :disabled="1" id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
+                <jet-input :disabled="1" id="email" type="email" class="mt-1 block w-full cursor-not-allowed" v-model="form.email" required />
             </div>
 
             <div class="mt-4">
