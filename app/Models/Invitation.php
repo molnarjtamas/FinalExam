@@ -9,6 +9,11 @@ class Invitation extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable=[
         'email',
         'token',

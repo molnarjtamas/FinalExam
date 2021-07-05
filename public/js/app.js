@@ -3395,8 +3395,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -3451,8 +3449,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
 /* harmony import */ var _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/ValidationErrors */ "./resources/js/Jetstream/ValidationErrors.vue");
-//
-//
 //
 //
 //
@@ -3801,8 +3797,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -3864,8 +3858,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
 /* harmony import */ var _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/ValidationErrors */ "./resources/js/Jetstream/ValidationErrors.vue");
-//
-//
 //
 //
 //
@@ -3975,8 +3967,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_AuthenticationCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/AuthenticationCard */ "./resources/js/Jetstream/AuthenticationCard.vue");
 /* harmony import */ var _Jetstream_AuthenticationCardLogo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/AuthenticationCardLogo */ "./resources/js/Jetstream/AuthenticationCardLogo.vue");
 /* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
-//
-//
 //
 //
 //
@@ -5602,13 +5592,16 @@ __webpack_require__.r(__webpack_exports__);
     addUser: function addUser() {
       var _this = this;
 
-      this.inviteUserForm.post(route('user.invite')), {
+      this.inviteUserForm.post(route('user.invite'), {
         errorBag: 'addUser',
         preserveScroll: true,
         onSuccess: function onSuccess() {
-          return _this.inviteUserForm.reset();
+          console.log(_this.inviteUserForm);
+          _this.inviteUserForm.email = '';
+          _this.inviteUserForm.role = null;
+          _this.inviteUserForm.token = null;
         }
-      };
+      });
     },
     fetchRoles: function fetchRoles() {
       var _this2 = this;
@@ -57142,19 +57135,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "jet-authentication-card",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "logo",
-          fn: function() {
-            return [_c("jet-authentication-card-logo")]
-          },
-          proxy: true
-        }
-      ])
-    },
     [
-      _vm._v(" "),
       _c("div", { staticClass: "mb-4 text-sm text-gray-600" }, [
         _vm._v(
           "\n        This is a secure area of the application. Please confirm your password before continuing.\n    "
@@ -57249,19 +57230,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "jet-authentication-card",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "logo",
-          fn: function() {
-            return [_c("jet-authentication-card-logo")]
-          },
-          proxy: true
-        }
-      ])
-    },
     [
-      _vm._v(" "),
       _c("div", { staticClass: "mb-4 text-sm text-gray-600" }, [
         _vm._v(
           "\n        Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.\n    "
@@ -57791,19 +57760,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "jet-authentication-card",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "logo",
-          fn: function() {
-            return [_c("jet-authentication-card-logo")]
-          },
-          proxy: true
-        }
-      ])
-    },
     [
-      _vm._v(" "),
       _c("jet-validation-errors", { staticClass: "mb-4" }),
       _vm._v(" "),
       _c(
@@ -57947,19 +57904,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "jet-authentication-card",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "logo",
-          fn: function() {
-            return [_c("jet-authentication-card-logo")]
-          },
-          proxy: true
-        }
-      ])
-    },
     [
-      _vm._v(" "),
       _c(
         "div",
         { staticClass: "mb-4 text-sm text-gray-600" },
@@ -58120,87 +58065,68 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "jet-authentication-card",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "logo",
-          fn: function() {
-            return [_c("jet-authentication-card-logo")]
-          },
-          proxy: true
-        }
-      ])
-    },
-    [
-      _vm._v(" "),
-      _c("div", { staticClass: "mb-4 text-sm text-gray-600" }, [
-        _vm._v(
-          "\n        Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.\n    "
-        )
-      ]),
-      _vm._v(" "),
-      _vm.verificationLinkSent
-        ? _c(
-            "div",
-            { staticClass: "mb-4 font-medium text-sm text-green-600" },
-            [
-              _vm._v(
-                "\n        A new verification link has been sent to the email address you provided during registration.\n    "
-              )
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submit($event)
-            }
-          }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "mt-4 flex items-center justify-between" },
-            [
-              _c(
-                "jet-button",
-                {
-                  class: { "opacity-25": _vm.form.processing },
-                  attrs: { disabled: _vm.form.processing }
-                },
-                [
-                  _vm._v(
-                    "\n                Resend Verification Email\n            "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "inertia-link",
-                {
-                  staticClass:
-                    "underline text-sm text-gray-600 hover:text-gray-900",
-                  attrs: {
-                    href: _vm.route("logout"),
-                    method: "post",
-                    as: "button"
-                  }
-                },
-                [_vm._v("Logout")]
-              )
-            ],
-            1
-          )
-        ]
+  return _c("jet-authentication-card", [
+    _c("div", { staticClass: "mb-4 text-sm text-gray-600" }, [
+      _vm._v(
+        "\n        Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.\n    "
       )
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _vm.verificationLinkSent
+      ? _c("div", { staticClass: "mb-4 font-medium text-sm text-green-600" }, [
+          _vm._v(
+            "\n        A new verification link has been sent to the email address you provided during registration.\n    "
+          )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.submit($event)
+          }
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "mt-4 flex items-center justify-between" },
+          [
+            _c(
+              "jet-button",
+              {
+                class: { "opacity-25": _vm.form.processing },
+                attrs: { disabled: _vm.form.processing }
+              },
+              [
+                _vm._v(
+                  "\n                Resend Verification Email\n            "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "inertia-link",
+              {
+                staticClass:
+                  "underline text-sm text-gray-600 hover:text-gray-900",
+                attrs: {
+                  href: _vm.route("logout"),
+                  method: "post",
+                  as: "button"
+                }
+              },
+              [_vm._v("Logout")]
+            )
+          ],
+          1
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

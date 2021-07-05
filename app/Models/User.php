@@ -62,6 +62,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    /**
+     * Defines the relation between User and Holiday models.
+     * A user has manny holidays.
+     *
+     */
     public function holidays()
     {
         return $this->hasMany(Holiday::class);

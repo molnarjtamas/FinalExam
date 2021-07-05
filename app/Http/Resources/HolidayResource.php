@@ -16,7 +16,6 @@ class HolidayResource extends JsonResource
      */
     public function toArray($request)
     {
-//        dd($this);
         return [
             'id' => $this->id,
             'user' => User::find($this->user_id),

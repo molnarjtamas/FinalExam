@@ -4,6 +4,7 @@
 This letter is a formal request for a(n) {{$data['type']}} leave <br/>
 from  {{date("F j, Y",strtotime($data['start_date']))}}
 to {{date("F j, Y",strtotime($data['end_date']))}}.
+Further details: <br/>
 
 {{ucfirst($data['description'])}} .
 

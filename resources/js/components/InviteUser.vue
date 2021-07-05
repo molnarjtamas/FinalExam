@@ -80,11 +80,11 @@ export default {
 
     methods: {
         addUser(){
-            this.inviteUserForm.post(route('user.invite')),{
+            this.inviteUserForm.post(route('user.invite'),{
                 errorBag: 'addUser',
                 preserveScroll: true,
-                onSuccess: () => this.inviteUserForm.reset(),
-            }
+                onSuccess: () => this.inviteUserForm.reset()
+            })
         },
 
         fetchRoles(){
