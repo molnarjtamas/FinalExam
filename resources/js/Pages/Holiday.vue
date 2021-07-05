@@ -4,6 +4,9 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Holiday
             </h2>
+            <h3 v-if="getResult ==='no'" class="text-red-600">
+                {{getMessage}}
+            </h3>
         </template>
 
         <div class="py-12">
@@ -12,15 +15,8 @@
                     <div v-if="canViewAllHolidays">
                         <AllHolidays></AllHolidays>
                     </div>
-
-                    <div v-if="canViewOwnHolidays" >
-                        <div class="lg:flex ">
-
-                            <MyHolidays></MyHolidays>
-                            <div class="flex justify-start self-end mb-6 mx-8">
-                                 <TakeHolidayForm ></TakeHolidayForm>
-                            </div>
-                        </div>
+                    <div v-if="canViewOwnHolidays">
+                        <MyHolidays v-bind:message="getMessage" v-bind:success:="getResult"></MyHolidays>
                     </div>
                 </div>
             </div>
@@ -32,19 +28,18 @@
 import AppLayout from '@/Layouts/AppLayout';
 import AllHolidays from "@/components/AllHolidays";
 import MyHolidays from "@/components/MyHolidays";
-import TakeHolidayForm from "@/components/TakeHolidayForm";
+
 import axios from "axios";
-import moment from "moment";
+
 
 export default {
     components: {
         AppLayout,
         AllHolidays,
         MyHolidays,
-        TakeHolidayForm,
-
-
     },
+    props:['success','message'],
+
     data() {
         return {
             permissions: null,
@@ -52,11 +47,17 @@ export default {
     },
     computed:
         {
-            canViewAllHolidays: function (){
-                return this.permissions ? this.checkPermission(this.permissions,'view-all-holidays') : false
+            getResult: function () {
+                return this.success;
             },
-            canViewOwnHolidays: function (){
-                return this.permissions ? this.checkPermission(this.permissions,'view-own-holidays') : false
+            getMessage: function () {
+                return this.message;
+            },
+            canViewAllHolidays: function () {
+                return this.permissions ? this.checkPermission(this.permissions, 'view-all-holidays') : false
+            },
+            canViewOwnHolidays: function () {
+                return this.permissions ? this.checkPermission(this.permissions, 'view-own-holidays') : false
             }
         },
     mounted() {
@@ -66,7 +67,7 @@ export default {
     methods: {
         fetchPermissions() {
             axios.get('user/permissions')
-                .then( response => {
+                .then(response => {
                     this.permissions = response.data
 
                 }).catch(err => {
@@ -74,7 +75,7 @@ export default {
             })
         },
 
-        checkPermission(permissions,permission) {
+        checkPermission(permissions, permission) {
             return permissions.some(element => element === permission);
         },
 

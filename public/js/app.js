@@ -4176,11 +4176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _components_AllHolidays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/AllHolidays */ "./resources/js/components/AllHolidays.vue");
 /* harmony import */ var _components_MyHolidays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/MyHolidays */ "./resources/js/components/MyHolidays.vue");
-/* harmony import */ var _components_TakeHolidayForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/TakeHolidayForm */ "./resources/js/components/TakeHolidayForm.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -4207,12 +4204,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-
-
 
 
 
@@ -4221,15 +4212,21 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     AllHolidays: _components_AllHolidays__WEBPACK_IMPORTED_MODULE_1__.default,
-    MyHolidays: _components_MyHolidays__WEBPACK_IMPORTED_MODULE_2__.default,
-    TakeHolidayForm: _components_TakeHolidayForm__WEBPACK_IMPORTED_MODULE_3__.default
+    MyHolidays: _components_MyHolidays__WEBPACK_IMPORTED_MODULE_2__.default
   },
+  props: ['success', 'message'],
   data: function data() {
     return {
       permissions: null
     };
   },
   computed: {
+    getResult: function getResult() {
+      return this.success;
+    },
+    getMessage: function getMessage() {
+      return this.message;
+    },
     canViewAllHolidays: function canViewAllHolidays() {
       return this.permissions ? this.checkPermission(this.permissions, 'view-all-holidays') : false;
     },
@@ -4244,7 +4241,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchPermissions: function fetchPermissions() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default().get('user/permissions').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get('user/permissions').then(function (response) {
         _this.permissions = response.data;
       })["catch"](function (err) {
         console.log(err);
@@ -5737,11 +5734,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
-/* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
-/* harmony import */ var _components_Waiting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/Waiting */ "./resources/js/components/Waiting.vue");
+/* harmony import */ var _components_HolidayMark__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/HolidayMark */ "./resources/js/components/HolidayMark.vue");
+/* harmony import */ var _components_CheckMark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/CheckMark */ "./resources/js/components/CheckMark.vue");
+/* harmony import */ var _components_Waiting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/Waiting */ "./resources/js/components/Waiting.vue");
+/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
+/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
+/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/Jetstream/ValidationErrors */ "./resources/js/Jetstream/ValidationErrors.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_13__);
 //
 //
 //
@@ -5858,6 +5865,78 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5865,23 +5944,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "MyHolidays",
+  props: ['success', 'message'],
   components: {
-    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_2__.default,
-    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_3__.default,
-    Waiting: _components_Waiting__WEBPACK_IMPORTED_MODULE_4__.default
+    HolidayMark: _components_HolidayMark__WEBPACK_IMPORTED_MODULE_1__.default,
+    CheckMark: _components_CheckMark__WEBPACK_IMPORTED_MODULE_2__.default,
+    Waiting: _components_Waiting__WEBPACK_IMPORTED_MODULE_3__.default,
+    ValidationErrors: _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_12__.default,
+    Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_10__.default,
+    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_8__.default,
+    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_4__.default,
+    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_5__.default,
+    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_6__.default,
+    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_7__.default,
+    vSelect: (vue_select__WEBPACK_IMPORTED_MODULE_11___default())
   },
   data: function data() {
     return {
       link: "/holidays/".concat(this.$page.props.user.id),
       holidays: {},
       links: {},
-      meta: {}
+      meta: {},
+      takeHolidayForm: this.$inertia.form({
+        type: '',
+        description: '',
+        start_date: '',
+        end_date: ''
+      })
     };
   },
-  computed: {},
+  computed: {
+    runOutOfPaid: function runOutOfPaid() {
+      var _this$holidays$;
+
+      return this.holidays && ((_this$holidays$ = this.holidays[0]) === null || _this$holidays$ === void 0 ? void 0 : _this$holidays$.user.days_left) < 1;
+    },
+    getResult: function getResult() {
+      return this.success;
+    },
+    getMessage: function getMessage() {
+      return this.message;
+    }
+  },
   mounted: function mounted() {
     this.fetchHolidays();
     this.getToday();
+    this.getMinStartDate();
   },
   methods: {
     fetchHolidays: function fetchHolidays() {
@@ -5897,7 +6004,22 @@ __webpack_require__.r(__webpack_exports__);
       this.holidays = res.data.data;
       this.links = res.data.links;
       this.meta = res.data.meta;
-      console.log(this.holidays[0].user.days_left);
+    },
+    requestHoliday: function requestHoliday() {
+      var _this2 = this;
+
+      this.takeHolidayForm.post(route('holiday.request'), {
+        errorBag: 'requestHoliday',
+        preserveScroll: true,
+        onSuccess: function onSuccess() {
+          _this2.takeHolidayForm.reset();
+
+          _this2.fetchHolidays();
+        }
+      });
+    },
+    getMinStartDate: function getMinStartDate() {
+      return moment__WEBPACK_IMPORTED_MODULE_13___default()().add(15, 'days').format("YYYY-MM-DD");
     },
     clickPage: function clickPage(button) {
       if (button === 'prev') this.link = this.links.prev;else this.link = this.links.next;
@@ -5907,165 +6029,10 @@ __webpack_require__.r(__webpack_exports__);
       if (holiday.start_date < this.getToday() && holiday.end_date > this.getToday()) return 'active-background';else if (holiday.end_date < this.getToday()) return 'outdated-background';else return '';
     },
     getToday: function getToday() {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()().format("YYYY-MM-DD");
+      return moment__WEBPACK_IMPORTED_MODULE_13___default()().format("YYYY-MM-DD");
     },
     formatDate: function formatDate(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format("MMM Do, YY");
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/FormSection */ "./resources/js/Jetstream/FormSection.vue");
-/* harmony import */ var _Jetstream_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Input */ "./resources/js/Jetstream/Input.vue");
-/* harmony import */ var _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/InputError */ "./resources/js/Jetstream/InputError.vue");
-/* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
-/* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Jetstream/ValidationErrors */ "./resources/js/Jetstream/ValidationErrors.vue");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    ValidationErrors: _Jetstream_ValidationErrors__WEBPACK_IMPORTED_MODULE_8__.default,
-    Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_6__.default,
-    JetActionMessage: _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_4__.default,
-    JetFormSection: _Jetstream_FormSection__WEBPACK_IMPORTED_MODULE_0__.default,
-    JetInput: _Jetstream_Input__WEBPACK_IMPORTED_MODULE_1__.default,
-    JetInputError: _Jetstream_InputError__WEBPACK_IMPORTED_MODULE_2__.default,
-    JetLabel: _Jetstream_Label__WEBPACK_IMPORTED_MODULE_3__.default,
-    vSelect: (vue_select__WEBPACK_IMPORTED_MODULE_7___default())
-  },
-  data: function data() {
-    return {
-      link: '/api/roles',
-      roles: [],
-      takeHolidayForm: this.$inertia.form({
-        type: '',
-        description: '',
-        start_date: '',
-        end_date: ''
-      })
-    };
-  },
-  mounted: function mounted() {
-    this.fetchRoles();
-    this.getMinStartDate();
-  },
-  methods: {
-    requestHoliday: function requestHoliday() {
-      var _this = this;
-
-      this.takeHolidayForm.post(route('holiday.request')), {
-        errorBag: 'requestHoliday',
-        preserveScroll: true,
-        onSuccess: function onSuccess() {
-          return _this.takeHolidayForm.reset();
-        }
-      };
-    },
-    fetchRoles: function fetchRoles() {
-      var _this2 = this;
-
-      axios.get(this.link).then(function (res) {
-        _this2.prepareParams(res);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    prepareParams: function prepareParams(res) {
-      this.roles = Object.values(res.data);
-    },
-    getMinStartDate: function getMinStartDate() {
-      return moment__WEBPACK_IMPORTED_MODULE_9___default()().add(15, 'days').format("YYYY-MM-DD");
-    },
-    formatDate: function formatDate(date) {
-      return moment__WEBPACK_IMPORTED_MODULE_9___default()(date).format("MMM Do YY");
+      return moment__WEBPACK_IMPORTED_MODULE_13___default()(date).format("MMM Do, YY");
     }
   }
 });
@@ -52121,45 +52088,6 @@ component.options.__file = "resources/js/components/MyHolidays.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/TakeHolidayForm.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/TakeHolidayForm.vue ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TakeHolidayForm.vue?vue&type=template&id=09d05fcc& */ "./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc&");
-/* harmony import */ var _TakeHolidayForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TakeHolidayForm.vue?vue&type=script&lang=js& */ "./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
-  _TakeHolidayForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__.render,
-  _TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/TakeHolidayForm.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/components/Users.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/Users.vue ***!
@@ -53022,22 +52950,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyHolidays_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MyHolidays.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/MyHolidays.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MyHolidays_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TakeHolidayForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TakeHolidayForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TakeHolidayForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -54044,23 +53956,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyHolidays_vue_vue_type_template_id_7f54ca12___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MyHolidays_vue_vue_type_template_id_7f54ca12___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MyHolidays.vue?vue&type=template&id=7f54ca12& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/MyHolidays.vue?vue&type=template&id=7f54ca12&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc& ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TakeHolidayForm_vue_vue_type_template_id_09d05fcc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TakeHolidayForm.vue?vue&type=template&id=09d05fcc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc&");
 
 
 /***/ }),
@@ -58479,7 +58374,15 @@ var render = function() {
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
                 [_vm._v("\n            Holiday\n        ")]
-              )
+              ),
+              _vm._v(" "),
+              _vm.getResult === "no"
+                ? _c("h3", { staticClass: "text-red-600" }, [
+                    _vm._v(
+                      "\n            " + _vm._s(_vm.getMessage) + "\n        "
+                    )
+                  ])
+                : _vm._e()
             ]
           },
           proxy: true
@@ -58499,25 +58402,18 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _vm.canViewOwnHolidays
-                ? _c("div", [
-                    _c(
-                      "div",
-                      { staticClass: "lg:flex " },
-                      [
-                        _c("MyHolidays"),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "flex justify-start self-end mb-6 mx-8"
-                          },
-                          [_c("TakeHolidayForm")],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ])
+                ? _c(
+                    "div",
+                    [
+                      _c("MyHolidays", {
+                        attrs: {
+                          message: _vm.getMessage,
+                          "success:": _vm.getResult
+                        }
+                      })
+                    ],
+                    1
+                  )
                 : _vm._e()
             ]
           )
@@ -60748,189 +60644,499 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-8" }, [
-    _c("div", { staticClass: "mt-6" }, [
-      _c("div", { staticClass: "lg:flex justify-between " }, [
-        _c("div", { staticClass: "lg:flex pl-6" }, [
-          _c(
-            "div",
-            { staticClass: "flex  items-center" },
-            [
-              _c("HolidayMark", {
-                staticClass: "self-center block h-44 w-full"
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
-            },
-            [_vm._v("\n                    My holidays\n                ")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
-          attrs: { role: "alert" }
-        },
-        [
-          _c("div", { staticClass: "flex" }, [
-            _c("div", { staticClass: "py-1" }, [
-              _c(
-                "svg",
-                {
-                  staticClass: "fill-current h-6 w-6 text-teal-500 mr-4",
-                  attrs: {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    viewBox: "0 0 20 20"
-                  }
-                },
-                [
-                  _c("path", {
-                    attrs: {
-                      d:
-                        "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("p", { staticClass: "font-bold" }, [
-                _vm._v("Everyone has 21 paid vacation days by default")
-              ]),
-              _vm._v(" "),
-              _vm.holidays[0]
-                ? _c("p", { staticClass: "text-sm" }, [
-                    _vm._v(
-                      "You have left : " +
-                        _vm._s(_vm.holidays[0].user.days_left) +
-                        " "
-                    )
-                  ])
-                : _c("p", { staticClass: "text-sm" }, [
-                    _vm._v("You have left: 21")
-                  ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "px-4 sm:px-8 py-4 overflow-x-auto" }, [
-        _c(
-          "div",
-          { staticClass: "inline-block  shadow rounded-lg overflow-hidden" },
-          [
-            _c("table", { staticClass: "min-w-full leading-normal" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                { staticClass: "text-xs sm:text-lg" },
-                _vm._l(_vm.holidays, function(holiday) {
-                  return _c("tr", { class: _vm.holidayStatusClass(holiday) }, [
-                    holiday
-                      ? _c(
-                          "td",
-                          { staticClass: "py-3 px-5 hidden sm:table-cell" },
-                          [_vm._v(_vm._s(holiday.type))]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    holiday
-                      ? _c(
-                          "td",
-                          { staticClass: "py-3 px-5 hidden sm:table-cell" },
-                          [_vm._v(_vm._s(holiday.description))]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    holiday
-                      ? _c("td", { staticClass: "py-3 px-5" }, [
-                          _vm._v(_vm._s(_vm.formatDate(holiday.start_date)))
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    holiday
-                      ? _c("td", { staticClass: "py-3 px-5" }, [
-                          _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    holiday
-                      ? _c("td", { staticClass: "py-3 px-5" }, [
-                          holiday.approved
-                            ? _c(
-                                "div",
-                                [
-                                  _c("CheckMark", {
-                                    staticClass: "h-8 w-8 ml-2 text-green-700"
-                                  })
-                                ],
-                                1
-                              )
-                            : _c(
-                                "div",
-                                [
-                                  _c("Waiting", { staticClass: "h-8 w-8 ml-2" })
-                                ],
-                                1
-                              )
-                        ])
-                      : _vm._e()
-                  ])
-                }),
-                0
-              )
-            ]),
+  return _c("div", { staticClass: "lg:flex" }, [
+    _c("div", { staticClass: "mt-8" }, [
+      _c("div", { staticClass: "mt-6" }, [
+        _c("div", { staticClass: "lg:flex justify-between " }, [
+          _c("div", { staticClass: "lg:flex pl-6" }, [
+            _c(
+              "div",
+              { staticClass: "flex  items-center" },
+              [
+                _c("HolidayMark", {
+                  staticClass: "self-center block h-44 w-full"
+                })
+              ],
+              1
+            ),
             _vm._v(" "),
             _c(
               "div",
               {
                 staticClass:
-                  "px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
+                  "self-center text-5xl ml-8 sm:ml-16 font-semibold text-gray-600 uppercase"
               },
               [
+                _vm._v(
+                  "\n                        My holidays\n                    "
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md",
+            attrs: { role: "alert" }
+          },
+          [
+            _c("div", { staticClass: "flex" }, [
+              _c("div", { staticClass: "py-1" }, [
                 _c(
-                  "span",
-                  { staticClass: "text-xs xs:text-sm text-gray-900" },
+                  "svg",
+                  {
+                    staticClass: "fill-current h-6 w-6 text-teal-500 mr-4",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 20 20"
+                    }
+                  },
                   [
-                    _vm._v(
-                      "Showing " +
-                        _vm._s(_vm.meta.from) +
-                        " to " +
-                        _vm._s(_vm.meta.to) +
-                        " of " +
-                        _vm._s(_vm.meta.total) +
-                        " Entries"
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "inline-flex mt-2 xs:mt-0" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
-                      on: {
-                        click: function($event) {
-                          return _vm.clickPage("prev")
-                        }
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
                       }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "font-bold" }, [
+                  _vm._v("Everyone has 21 paid vacation days by default")
+                ]),
+                _vm._v(" "),
+                _vm.holidays[0]
+                  ? _c("p", { staticClass: "text-sm" }, [
+                      _vm._v(
+                        "You have left : " +
+                          _vm._s(_vm.holidays[0].user.days_left) +
+                          " "
+                      )
+                    ])
+                  : _c("p", { staticClass: "text-sm" }, [
+                      _vm._v("You have left: 21")
+                    ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-sm" }, [
+                  _vm._v(
+                    "Note that paid requests longer than that will be automatically rejected."
+                  )
+                ])
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "px-4 sm:px-8 py-4 overflow-x-auto" }, [
+          _c(
+            "div",
+            { staticClass: "inline-block  shadow rounded-lg overflow-hidden" },
+            [
+              _c("table", { staticClass: "min-w-full leading-normal" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  { staticClass: "text-xs sm:text-lg" },
+                  _vm._l(_vm.holidays, function(holiday) {
+                    return _c(
+                      "tr",
+                      { class: _vm.holidayStatusClass(holiday) },
+                      [
+                        holiday
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.type))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c(
+                              "td",
+                              { staticClass: "py-3 px-5 hidden sm:table-cell" },
+                              [_vm._v(_vm._s(holiday.description))]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _vm._v(_vm._s(_vm.formatDate(holiday.start_date)))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              _vm._v(_vm._s(_vm.formatDate(holiday.end_date)))
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        holiday
+                          ? _c("td", { staticClass: "py-3 px-5" }, [
+                              holiday.approved
+                                ? _c(
+                                    "div",
+                                    [
+                                      _c("CheckMark", {
+                                        staticClass:
+                                          "h-8 w-8 ml-2 text-green-700"
+                                      })
+                                    ],
+                                    1
+                                  )
+                                : _c(
+                                    "div",
+                                    [
+                                      _c("Waiting", {
+                                        staticClass: "h-8 w-8 ml-2"
+                                      })
+                                    ],
+                                    1
+                                  )
+                            ])
+                          : _vm._e()
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
+                },
+                [
+                  _c(
+                    "span",
+                    { staticClass: "text-xs xs:text-sm text-gray-900" },
+                    [
+                      _vm._v(
+                        "Showing " +
+                          _vm._s(_vm.meta.from) +
+                          " to " +
+                          _vm._s(_vm.meta.to) +
+                          " of " +
+                          _vm._s(_vm.meta.total) +
+                          " Entries"
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "inline-flex mt-2 xs:mt-0" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-l",
+                        on: {
+                          click: function($event) {
+                            return _vm.clickPage("prev")
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Prev\n                            "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
+                        on: {
+                          click: function($event) {
+                            return _vm.clickPage("next")
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Next\n                            "
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex justify-start self-end mb-6 mx-8" },
+      [
+        _c("jet-form-section", {
+          scopedSlots: _vm._u([
+            {
+              key: "form",
+              fn: function() {
+                return [
+                  _c(
+                    "div",
+                    { staticClass: "col-span-4 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        staticClass: "mb-2",
+                        attrs: { for: "type", value: "Type of holiday" }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { staticClass: "inline-flex items-center" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.takeHolidayForm.type,
+                              expression: "takeHolidayForm.type"
+                            }
+                          ],
+                          staticClass: "form-radio",
+                          attrs: {
+                            type: "radio",
+                            name: "type",
+                            value: "paid",
+                            disabled: _vm.runOutOfPaid
+                          },
+                          domProps: {
+                            checked: _vm._q(_vm.takeHolidayForm.type, "paid")
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$set(
+                                _vm.takeHolidayForm,
+                                "type",
+                                "paid"
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ml-2" }, [_vm._v("Paid")])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        { staticClass: "inline-flex items-center ml-6" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.takeHolidayForm.type,
+                                expression: "takeHolidayForm.type"
+                              }
+                            ],
+                            staticClass: "form-radio",
+                            attrs: {
+                              type: "radio",
+                              name: "type",
+                              value: "unpaid"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.takeHolidayForm.type,
+                                "unpaid"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                return _vm.$set(
+                                  _vm.takeHolidayForm,
+                                  "type",
+                                  "unpaid"
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "ml-2" }, [
+                            _vm._v("Unpaid")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.takeHolidayForm.errors.type }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-4 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { for: "description", value: "Description" }
+                      }),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.takeHolidayForm.description,
+                            expression: "takeHolidayForm.description"
+                          }
+                        ],
+                        staticClass:
+                          "h-24 w-full resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
+                        attrs: { id: "description" },
+                        domProps: { value: _vm.takeHolidayForm.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.takeHolidayForm,
+                              "description",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: {
+                          message: _vm.takeHolidayForm.errors.description
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-4 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { for: "start_date", value: "Starting on" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.takeHolidayForm.start_date,
+                            expression: "takeHolidayForm.start_date"
+                          }
+                        ],
+                        staticClass:
+                          "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
+                        attrs: {
+                          id: "start_date",
+                          type: "date",
+                          min: _vm.getMinStartDate()
+                        },
+                        domProps: { value: _vm.takeHolidayForm.start_date },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.takeHolidayForm,
+                              "start_date",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: {
+                          message: _vm.takeHolidayForm.errors.start_date
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-4 sm:col-span-4" },
+                    [
+                      _c("jet-label", {
+                        attrs: { for: "end_date", value: "Until" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.takeHolidayForm.end_date,
+                            expression: "takeHolidayForm.end_date"
+                          }
+                        ],
+                        staticClass:
+                          "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
+                        attrs: {
+                          id: "end_date",
+                          type: "date",
+                          min: _vm.getMinStartDate()
+                        },
+                        domProps: { value: _vm.takeHolidayForm.end_date },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.takeHolidayForm,
+                              "end_date",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("jet-input-error", {
+                        staticClass: "mt-2",
+                        attrs: { message: _vm.takeHolidayForm.errors.end_date }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "actions",
+              fn: function() {
+                return [
+                  _c(
+                    "jet-action-message",
+                    {
+                      staticClass: "mr-3",
+                      attrs: { on: _vm.takeHolidayForm.recentlySuccessful }
                     },
                     [
                       _vm._v(
-                        "\n                            Prev\n                        "
+                        "\n                    " +
+                          _vm._s(_vm.getMessage) +
+                          "\n                "
                       )
                     ]
                   ),
@@ -60939,26 +61145,30 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "text-sm bg-green-700 hover:bg-green-900 text-gray-50 font-semibold py-2 px-4 rounded-r",
+                        "text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded",
+                      class: { "opacity-25": _vm.takeHolidayForm.processing },
+                      attrs: { disabled: _vm.takeHolidayForm.processing },
                       on: {
                         click: function($event) {
-                          return _vm.clickPage("next")
+                          return _vm.requestHoliday()
                         }
                       }
                     },
                     [
                       _vm._v(
-                        "\n                            Next\n                        "
+                        "\n                    Give me a break!\n                "
                       )
                     ]
                   )
-                ])
-              ]
-            )
-          ]
-        )
-      ])
-    ])
+                ]
+              },
+              proxy: true
+            }
+          ])
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -60979,7 +61189,7 @@ var staticRenderFns = [
             { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell " },
             [
               _vm._v(
-                "\n                            Type\n                        "
+                "\n                                Type\n                            "
               )
             ]
           ),
@@ -60989,26 +61199,26 @@ var staticRenderFns = [
             { staticClass: "px-5 py-3 border-b-2 hidden sm:table-cell" },
             [
               _vm._v(
-                "\n                            Description\n                        "
+                "\n                                Description\n                            "
               )
             ]
           ),
           _vm._v(" "),
           _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
-              "\n                            I leave on\n                        "
+              "\n                                I leave on\n                            "
             )
           ]),
           _vm._v(" "),
           _c("th", { staticClass: "px-5 py-3 border-b-2  " }, [
             _vm._v(
-              "\n                            Until\n                        "
+              "\n                                Until\n                            "
             )
           ]),
           _vm._v(" "),
           _c("th", { staticClass: "px-5 py-3 border-b-2   " }, [
             _vm._v(
-              "\n                            Status\n                        "
+              "\n                                Status\n                            "
             )
           ])
         ])
@@ -61016,275 +61226,6 @@ var staticRenderFns = [
     )
   }
 ]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TakeHolidayForm.vue?vue&type=template&id=09d05fcc& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("jet-form-section", {
-    scopedSlots: _vm._u([
-      {
-        key: "form",
-        fn: function() {
-          return [
-            _c(
-              "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
-              [
-                _c("jet-label", {
-                  staticClass: "mb-2",
-                  attrs: { for: "type", value: "Type of holiday" }
-                }),
-                _vm._v(" "),
-                _c("label", { staticClass: "inline-flex items-center" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.takeHolidayForm.type,
-                        expression: "takeHolidayForm.type"
-                      }
-                    ],
-                    staticClass: "form-radio",
-                    attrs: { type: "radio", name: "type", value: "paid" },
-                    domProps: {
-                      checked: _vm._q(_vm.takeHolidayForm.type, "paid")
-                    },
-                    on: {
-                      change: function($event) {
-                        return _vm.$set(_vm.takeHolidayForm, "type", "paid")
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ml-2" }, [_vm._v("Paid")])
-                ]),
-                _vm._v(" "),
-                _c("label", { staticClass: "inline-flex items-center ml-6" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.takeHolidayForm.type,
-                        expression: "takeHolidayForm.type"
-                      }
-                    ],
-                    staticClass: "form-radio",
-                    attrs: { type: "radio", name: "type", value: "unpaid" },
-                    domProps: {
-                      checked: _vm._q(_vm.takeHolidayForm.type, "unpaid")
-                    },
-                    on: {
-                      change: function($event) {
-                        return _vm.$set(_vm.takeHolidayForm, "type", "unpaid")
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "ml-2" }, [_vm._v("Unpaid")])
-                ]),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.type }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
-              [
-                _c("jet-label", {
-                  attrs: { for: "description", value: "Description" }
-                }),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.takeHolidayForm.description,
-                      expression: "takeHolidayForm.description"
-                    }
-                  ],
-                  staticClass:
-                    "h-24 w-full resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
-                  attrs: { id: "description" },
-                  domProps: { value: _vm.takeHolidayForm.description },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.takeHolidayForm,
-                        "description",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.description }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
-              [
-                _c("jet-label", {
-                  attrs: { for: "start_date", value: "Starting on" }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.takeHolidayForm.start_date,
-                      expression: "takeHolidayForm.start_date"
-                    }
-                  ],
-                  staticClass:
-                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
-                  attrs: {
-                    id: "start_date",
-                    type: "date",
-                    min: _vm.getMinStartDate()
-                  },
-                  domProps: { value: _vm.takeHolidayForm.start_date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.takeHolidayForm,
-                        "start_date",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.start_date }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-4 sm:col-span-4" },
-              [
-                _c("jet-label", { attrs: { for: "end_date", value: "Until" } }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.takeHolidayForm.end_date,
-                      expression: "takeHolidayForm.end_date"
-                    }
-                  ],
-                  staticClass:
-                    "border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm",
-                  attrs: {
-                    id: "end_date",
-                    type: "date",
-                    min: _vm.getMinStartDate()
-                  },
-                  domProps: { value: _vm.takeHolidayForm.end_date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.takeHolidayForm,
-                        "end_date",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.takeHolidayForm.errors.end_date }
-                })
-              ],
-              1
-            )
-          ]
-        },
-        proxy: true
-      },
-      {
-        key: "actions",
-        fn: function() {
-          return [
-            _c(
-              "jet-action-message",
-              {
-                staticClass: "mr-3",
-                attrs: { on: _vm.takeHolidayForm.recentlySuccessful }
-              },
-              [_vm._v("\n                Requested.\n            ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded",
-                class: { "opacity-25": _vm.takeHolidayForm.processing },
-                attrs: { disabled: _vm.takeHolidayForm.processing },
-                on: {
-                  click: function($event) {
-                    return _vm.requestHoliday()
-                  }
-                }
-              },
-              [_vm._v("\n                Give me a break!\n            ")]
-            )
-          ]
-        },
-        proxy: true
-      }
-    ])
-  })
-}
-var staticRenderFns = []
 render._withStripped = true
 
 

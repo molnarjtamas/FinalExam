@@ -1,5 +1,7 @@
-<template>
 
+
+<template>
+<div class="lg:flex">
     <div class="mt-8">
 
 
@@ -23,6 +25,7 @@
                         <p class="font-bold">Everyone has 21 paid vacation days by default</p>
                         <p v-if="holidays[0]" class="text-sm">You have left : {{holidays[0].user.days_left}} </p>
                         <p v-else class="text-sm">You have left: 21</p>
+                        <p class="text-sm">Note that paid requests longer than that will be automatically rejected.</p>
                     </div>
                 </div>
             </div>
@@ -112,26 +115,101 @@
         </div>
 
     </div>
+    <div class="flex justify-start self-end mb-6 mx-8">
+
+        <jet-form-section>
+
+            <template #form>
+
+
+                <div class="col-span-4 sm:col-span-4">
+                    <jet-label for="type" value="Type of holiday" class="mb-2"/>
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="type" value="paid" :disabled="runOutOfPaid" v-model="takeHolidayForm.type">
+                        <span class="ml-2">Paid</span>
+                    </label>
+                    <label class="inline-flex items-center ml-6">
+                        <input type="radio" class="form-radio" name="type" value="unpaid"   v-model="takeHolidayForm.type">
+                        <span class="ml-2">Unpaid</span>
+                    </label>
+
+                    <jet-input-error :message="takeHolidayForm.errors.type" class="mt-2" />
+                </div>
+                <div class="col-span-4 sm:col-span-4">
+                    <jet-label for="description" value="Description" />
+                    <textarea  class="h-24 w-full resize-none border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                               id="description" v-model="takeHolidayForm.description"/>
+                    <jet-input-error :message="takeHolidayForm.errors.description" class="mt-2" />
+
+
+                </div>
+
+                <div class="col-span-4 sm:col-span-4">
+
+                    <jet-label for="start_date" value="Starting on"/>
+                    <input class="border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm" id="start_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.start_date"/>
+                    <jet-input-error :message="takeHolidayForm.errors.start_date" class="mt-2" />
+                </div>
+                <div class="col-span-4 sm:col-span-4">
+
+                    <jet-label for="end_date" value="Until"/>
+                    <input class="border-gray-300 focus:border-green-700 focus:ring focus:ring-green-600 focus:ring-opacity-50 rounded-md shadow-sm" id="end_date" type="date" :min="getMinStartDate()" v-model="takeHolidayForm.end_date" />
+                    <jet-input-error :message="takeHolidayForm.errors.end_date" class="mt-2" />
+                </div>
+
+
+            </template>
+
+
+            <template #actions>
+                <jet-action-message :on="takeHolidayForm.recentlySuccessful" class="mr-3">
+                    {{getMessage}}
+                </jet-action-message>
+
+                <button  class="text-sm bg-yellow-500 hover:bg-yellow-600 text-gray-50 font-semibold py-2 px-4 rounded" v-on:click="requestHoliday()" :class="{ 'opacity-25': takeHolidayForm.processing }" :disabled="takeHolidayForm.processing">
+                    Give me a break!
+                </button>
+            </template>
+        </jet-form-section>
+
+    </div>
+
+</div>
 </template>
 
 <script>
 
 import axios from "axios";
-import moment from "moment";
 import HolidayMark from "@/components/HolidayMark"
 import CheckMark from "@/components/CheckMark"
 import Waiting from "@/components/Waiting"
-
-
+import JetFormSection from '@/Jetstream/FormSection'
+import JetInput from '@/Jetstream/Input'
+import JetInputError from '@/Jetstream/InputError'
+import JetLabel from '@/Jetstream/Label'
+import JetActionMessage from '@/Jetstream/ActionMessage'
+import 'vue-select/dist/vue-select.css';
+import Button from "@/Jetstream/Button";
+import vSelect from 'vue-select'
+import ValidationErrors from "@/Jetstream/ValidationErrors";
+import moment from "moment";
 
 export default {
     name: "MyHolidays",
 
-
+    props:['success','message'],
     components: {
         HolidayMark,
         CheckMark,
-        Waiting
+        Waiting,
+        ValidationErrors,
+        Button,
+        JetActionMessage,
+        JetFormSection,
+        JetInput,
+        JetInputError,
+        JetLabel,
+        vSelect,
     },
     data() {
         return {
@@ -139,18 +217,30 @@ export default {
             holidays: {},
             links: {},
             meta: {},
-
-
+            takeHolidayForm: this.$inertia.form({
+                type: '',
+                description: '',
+                start_date: '',
+                end_date:'',
+            }),
         }
     },
 
     computed: {
-
+        runOutOfPaid: function () {
+            return (this.holidays) && (this.holidays[0]?.user.days_left < 1);
+        },
+        getResult: function () {
+            return this.success;
+        },
+        getMessage: function () {
+            return this.message;
+        },
     },
     mounted() {
         this.fetchHolidays()
         this.getToday()
-
+        this.getMinStartDate()
     },
 
     methods: {
@@ -163,14 +253,33 @@ export default {
                 console.log(err)
             })
         },
-
-
         prepareParams(res) {
             this.holidays = res.data.data
             this.links = res.data.links
             this.meta = res.data.meta
-            console.log(this.holidays[0].user.days_left)
+
         },
+
+        requestHoliday(){
+
+            this.takeHolidayForm.post(route('holiday.request'),{
+                errorBag: 'requestHoliday',
+                preserveScroll: true,
+                onSuccess: () => {
+                    this.takeHolidayForm.reset();
+                    this.fetchHolidays();
+
+                }
+
+            });
+
+        },
+        getMinStartDate() {
+            return moment().add(15,'days').format("YYYY-MM-DD");
+        },
+
+
+
 
         clickPage(button) {
             if (button === 'prev')

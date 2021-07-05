@@ -15,6 +15,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,6 +24,7 @@ class HolidayController extends Controller
     // this function shows all of the holidays
     public function index()
     {
+
         return HolidayResource::collection(Holiday::orderBy('start_date')->paginate(10));
 
     }
@@ -30,6 +32,7 @@ class HolidayController extends Controller
     //this function shows holidays by user ID
     public function show(User $user)
     {
+
         return HolidayResource::collection($user->holidays()->orderBy('start_date')->paginate(4));
     }
 
@@ -39,6 +42,12 @@ class HolidayController extends Controller
         //validation
         $validated = $request->validated();
         $validated['user_id'] = Auth::id();
+        $days_left = User::findOrFail(Auth::id())->days_left;
+        //check if paid vacation exceeds remaining days
+        if( ($validated['type'] == 'paid')
+            && ($this->workDays($validated['start_date'],$validated['end_date']) > $days_left) ){
+            return redirect('/holiday')->with('success','no')->with('message','You do not have enough paid vacations days left.');
+        }
 
         //inserting into the database
         $holiday = Holiday::create($validated);
@@ -56,7 +65,7 @@ class HolidayController extends Controller
             ->notify(new HolidayRequested($approve_url, $decline_url, $validated));
 
         //redirecting with response
-        return redirect('/holiday')->with('success', 'The Invitation has been sent successfully');
+        return redirect('/holiday')->with('success','yes')->with('message','The request has been sent successfully');
     }
 
     //function to approve the holiday request

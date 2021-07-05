@@ -27,6 +27,7 @@ class UserController extends Controller
 
     }
 
+
     //this function is processing the member invitations
     public function process_invitations(Request $request)
     {
