@@ -25,9 +25,7 @@ class UserController extends Controller
     public function index()
     {
         return UserResource::collection(User::orderBy('name')->paginate(10));
-
     }
-
 
     //this function is processing the member invitations
     public function process_invitations(ProcessInvitationRequest $request)

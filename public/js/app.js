@@ -4258,7 +4258,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Jetstream_AuthenticationCardLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/AuthenticationCardLogo */ "./resources/js/Jetstream/AuthenticationCardLogo.vue");
 //
 //
 //
@@ -4272,14 +4271,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['policy'],
-  components: {
-    JetAuthenticationCardLogo: _Jetstream_AuthenticationCardLogo__WEBPACK_IMPORTED_MODULE_0__.default
-  }
+  props: ['policy']
 });
 
 /***/ }),
@@ -5121,7 +5114,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Jetstream_AuthenticationCardLogo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Jetstream/AuthenticationCardLogo */ "./resources/js/Jetstream/AuthenticationCardLogo.vue");
 //
 //
 //
@@ -5135,14 +5127,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['terms'],
-  components: {
-    JetAuthenticationCardLogo: _Jetstream_AuthenticationCardLogo__WEBPACK_IMPORTED_MODULE_0__.default
-  }
+  props: ['terms']
 });
 
 /***/ }),
@@ -5596,10 +5582,7 @@ __webpack_require__.r(__webpack_exports__);
         errorBag: 'addUser',
         preserveScroll: true,
         onSuccess: function onSuccess() {
-          console.log(_this.inviteUserForm);
-          _this.inviteUserForm.email = '';
-          _this.inviteUserForm.role = null;
-          _this.inviteUserForm.token = null;
+          return _this.inviteUserForm.reset();
         }
       });
     },
@@ -58377,8 +58360,6 @@ var render = function() {
         "div",
         { staticClass: "min-h-screen flex flex-col items-center pt-6 sm:pt-0" },
         [
-          _c("div", [_c("jet-authentication-card-logo")], 1),
-          _vm._v(" "),
           _c("div", {
             staticClass:
               "w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose",
@@ -59697,8 +59678,6 @@ var render = function() {
         "div",
         { staticClass: "min-h-screen flex flex-col items-center pt-6 sm:pt-0" },
         [
-          _c("div", [_c("jet-authentication-card-logo")], 1),
-          _vm._v(" "),
           _c("div", {
             staticClass:
               "w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose",

@@ -24,15 +24,12 @@ class HolidayController extends Controller
     // this function shows all of the holidays
     public function index()
     {
-
         return HolidayResource::collection(Holiday::orderBy('start_date')->paginate(10));
-
     }
 
     //this function shows holidays by user ID
     public function show(User $user)
     {
-
         return HolidayResource::collection($user->holidays()->orderBy('start_date')->paginate(4));
     }
 
