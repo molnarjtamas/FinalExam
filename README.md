@@ -7,8 +7,8 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Functional requirements ](#Functional requirements )
-* [Non Functional requirements](#Non Functional requirements)
+* [Functional requirements ](#functional-requirements )
+* [Non Functional requirements](#non-functional-requirements)
 * [Status](#status)
 * [License](#license)
 * [Credit](#credit)
@@ -61,8 +61,10 @@ Project is: _in version 1.0_,
 
 ## Credit
 This application is my BACHELOR THESIS at Sapientia EMTE, Marosvasarhely.
+
 Leading professors:
 Dr. Jánosi-Rancz Katalin Tünde
+
 Special thanks to my soon to be collegues @[WebGurus](https://www.webgurus.biz/)
 
 ## Contact
