@@ -5,7 +5,7 @@
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Update your account's profile name and change avatar.
         </template>
 
         <template #form>
@@ -51,7 +51,7 @@
             <!-- Email -->
             <div class="col-span-6 sm:col-span-4">
                 <jet-label for="email" value="Email" />
-                <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />
+                <jet-input :disabled="1" id="email" type="email" class="mt-1 block w-full cursor-not-allowed" v-model="form.email" />
                 <jet-input-error :message="form.errors.email" class="mt-2" />
             </div>
         </template>
